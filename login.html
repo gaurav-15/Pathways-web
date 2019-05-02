@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="112424505552-o5dun7r6c791f56j3112sei76ledfdou.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Login</title>
+
+    <script>
+        var courses=[];
+        var selected=[];
+        var l=0;
+        var email="";
+        var login_response="";
+
+        function getCourses() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    //document.getElementById("data").innerHTML = xhttp.responseText;
+                    console.log(xhttp.responseText);
+                    parseJSON(xhttp.responseText);
+                }
+            };
+            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/courses", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+        }
+
+
+        function parseJSON(json_s) {
+            var json=JSON.parse(json_s);
+            for (var i=0;i<json.length; i++) {
+                var obj = {c_name: json[i].name, c_code:json[i].code};
+                courses[i] = obj;
+            }
+            writeCourses(json)
+        }
+
+
+        function writeCourses(json) {
+            var rtext=document.createElement("div");
+            rtext.innerText="Courses";
+            document.getElementById('data').appendChild(rtext);
+            for (var i=0;i<json.length; i++) {
+                var checkbox = document.createElement('input');
+                checkbox.type = "checkbox";
+                checkbox.name = courses[i].c_code;
+                checkbox.value = courses[i].c_code;
+                checkbox.id = courses[i].c_code;
+
+                var label = document.createElement('label');
+                label.htmlFor = courses[i].c_code;
+                label.appendChild(document.createTextNode(courses[i].c_name));
+
+                document.getElementById('data').appendChild(checkbox);
+                document.getElementById('data').appendChild(label);
+                var linebreak = document.createElement("br");
+                document.getElementById('data').appendChild(linebreak);
+            }
+            linebreak = document.createElement("br");
+            document.getElementById('data').appendChild(linebreak);
+            linebreak = document.createElement("br");
+            document.getElementById('data').appendChild(linebreak);
+            setcheckedforcourses();
+            $(document).ready(function() {
+                $("input[type=checkbox]").change(function(){
+                    var chk = $(this);
+                    if(chk.is(":checked")){
+                        console.log("value: "+chk.val()+", name:"+chk.attr('name')+" checked");
+                        selected[l]=chk.val();
+                        l++;
+                    }else{
+                        console.log("value: "+chk.val()+", name:"+chk.attr('name')+" unchecked");
+                        selected=removeitem(selected, chk.val());
+                        l--;
+                    }
+                });
+            });
+        }
+
+
+        function removeitem(arr) {
+            var what, a = arguments, L = a.length, ax;
+            while (L > 1 && arr.length) {
+                what = a[--L];
+                while ((ax= arr.indexOf(what)) !== -1) {
+                    arr.splice(ax, 1);
+                }
+            }
+            return arr;
+        }
+
+        function login() {
+            var selected_json=JSON.stringify(selected);
+            console.log("selected: "+selected_json);
+            var branch=document.getElementById('branch').value;
+            var sem=document.getElementById('sem').value;
+            var sg_status=document.getElementById('sg_status').value;
+            var cw_status=document.getElementById('cw_status').value;
+            var interests_str=document.getElementById('interests').value;
+            var courses=selected_json;
+            var interests=interests_str.split(",");
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    //document.getElementById("data").innerHTML = xhttp.responseText;
+                    console.log(xhttp.responseText.toString());
+                }
+            };
+            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/updateuserdetails", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("email="+email+"&branch="+branch+"&sem="+sem+"&courses="+courses+"&sg_status="+sg_status+"&cw_status="+cw_status+"&interests="+JSON.stringify(interests));
+        }
+
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('Name: ' + profile.getName());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            console.log('Image URL: ' + profile.getImageUrl());
+            email=profile.getEmail();
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    if (xhttp.responseText==="0"){
+                        console.log("Failed to login");
+                        signOut();
+                    } else {
+                        console.log(xhttp.responseText);
+                        login_response=xhttp.responseText;
+                        if (email==="" || login_response==="") {
+                            console.log("u need to login first!");
+                        }else {
+                            setcheckedforcourses();
+                        }
+                    }
+                }
+            };
+            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/login", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("email="+profile.getEmail()+"&name="+profile.getName()+"&url="+profile.getImageUrl());
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+
+
+        function setcheckedforcourses() {
+            if(login_response==="") {
+                console.log("list empty");
+            }else {
+                console.log("list not empty");
+                var userdata=JSON.parse(login_response);
+                for (var i=0;i<userdata.courses.length;i++) {
+                    document.getElementById(userdata.courses[i]).checked=true;
+                }
+            }
+        }
+
+        getCourses();
+    </script>
+</head>
+<body>
+<div>Welcome to Pathways</div><br>
+<div class="g-signin2" data-onsuccess="onSignIn"></div><br><br>
+<input type="text" placeholder="Branch" name="branch" id="branch">
+<input type="text" placeholder="semester" name="sem" id="sem">
+<input type="number" placeholder="SG" name="sg_status" id="sg_status">
+<input type="number" placeholder="CW" name="cw_status" id="cw_status">
+<input type="text" placeholder="interests" name="interests" id="interests">
+<button onclick="login()">Done</button><br><br>
+<div id="data"></div>
+</body>
+</html>

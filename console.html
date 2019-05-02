@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pathways: find your way</title>
+    <meta name="google-signin-client_id" content="112424505552-o5dun7r6c791f56j3112sei76ledfdou.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('Name: ' + profile.getName());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            console.log('Image URL: ' + profile.getImageUrl());
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    if (xhttp.responseText==="0"){
+                        console.log("Failed to login");
+                        signOut();
+                    } else {
+                        console.log(xhttp.responseText);
+                    }
+                }
+            };
+            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/login", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("email="+profile.getEmail()+"&name="+profile.getName()+"&url="+profile.getImageUrl());
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+
+
+        function searchCourses() {
+            var search=document.getElementById('search').value;
+            console.log(search);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    //document.getElementById("data").innerHTML = xhttp.responseText;
+                    console.log(xhttp.responseText.toString());
+                    addSearchData(JSON.parse(xhttp.responseText.toString()));
+                }
+            };
+            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/searchCourses", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("search="+search);
+        }
+
+
+        function addSearchData(json) {
+            var linebreak = document.createElement("br");
+            //console.log(linebreak);
+            document.getElementById('searchdata').appendChild(linebreak);
+            for (var i=0;i<json.length; i++) {
+                var rtext=document.createElement("div");
+                //console.log(rtext);
+                rtext.innerText=json[i].name;
+                //console.log(json[i].name);
+                document.getElementById('searchdata').appendChild(rtext);
+                var linebreak = document.createElement("br");
+                //console.log(linebreak);
+                document.getElementById('searchdata').appendChild(linebreak);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div>Welcome to Pathways</div><br>
+<div class="g-signin2" data-onsuccess="onSignIn"></div><br><br>
+<a href="courses.html">fetch Courses</a><br>
+<a href="#" onclick="signOut();">Sign out</a><br><br>
+
+<a href="preq.html" > PREREQUISITES </a> <br>
+<a href="antireq.html" > ANTI-REQUISITES </a> <br>
+<a href="options.html" > OPTIONS </a> <br>
+<a href="login.html">Login</a><br><br>
+
+<br><br>
+<input type="text" placeholder="Search course" name="search" id="search">
+<button onclick="searchCourses()">Search</button>
+
+<div id="searchdata"></div>
+</body>
+</html>

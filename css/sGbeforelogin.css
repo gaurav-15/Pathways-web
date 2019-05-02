@@ -1,0 +1,2351 @@
+
+@font-face {
+                          font-family: "BebasNeueBold";
+                          src: url('../fonts/BebasNeue Bold.otf') format("opentype");
+                        }
+                        @font-face {
+                          font-family: "BebasNeue";
+                          src: url('../fonts/Bebas Neue.ttf') format("truetype");
+                        }
+                        @font-face {
+                          font-family: "BebasNeueLight";
+                          src: url('../fonts/BebasNeue Light.otf') format("opentype");
+                        }
+                        
+.sgbeforelogin {
+  width               : 100%;
+  min-width           : 1440px;
+  height              : 100vh;
+  min-height          : 3696px;
+  position            : relative;
+  overflow            : hidden;
+  margin              : 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color    : rgba(255, 255, 255, 1.0);
+}
+a {
+  text-decoration     : none;
+}
+div {
+  -webkit-text-size-adjust: none;
+}
+.anima-full-width-a {
+  width               : 100%;
+}
+.anima-full-height-a {
+  height              : 100%;
+}
+textarea:focus, input:focus {
+  outline             : none;
+}
+div {
+  -webkit-text-size-adjust: none;
+}
+.anima-animate-enter1 {
+  opacity             : 0;
+  display             : block;
+  -webkit-animation   : anima-animate-enter1-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -moz-animation      : anima-animate-enter1-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -o-animation        : anima-animate-enter1-frames 0.600000023842s ease-in-out 1 normal forwards;
+  animation           : anima-animate-enter1-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -o-animation-delay  : 0s;
+  animation-delay     : 0s;
+}
+@-webkit-keyframes anima-animate-enter1-frames {
+  0%
+   
+  {
+  opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+  opacity: 0.75;
+    }
+}
+@-moz-keyframes anima-animate-enter1-frames {
+  0%
+   
+  {
+  opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+  opacity: 0.75;
+    }
+}
+@-o-keyframes anima-animate-enter1-frames {
+  0%
+   
+  {
+  opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+  opacity: 0.75;
+    }
+}
+@keyframes anima-animate-enter1-frames {
+  0%
+   
+  {
+  opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+  opacity: 0.75;
+    }
+}
+.sgbeforelogin .img20180703172355 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : -77px;
+  height              : 1919px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .sidebar {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 1688px;
+  width               : 1446px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .rectangle {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 762px;
+  height              : 1054px;
+  width               : 1446px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.0;
+}
+.sgbeforelogin .group5 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 24px;
+  height              : 85px;
+  width               : 254px;
+  position            : absolute;
+  margin              : 0;
+  left                : 141px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group5 .fill1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 14px;
+  height              : 58px;
+  width               : 235px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group5 .p {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 5px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 60.32px;
+  color               : rgba(79, 95, 98, 1.0);
+  text-align          : left;
+  line-height         : 72.0px;
+}
+.sgbeforelogin .group5 .athw {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 11px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 28px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 50.0px;
+  color               : rgba(79, 95, 98, 1.0);
+  text-align          : left;
+  line-height         : 61.0px;
+}
+.sgbeforelogin .group5 .a {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 11px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 116px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 50.0px;
+  color               : rgba(79, 95, 98, 1.0);
+  text-align          : left;
+  line-height         : 61.0px;
+}
+.sgbeforelogin .group5 .y {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 11px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 137px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 51.0px;
+  color               : rgba(79, 95, 98, 1.0);
+  text-align          : left;
+  line-height         : 61.0px;
+}
+.sgbeforelogin .group5 .iiitd {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 24px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 185px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 51.0px;
+  color               : rgba(110, 192, 192, 1.0);
+  text-align          : left;
+  line-height         : 61.0px;
+}
+.sgbeforelogin .group5 .fill3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 6px;
+  height              : 30px;
+  width               : 19px;
+  position            : absolute;
+  margin              : 0;
+  left                : 235px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .u2022selfgrowthsgi {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 269px;
+  height              : auto;
+  width               : 616px;
+  position            : absolute;
+  margin              : 0;
+  left                : 106px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
+  font-size           : 26.0px;
+  color               : rgba(86, 87, 86, 1.0);
+  text-align          : left;
+  line-height         : 41.0px;
+}
+.sgbeforelogin .u2022selfgrowthsgi .span1 {
+  
+}
+.sgbeforelogin .u2022selfgrowthsgi .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.sgbeforelogin .u2022selfgrowthsgi .span3 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.sgbeforelogin .u2022selfgrowthsgi .span4 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.sgbeforelogin .u2022selfgrowthsgi .span5 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.sgbeforelogin .u2022selfgrowthsgi .span6 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.sgbeforelogin .u2022selfgrowthsgi .span7 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.sgbeforelogin .u2022selfgrowthsgi .span8 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.sgbeforelogin .group7 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 66px;
+  height              : 117px;
+  width               : 699px;
+  position            : absolute;
+  margin              : 0;
+  left                : 405px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .rectangle2 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  top                 : 50px;
+  height              : 10px;
+  width               : 627px;
+  position            : absolute;
+  margin              : 0;
+  left                : 48px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 21px;
+  height              : 65px;
+  width               : 66px;
+  position            : absolute;
+  margin              : 0;
+  left                : 175px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group2 .rectangle3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 65px;
+  width               : 66px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group2 .cw {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 17px;
+  height              : auto;
+  width               : 62px;
+  position            : absolute;
+  margin              : 0;
+  left                : 2px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(236, 236, 238, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.sgbeforelogin .group7 .group19 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 21px;
+  height              : 66px;
+  width               : 65px;
+  position            : absolute;
+  margin              : 0;
+  left                : 330px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group19 .rectangle3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 66px;
+  width               : 65px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group19 .courses {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 18px;
+  height              : auto;
+  width               : 64px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 20.0px;
+  color               : rgba(236, 236, 238, 1.0);
+  text-align          : center;
+  line-height         : 18.0px;
+}
+.sgbeforelogin .group7 .group19 .courses .span1 {
+  color               : rgba(255, 255, 255, 1.0);
+  line-height         : 24.0px;
+}
+.sgbeforelogin .group7 .group19 .courses .span2 {
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  line-height         : 25.0px;
+}
+.sgbeforelogin .group7 .group20 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 21px;
+  height              : 65px;
+  width               : 65px;
+  position            : absolute;
+  margin              : 0;
+  left                : 484px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group20 .rectangle3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 65px;
+  width               : 65px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group20 .ip {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 14px;
+  height              : auto;
+  width               : 67px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(236, 236, 238, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.sgbeforelogin .group7 .group21 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 21px;
+  height              : 65px;
+  width               : 65px;
+  position            : absolute;
+  margin              : 0;
+  left                : 638px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group21 .rectangle3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 65px;
+  width               : 65px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group21 .btechprojects2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 16px;
+  height              : 31px;
+  width               : 56px;
+  position            : absolute;
+  margin              : 0;
+  left                : 6px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group21 .btechprojects2 .btp {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : 58px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(236, 236, 238, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.sgbeforelogin .group7 .group21 .btechprojects2 .btp .span1 {
+  
+}
+.sgbeforelogin .group7 .group21 .btechprojects2 .btp .span2 {
+  font-family         : "BebasNeue", Helvetica, Arial, serif;
+  color               : rgba(30, 29, 29, 1.0);
+}
+.sgbeforelogin .group7 .group17 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 108px;
+  width               : 107px;
+  position            : absolute;
+  margin              : 0;
+  left                : 4px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group17 .rectangle3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 108px;
+  width               : 107px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group7 .group17 .sg {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 29px;
+  height              : auto;
+  width               : 67px;
+  position            : absolute;
+  margin              : 0;
+  left                : 20px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 40.0px;
+  color               : rgba(253, 253, 255, 1.0);
+  text-align          : center;
+  line-height         : 48.0px;
+}
+.sgbeforelogin .selfgrowth {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 120px;
+  height              : 204px;
+  width               : 263px;
+  position            : absolute;
+  margin              : 0;
+  left                : 106px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueBold", Helvetica, Arial, serif;
+  font-size           : 89.0px;
+  color               : rgba(87, 87, 87, 1.0);
+  text-align          : left;
+  letter-spacing      : 1.5px;
+  line-height         : 68.0px;
+}
+.sgbeforelogin .selfgrowth .span1 {
+  line-height         : 60.0px;
+}
+.sgbeforelogin .selfgrowth .span2 {
+  font-size           : 70.0px;
+  line-height         : 60.0px;
+}
+.sgbeforelogin .selfgrowth .span3 {
+  line-height         : 60.0px;
+}
+.sgbeforelogin .selfgrowth .span4 {
+  font-size           : 85.0px;
+  line-height         : 60.0px;
+}
+.sgbeforelogin .selfgrowth .span5 {
+  font-size           : 78.0px;
+  line-height         : 60.0px;
+}
+.sgbeforelogin .selfgrowth .span6 {
+  font-size           : 68.0px;
+  line-height         : 60.0px;
+}
+.sgbeforelogin .selfgrowth .span7 {
+  font-size           : 68.0px;
+  letter-spacing      : 1.1px;
+  line-height         : 60.0px;
+}
+.sgbeforelogin .faqsincludingseni {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1914px;
+  height              : auto;
+  width               : 538px;
+  position            : absolute;
+  margin              : 0;
+  left                : 145px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueLight", Helvetica, Arial, serif;
+  font-size           : 69.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : left;
+  letter-spacing      : 2.2px;
+  line-height         : 26.0px;
+}
+.sgbeforelogin .faqsincludingseni .span1 {
+  line-height         : 37.0px;
+}
+.sgbeforelogin .faqsincludingseni .span2 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  font-size           : 48.0px;
+  line-height         : 37.0px;
+}
+.sgbeforelogin .faqsincludingseni .span3 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  font-size           : 26.0px;
+  line-height         : 37.0px;
+}
+.sgbeforelogin .rectangle1 {
+  background-color    : rgba(255, 255, 255, 1.0);
+  top                 : 1800px;
+  height              : 73px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group15 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1854px;
+  height              : 2393px;
+  width               : 2094px;
+  position            : absolute;
+  margin              : 0;
+  left                : -453px;
+  -ms-transform       : rotate(21deg); /* IE 9 */
+  -webkit-transform   : rotate(21deg); /* Chrome, Safari, Opera */
+  transform           : rotate(21deg);
+  opacity             : 0.41;
+}
+.sgbeforelogin .group15 .rectangle10 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 255px;
+  height              : 63px;
+  width               : 333px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1344px;
+  border-radius       : 31px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.3;
+}
+.sgbeforelogin .group15 .rectangle11 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 192px;
+  height              : 114px;
+  width               : 617px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1071px;
+  border-radius       : 57px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.3;
+}
+.sgbeforelogin .group15 .rectangle2 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 1069px;
+  height              : 114px;
+  width               : 617px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1469px;
+  border-radius       : 57px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.3;
+}
+.sgbeforelogin .group15 .rectangle3 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 820px;
+  height              : 114px;
+  width               : 617px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1518px;
+  border-radius       : 57px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.43;
+}
+.sgbeforelogin .group15 .rectangle4 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 728px;
+  height              : 114px;
+  width               : 617px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1057px;
+  border-radius       : 57px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.18;
+}
+.sgbeforelogin .group15 .rectangle5 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 2087px;
+  height              : 114px;
+  width               : 617px;
+  position            : absolute;
+  margin              : 0;
+  left                : 512px;
+  border-radius       : 57px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.37;
+}
+.sgbeforelogin .group15 .rectangle6 {
+  background-color    : rgba(209, 233, 233, 1.0);
+  top                 : 169px;
+  height              : 31px;
+  width               : 340px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1151px;
+  border-radius       : 15px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.86;
+}
+.sgbeforelogin .group15 .rectangle7 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 1072px;
+  height              : 53px;
+  width               : 457px;
+  position            : absolute;
+  margin              : 0;
+  left                : -40px;
+  border-radius       : 26px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.7;
+}
+.sgbeforelogin .group15 .rectangle8 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 356px;
+  height              : 66px;
+  width               : 457px;
+  position            : absolute;
+  margin              : 0;
+  left                : 517px;
+  border-radius       : 33px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.12;
+}
+.sgbeforelogin .group15 .rectangle9 {
+  background-color    : rgba(111, 192, 192, 1.0);
+  top                 : 852px;
+  height              : 91px;
+  width               : 422px;
+  position            : absolute;
+  margin              : 0;
+  left                : -8px;
+  border-radius       : 45px;
+  -ms-transform       : rotate(-42deg); /* IE 9 */
+  -webkit-transform   : rotate(-42deg); /* Chrome, Safari, Opera */
+  transform           : rotate(-42deg);
+  opacity             : 0.3;
+}
+.sgbeforelogin .group9 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 3463px;
+  height              : 245px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .rectangle2 {
+  background-color    : rgba(37, 45, 46, 1.0);
+  top                 : 0px;
+  height              : 234px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group4 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 11px;
+  height              : 33px;
+  width               : 173px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1247px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group4 .fb {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 31px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group4 .group3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 92px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group4 .group3 .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group4 .group3 .twitter {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 5px;
+  height              : 23px;
+  width               : 23px;
+  position            : absolute;
+  margin              : 0;
+  left                : 6px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group4 .ytoutube {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 31px;
+  width               : 31px;
+  position            : absolute;
+  margin              : 0;
+  left                : 46px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group4 .linked {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 33px;
+  width               : 34px;
+  position            : absolute;
+  margin              : 0;
+  left                : 139px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group6 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 62px;
+  height              : 93px;
+  width               : 111px;
+  position            : absolute;
+  margin              : 0;
+  left                : 57px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group6 .iiitd {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 52px;
+  width               : 104px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .group6 .websitelink {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 45px;
+  height              : 48px;
+  width               : 111px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group9 .developedbystudent {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 42px;
+  height              : 59px;
+  width               : 443px;
+  position            : absolute;
+  margin              : 0;
+  left                : 555px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  font-size           : 29.0px;
+  color               : rgba(247, 247, 247, 1.0);
+  text-align          : left;
+  line-height         : 40.0px;
+}
+.sgbeforelogin .group9 .theinformationavai {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 158px;
+  height              : 87px;
+  width               : 863px;
+  position            : absolute;
+  margin              : 0;
+  left                : 315px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
+  font-size           : 16.0px;
+  color               : rgba(247, 247, 247, 1.0);
+  text-align          : center;
+  line-height         : 20.0px;
+}
+.sgbeforelogin .group9 .jatinsinghaldash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 70px;
+  height              : 82px;
+  width               : 849px;
+  position            : absolute;
+  margin              : 0;
+  left                : 352px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  font-size           : 22.0px;
+  color               : rgba(247, 247, 247, 1.0);
+  text-align          : left;
+  line-height         : 30.0px;
+}
+.sgbeforelogin .foranyqueriesuse {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1710px;
+  height              : 178px;
+  width               : 573px;
+  position            : absolute;
+  margin              : 0;
+  left                : 718px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  font-size           : 21.0px;
+  color               : rgba(120, 120, 120, 1.0);
+  text-align          : right;
+  line-height         : 21.0px;
+}
+.sgbeforelogin .foranyqueriesuse .span1 {
+  line-height         : 29.0px;
+}
+.sgbeforelogin .foranyqueriesuse .span2 {
+  font-size           : 25.0px;
+  line-height         : 34.0px;
+}
+.sgbeforelogin .foranyqueriesuse .span3 {
+  line-height         : 29.0px;
+}
+.sgbeforelogin .foranyqueriesuse .span4 {
+  color               : rgba(164, 162, 162, 1.0);
+  line-height         : 29.0px;
+}
+.sgbeforelogin .foranyqueriesuse .span5 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  line-height         : 29.0px;
+}
+.sgbeforelogin .a1whencaniregist {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 2029px;
+  height              : auto;
+  width               : 1226px;
+  position            : absolute;
+  margin              : 0;
+  left                : 108px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-DemiBold", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(134, 188, 176, 1.0);
+  text-align          : left;
+  line-height         : 34.0px;
+}
+.sgbeforelogin .a1whencaniregist .span1 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span2 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+}
+.sgbeforelogin .a1whencaniregist .span3 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(88, 94, 90, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span4 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span5 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+}
+.sgbeforelogin .a1whencaniregist .span6 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(88, 94, 93, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span7 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span8 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+}
+.sgbeforelogin .a1whencaniregist .span9 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(90, 94, 93, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span10 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span11 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+}
+.sgbeforelogin .a1whencaniregist .span12 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(87, 94, 93, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span13 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span14 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(90, 94, 93, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span15 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+}
+.sgbeforelogin .a1whencaniregist .span16 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span17 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(88, 95, 93, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span18 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span19 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(87, 96, 93, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span20 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span21 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(85, 97, 93, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span22 {
+  
+}
+.sgbeforelogin .a1whencaniregist .span23 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(85, 98, 96, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span24 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(120, 120, 120, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span25 {
+  color               : rgba(115, 192, 194, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span26 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(120, 120, 120, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span27 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(82, 99, 102, 1.0);
+}
+.sgbeforelogin .a1whencaniregist .span28 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  color               : rgba(120, 120, 120, 1.0);
+}
+.sgbeforelogin .group12 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 336px;
+  height              : 426px;
+  width               : 413px;
+  position            : fixed;
+  margin              : 0;
+  left                : 980px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 0px;
+  bottom              : 0px;
+  height              : 17.14%;
+  width               : 18.89%;
+  position            : fixed;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 73px;
+  width               : 78px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group .rectangle2 {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 12.33%;
+  height              : 65.75%;
+  width               : 73.08%;
+  position            : absolute;
+  margin              : 0;
+  left                : 13.46%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group .ask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 31.51%;
+  height              : 36.99%;
+  width               : 65.38%;
+  position            : absolute;
+  margin              : 0;
+  left                : 17.31%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 20.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 27.0px;
+}
+.sgbeforelogin .group12 .group11 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 91.78%;
+  width               : 94.67%;
+  position            : fixed;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.0;
+}
+.sgbeforelogin .group12 .group11 .rectangle11 {
+  background-color    : rgba(255, 255, 255, 1.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 21px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group11 .group14 {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 3.58%;
+  height              : 11.00%;
+  width               : 56.52%;
+  position            : absolute;
+  margin              : 0;
+  left                : 20.97%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group11 .group14 .rectangle2 {
+  background-color    : rgba(70, 70, 70, 1.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 11px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group11 .group14 .submit {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 8.14%;
+  top                 : 23.26%;
+  height              : 53.49%;
+  width               : 80.54%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 23.0px;
+}
+.sgbeforelogin .group12 .group11 .rectangle3 {
+  background-color    : rgba(235, 247, 248, 1.0);
+  top                 : 8.70%;
+  height              : 12.02%;
+  width               : 87.72%;
+  position            : absolute;
+  margin              : 0;
+  left                : 5.37%;
+  border-radius       : 11px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group11 .enteryouremail {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 9.46%;
+  top                 : 10.23%;
+  height              : 8.95%;
+  width               : 80.05%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : left;
+  line-height         : 35.0px;
+  border              : 0;
+  resize              : none;
+  padding             : 0;
+}
+.sgbeforelogin .group12 .group11 .enteryouremail::placeholder {
+  color               : rgba(79, 96, 99, 0.6);
+}
+.sgbeforelogin .group12 .group11 .rectangle4 {
+  background-color    : rgba(235, 247, 248, 1.0);
+  bottom              : 18.16%;
+  height              : 53.96%;
+  width               : 87.72%;
+  position            : absolute;
+  margin              : 0;
+  left                : 5.37%;
+  border-radius       : 22px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group12 .group11 .askyourquestionu2026 {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 21.48%;
+  height              : 47.31%;
+  width               : 78.01%;
+  position            : absolute;
+  margin              : 0;
+  left                : 10.49%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : left;
+  line-height         : 23.0px;
+  border              : 0;
+  resize              : none;
+  padding             : 0;
+}
+.sgbeforelogin .group12 .group11 .askyourquestionu2026::placeholder {
+  color               : rgba(79, 96, 99, 0.6);
+}
+.sgbeforelogin .group13 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 26px;
+  height              : 238px;
+  width               : 259px;
+  position            : absolute;
+  margin              : 0;
+  left                : 35px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group13 .menubutton {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : relative;
+  margin              : 0;
+  left                : 0px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group13 .menubutton .background {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group13 .menubutton .group2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 2.52%;
+  height              : 84.87%;
+  width               : 76.83%;
+  position            : absolute;
+  margin              : 0;
+  left                : 1.93%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group13 .menubutton .group2 .group {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 13.37%;
+  width               : 22.61%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group13 .menubutton .group2 .group .rectangle4 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  bottom              : 0px;
+  height              : 22.22%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group13 .menubutton .group2 .group .rectangle11 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  top                 : 38.89%;
+  height              : 22.22%;
+  width               : 64.44%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group13 .menubutton .group2 .group .rectangle2 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  top                 : 0px;
+  height              : 22.22%;
+  width               : 80.00%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group13 .menubutton .group2 .rectangle3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.0;
+}
+.sgbeforelogin .group13 .menubutton .group2 .aboutu2022 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 4.52%;
+  top                 : 6.44%;
+  height              : 16.83%;
+  width               : 65.33%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.0;
+  font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : right;
+  letter-spacing      : 0.36px;
+  line-height         : 20.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .aboutu2022 .span1 {
+  line-height         : 34.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .aboutu2022 .span2 {
+  font-size           : 20.0px;
+  line-height         : 27.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .helpu2022 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 4.52%;
+  top                 : 28.22%;
+  height              : 16.83%;
+  width               : 65.33%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.0;
+  font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : right;
+  letter-spacing      : 0.36px;
+  line-height         : 21.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .helpu2022 .span1 {
+  line-height         : 34.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .helpu2022 .span2 {
+  font-size           : 21.0px;
+  line-height         : 29.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .contactu2022 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 4.52%;
+  bottom              : 32.67%;
+  height              : 16.83%;
+  width               : 65.33%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.0;
+  font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : right;
+  letter-spacing      : 0.36px;
+  line-height         : 21.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .contactu2022 .span1 {
+  line-height         : 34.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .contactu2022 .span2 {
+  font-size           : 21.0px;
+  line-height         : 29.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .procedureu2022 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 4.52%;
+  bottom              : 10.89%;
+  height              : 16.83%;
+  width               : 65.33%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.0;
+  font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : right;
+  letter-spacing      : 0.36px;
+  line-height         : 21.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .procedureu2022 .span1 {
+  line-height         : 34.0px;
+}
+.sgbeforelogin .group13 .menubutton .group2 .procedureu2022 .span2 {
+  font-size           : 21.0px;
+  line-height         : 29.0px;
+}
+.sgbeforelogin .groupwhen {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 785px;
+  height              : 932px;
+  width               : 1264px;
+  position            : absolute;
+  margin              : 0;
+  left                : 68px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .rectangle3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 932px;
+  width               : 1263px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.77;
+}
+.sgbeforelogin .groupwhen .rectangle4 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  top                 : 70px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 37px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  transition          : all 0.2s ease-in-out;
+}
+.sgbeforelogin .groupwhen .rectangle4:hover {
+  transform           : scale(1.1);
+}
+.sgbeforelogin .groupwhen .searchingorganizati {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 87px;
+  height              : auto;
+  width               : 305px;
+  position            : absolute;
+  margin              : 0;
+  left                : 43px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  transition          : all 0.2s ease-in-out;
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(254, 254, 254, 1.0);
+  text-align          : center;
+  line-height         : 16.0px;
+}
+.sgbeforelogin .groupwhen .searchingorganizati:hover {
+  transform           : scale(1.1);
+}
+.sgbeforelogin .groupwhen .searchingorganizati .span1 {
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .searchingorganizati .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .searchingorganizati .span3 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(30, 29, 29, 1.0);
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .searchingorganizati .span4 {
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 16.0px;
+  color               : rgba(30, 29, 29, 1.0);
+  line-height         : 22.0px;
+}
+.sgbeforelogin .groupwhen .rectangle5 {
+  background-color    : rgba(235, 247, 248, 1.0);
+  top                 : 70px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 470px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .rectangle6 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  top                 : 70px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 470px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .registrationtobe {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 86px;
+  height              : auto;
+  width               : 305px;
+  position            : absolute;
+  margin              : 0;
+  left                : 469px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .registrationtobe .span1 {
+  color               : rgba(254, 254, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .registrationtobe .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(254, 254, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .rectangle7 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  top                 : 62px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 911px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .proposalanyinform {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 86px;
+  height              : auto;
+  width               : 305px;
+  position            : absolute;
+  margin              : 0;
+  left                : 915px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .proposalanyinform .span1 {
+  
+}
+.sgbeforelogin .groupwhen .proposalanyinform .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+}
+.sgbeforelogin .groupwhen .line {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 149px;
+  height              : 25px;
+  width               : 67px;
+  position            : absolute;
+  margin              : 0;
+  left                : 382px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .line1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 149px;
+  height              : 25px;
+  width               : 67px;
+  position            : absolute;
+  margin              : 0;
+  left                : 818px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .line2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 284px;
+  height              : 25px;
+  width               : 73px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1030px;
+  -ms-transform       : rotate(90deg); /* IE 9 */
+  -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
+  transform           : rotate(90deg);
+}
+.sgbeforelogin .groupwhen .line3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 586px;
+  height              : 25px;
+  width               : 72px;
+  position            : absolute;
+  margin              : 0;
+  left                : 156px;
+  -ms-transform       : rotate(90deg); /* IE 9 */
+  -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
+  transform           : rotate(90deg);
+}
+.sgbeforelogin .groupwhen .phasei {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 20px;
+  height              : auto;
+  width               : 208px;
+  position            : absolute;
+  margin              : 0;
+  left                : 528px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 31.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : center;
+  line-height         : 42.0px;
+}
+.sgbeforelogin .groupwhen .phaseii {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 309px;
+  height              : auto;
+  width               : 208px;
+  position            : absolute;
+  margin              : 0;
+  left                : 523px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 31.0px;
+  color               : rgba(126, 128, 129, 1.0);
+  text-align          : center;
+  line-height         : 42.0px;
+}
+.sgbeforelogin .groupwhen .phaseiii {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 610px;
+  height              : auto;
+  width               : 208px;
+  position            : absolute;
+  margin              : 0;
+  left                : 523px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 31.0px;
+  color               : rgba(115, 192, 194, 1.0);
+  text-align          : center;
+  line-height         : 42.0px;
+}
+.sgbeforelogin .groupwhen .line4 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 734px;
+  height              : 25px;
+  width               : 67px;
+  position            : absolute;
+  margin              : 0;
+  left                : 389px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .line5 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 734px;
+  height              : 25px;
+  width               : 67px;
+  position            : absolute;
+  margin              : 0;
+  left                : 818px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .line6 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 443px;
+  height              : 25px;
+  width               : 68px;
+  position            : absolute;
+  margin              : 0;
+  left                : 814px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .line7 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 443px;
+  height              : 25px;
+  width               : 68px;
+  position            : absolute;
+  margin              : 0;
+  left                : 381px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .rectangle8 {
+  background-color    : rgba(127, 129, 129, 1.0);
+  top                 : 363px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 906px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .proposalapprovaly {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 379px;
+  height              : auto;
+  width               : 305px;
+  position            : absolute;
+  margin              : 0;
+  left                : 905px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .proposalapprovaly .span1 {
+  color               : rgba(246, 247, 246, 1.0);
+}
+.sgbeforelogin .groupwhen .proposalapprovaly .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(246, 247, 246, 1.0);
+}
+.sgbeforelogin .groupwhen .rectangle9 {
+  background-color    : rgba(127, 129, 129, 1.0);
+  top                 : 362px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 475px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .rectangle10 {
+  background-color    : rgba(127, 129, 129, 1.0);
+  top                 : 362px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 37px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .workcompletionon {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 379px;
+  height              : auto;
+  width               : 305px;
+  position            : absolute;
+  margin              : 0;
+  left                : 40px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(253, 253, 253, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .workcompletionon .span1 {
+  color               : rgba(254, 255, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .workcompletionon .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(254, 255, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .workcompletionon .span3 {
+  color               : rgba(254, 255, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .rectangle11 {
+  background-color    : rgba(115, 192, 194, 1.0);
+  top                 : 655px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 37px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .reportaftercomple {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 671px;
+  height              : auto;
+  width               : 305px;
+  position            : absolute;
+  margin              : 0;
+  left                : 40px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(254, 254, 254, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .reportaftercomple .span1 {
+  color               : rgba(254, 255, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .reportaftercomple .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(254, 255, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .rectangle12 {
+  background-color    : rgba(115, 192, 194, 1.0);
+  top                 : 655px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 475px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .rectangle13 {
+  background-color    : rgba(115, 192, 194, 1.0);
+  top                 : 655px;
+  height              : 184px;
+  width               : 313px;
+  position            : absolute;
+  margin              : 0;
+  left                : 911px;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .groupwhen .gradebasedonthe {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 671px;
+  height              : auto;
+  width               : 305px;
+  position            : absolute;
+  margin              : 0;
+  left                : 917px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(254, 254, 254, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .gradebasedonthe .span1 {
+  color               : rgba(254, 255, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .gradebasedonthe .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(254, 255, 254, 1.0);
+}
+.sgbeforelogin .groupwhen .weeklylogsubmissio {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 382px;
+  height              : auto;
+  width               : 304px;
+  position            : absolute;
+  margin              : 0;
+  left                : 480px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(246, 247, 246, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .weeklylogsubmissio .span1 {
+  
+}
+.sgbeforelogin .groupwhen .weeklylogsubmissio .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+}
+.sgbeforelogin .groupwhen .finalpresentation {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 671px;
+  height              : auto;
+  width               : 292px;
+  position            : absolute;
+  margin              : 0;
+  left                : 486px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.sgbeforelogin .groupwhen .finalpresentation .span1 {
+  
+}
+.sgbeforelogin .groupwhen .finalpresentation .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+}
+.sgbeforelogin .group16 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 684px;
+  height              : 103px;
+  width               : 153px;
+  position            : absolute;
+  margin              : 0;
+  left                : 233px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group16 .rectangle2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 103px;
+  width               : 153px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group16 .howtodo {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 29px;
+  height              : auto;
+  width               : 122px;
+  position            : absolute;
+  margin              : 0;
+  left                : 18px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 22.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.sgbeforelogin .group8 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 680px;
+  height              : 103px;
+  width               : 161px;
+  position            : absolute;
+  margin              : 0;
+  left                : 640px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group8 .rectangle2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 103px;
+  width               : 161px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group8 .wheretodo {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 23px;
+  height              : auto;
+  width               : 122px;
+  position            : absolute;
+  margin              : 0;
+  left                : 17px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 22.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.sgbeforelogin .group18 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 680px;
+  height              : 103px;
+  width               : 161px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1046px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group18 .rectangle2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 103px;
+  width               : 161px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group18 .rectangle2 .rectangle11 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 103px;
+  width               : 161px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group18 .group71 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 27px;
+  height              : 61px;
+  width               : 122px;
+  position            : absolute;
+  margin              : 0;
+  left                : 20px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.sgbeforelogin .group18 .group71 .whentodo {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : 124px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 22.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+/* .anima-animate-appear prefix for appear animations */
+.anima-animate-appear {
+  opacity             : 0;
+  display             : block;
+  -webkit-animation   : anima-reveal 0.3s ease-in-out 1 normal forwards;
+  -moz-animation      : anima-reveal 0.3s ease-in 1 normal forwards;
+  -o-animation        : anima-reveal 0.3s ease-in-out 1 normal forwards;
+  animation           : anima-reveal 0.3s ease-in-out 1 normal forwards;
+}
+.anima-animate-disappear {
+  opacity             : 1;
+  display             : block;
+  -webkit-animation   : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+  -moz-animation      : anima-reveal 0.3s ease-in 1 normal forwards;
+  -o-animation        : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+  animation           : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.anima-animate-nodelay {
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay  : 0;
+  animation-delay     : 0;
+}
+@-webkit-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@-moz-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@-o-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+.anima-valign-text-middle {
+  display             : flex;
+  flex-direction      : column;
+  justify-content     : center;
+}

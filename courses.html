@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses: Pathways: find your way</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        var courses=[];
+        var prereq=[];
+        var antireq=[];
+        var l=0;
+        var m=0;
+
+        function getCourses() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    //document.getElementById("data").innerHTML = xhttp.responseText;
+                    console.log(xhttp.responseText);
+                    parseJSON(xhttp.responseText);
+                }
+            };
+            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/courses", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+        }
+
+
+        function parseJSON(json_s) {
+            var json=JSON.parse(json_s);
+            for (var i=0;i<json.length; i++) {
+                var obj = {c_name: json[i].name, c_code:json[i].code};
+                courses[i] = obj;
+            }
+            writeCourses(json)
+        }
+
+
+        function writeCourses(json) {
+            var rtext=document.createElement("div");
+            rtext.innerText="Prerequisites";
+            document.getElementById('data').appendChild(rtext);
+            for (var i=0;i<json.length; i++) {
+                var checkbox = document.createElement('input');
+                checkbox.type = "checkbox";
+                checkbox.name = "p";
+                checkbox.value = courses[i].c_code;
+                checkbox.id = "chk_p_"+i;
+
+                var label = document.createElement('label');
+                label.htmlFor = "chk_p_"+i;
+                label.appendChild(document.createTextNode(courses[i].c_name));
+
+                document.getElementById('data').appendChild(checkbox);
+                document.getElementById('data').appendChild(label);
+                var linebreak = document.createElement("br");
+                document.getElementById('data').appendChild(linebreak);
+            }
+            linebreak = document.createElement("br");
+            document.getElementById('data').appendChild(linebreak);
+            linebreak = document.createElement("br");
+            document.getElementById('data').appendChild(linebreak);
+            rtext=document.createElement("div");
+            rtext.innerText="Antirequisites";
+            document.getElementById('data').appendChild(rtext);
+            for (var i=0;i<json.length; i++) {
+                var checkbox = document.createElement('input');
+                checkbox.type = "checkbox";
+                checkbox.name = "a";
+                checkbox.value = courses[i].c_code;
+                checkbox.id = "chk_a_" + i;
+
+                var label = document.createElement('label');
+                label.htmlFor = "chk_a_" + i;
+                label.appendChild(document.createTextNode(courses[i].c_name));
+
+                document.getElementById('data').appendChild(checkbox);
+                document.getElementById('data').appendChild(label);
+                linebreak = document.createElement("br");
+                document.getElementById('data').appendChild(linebreak);
+            }
+
+            $(document).ready(function() {
+                $("input[type=checkbox]").change(function(){
+                    var chk = $(this);
+                    if(chk.is(":checked")){
+                        console.log("value: "+chk.val()+", name:"+chk.attr('name')+" checked");
+                        if (chk.attr('name')==='a') {
+                            antireq[m]=chk.val();
+                            m++;
+                        }else if (chk.attr('name')==='p') {
+                            prereq[l]=chk.val();
+                            l++;
+                        }
+                    }else{
+                        console.log("value: "+chk.val()+", name:"+chk.attr('name')+" unchecked");
+                        if (chk.attr('name')==='a') {
+                            antireq=removeitem(antireq,chk.val());
+                            m--;
+                        }else if (chk.attr('name')==='p') {
+                            prereq=removeitem(prereq, chk.val());
+                            l--;
+                        }
+                    }
+                });
+            });
+        }
+
+
+        function removeitem(arr) {
+            var what, a = arguments, L = a.length, ax;
+            while (L > 1 && arr.length) {
+                what = a[--L];
+                while ((ax= arr.indexOf(what)) !== -1) {
+                    arr.splice(ax, 1);
+                }
+            }
+            return arr;
+        }
+        
+        
+        
+        function addCourse() {
+            var preq_json=JSON.stringify(prereq);
+            var anti_json=JSON.stringify(antireq);
+            console.log("prereq: "+preq_json);
+            console.log("antireq: "+anti_json);
+            var title=document.getElementById('title').value;
+            var code=document.getElementById('code').value;
+            var semester=document.getElementById('semester').value;
+            var credits=document.getElementById('credits').value;
+            var tags=document.getElementById('tags').value;
+            console.log("title: "+title);
+            console.log("code: "+code);
+            console.log("semester: "+semester);
+            console.log("credits:"+credits);
+            console.log("tags:"+tags);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    //document.getElementById("data").innerHTML = xhttp.responseText;
+                   console.log(xhttp.responseText.toString());
+                }
+            };
+            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/addCourse", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("title="+title+"&code="+code+"&semester="+semester+"&credits="+credits+"&prerequisites="+preq_json+"&antirequisites="+anti_json+"&tags="+tags);
+        }
+
+        getCourses();
+    </script>
+</head>
+<body>
+<div>Welcome to Pathways...<br>Courses will load in some time automatically. no need to click any button...<br> <b>ADD COURSE PORTAL</b></div><br><br>
+<input type="text" name="title" id="title" placeholder="title">
+<input type="text" name="code" id="code" placeholder="code">
+<input type="text" name="semester" id="semester" placeholder="semester">
+<input type="number" name="credits" id="credits" placeholder="credits">
+<input type="text" name="tags" id="tags" placeholder="tags" style="width:500px;">
+<button onclick="addCourse()">Add course</button>
+<br><br>
+<div id="data"></div>
+</body>
+</html>

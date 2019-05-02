@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anti-requisites Page</title>
+</head>
+<script>
+
+    function getAntireq()
+    {
+        var ID;
+        ID=document.getElementById("cid").value;
+
+        //Database
+        var courseblock;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                //courseblock= JSON.parse(xhttp.responseText.toString());
+                //getRes(courseblock);
+                //console.log(courseblock[0].prerequisites);
+                console.log(xhttp.responseText.toString());
+            }
+        };
+        xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/getantireqbyid", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("code="+ID);
+
+    }
+</script>
+<body>
+<label> YOU WILL GET ANTIREQUISITES OF A COURSE HERE.      ENTER COURSE ID TO GET ALL THE ANTIREQUISITES </label> <br>
+<input type="text" name="cid" id="cid" placeholder="Enter Course ID">
+<button onclick="getAntireq()"> Get antirequisites </button>
+<br><br>
+<div id="data"></div>
+</body>
+</html>
