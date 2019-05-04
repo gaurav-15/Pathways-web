@@ -4,12 +4,12 @@
                           src: url('../fonts/BebasNeue Bold.otf') format("opentype");
                         }
                         @font-face {
-                          font-family: "BebasNeue";
-                          src: url('../fonts/Bebas Neue.ttf') format("truetype");
-                        }
-                        @font-face {
                           font-family: "BebasNeueLight";
                           src: url('../fonts/BebasNeue Light.otf') format("opentype");
+                        }
+                        @font-face {
+                          font-family: "BebasNeue";
+                          src: url('../fonts/Bebas Neue.ttf') format("truetype");
                         }
                         
 .cwbeforelogin {
@@ -42,19 +42,19 @@ textarea:focus, input:focus {
 div {
   -webkit-text-size-adjust: none;
 }
-.anima-animate-enter2 {
+.anima-animate-enter {
   opacity             : 0;
   display             : block;
-  -webkit-animation   : anima-animate-enter2-frames 0.600000023842s ease-in-out 1 normal forwards;
-  -moz-animation      : anima-animate-enter2-frames 0.600000023842s ease-in-out 1 normal forwards;
-  -o-animation        : anima-animate-enter2-frames 0.600000023842s ease-in-out 1 normal forwards;
-  animation           : anima-animate-enter2-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -webkit-animation   : anima-animate-enter-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -moz-animation      : anima-animate-enter-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -o-animation        : anima-animate-enter-frames 0.600000023842s ease-in-out 1 normal forwards;
+  animation           : anima-animate-enter-frames 0.600000023842s ease-in-out 1 normal forwards;
   -webkit-animation-delay: 0s;
   -moz-animation-delay: 0s;
   -o-animation-delay  : 0s;
   animation-delay     : 0s;
 }
-@-webkit-keyframes anima-animate-enter2-frames {
+@-webkit-keyframes anima-animate-enter-frames {
   0%
    
   {
@@ -68,7 +68,7 @@ div {
   opacity: 0.75;
     }
 }
-@-moz-keyframes anima-animate-enter2-frames {
+@-moz-keyframes anima-animate-enter-frames {
   0%
    
   {
@@ -82,7 +82,7 @@ div {
   opacity: 0.75;
     }
 }
-@-o-keyframes anima-animate-enter2-frames {
+@-o-keyframes anima-animate-enter-frames {
   0%
    
   {
@@ -96,7 +96,7 @@ div {
   opacity: 0.75;
     }
 }
-@keyframes anima-animate-enter2-frames {
+@keyframes anima-animate-enter-frames {
   0%
    
   {
@@ -416,7 +416,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .u2022communityworkpro {
+.cwbeforelogin .u2022communityworkis {
   background-color    : rgba(255,255,255,0.0);
   top                 : 281px;
   height              : auto;
@@ -433,10 +433,42 @@ div {
   text-align          : left;
   line-height         : 41.0px;
 }
-.cwbeforelogin .u2022communityworkpro .span1 {
+.cwbeforelogin .u2022communityworkis .span1 {
   
 }
-.cwbeforelogin .u2022communityworkpro .span2 {
+.cwbeforelogin .u2022communityworkis .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.cwbeforelogin .u2022communityworkis .span3 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.cwbeforelogin .u2022communityworkis .span4 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.cwbeforelogin .u2022communityworkis .span5 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.cwbeforelogin .u2022communityworkis .span6 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.cwbeforelogin .u2022communityworkis .span7 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.cwbeforelogin .u2022communityworkis .span8 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.cwbeforelogin .u2022communityworkis .span9 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  letter-spacing      : 1.2px;
+}
+.cwbeforelogin .u2022communityworkis .span10 {
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   letter-spacing      : 1.2px;
 }
@@ -1298,7 +1330,7 @@ div {
   transform           : rotate(0deg);
   opacity             : 0.0;
 }
-.cwbeforelogin .group15 .group10 .rectangle2 {
+.cwbeforelogin .group15 .group10 .rectangle4 {
   background-color    : rgba(255,255,255,0.0);
   top                 : 0px;
   height              : 100%;
@@ -1331,20 +1363,8 @@ div {
 }
 .cwbeforelogin .group15 .groupwhere {
   background-color    : rgba(255,255,255,0.0);
-  bottom              : 5.84%;
-  height              : 81.44%;
-  width               : 93.28%;
-  position            : absolute;
-  margin              : 0;
-  left                : 3.36%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.cwbeforelogin .group15 .groupwhere .rectangle4 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
+  bottom              : -0.67%;
+  height              : 89.19%;
   width               : 100%;
   position            : absolute;
   margin              : 0;
@@ -1352,29 +1372,43 @@ div {
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
-  opacity             : 0.9;
+  opacity             : 0.0;
+}
+.cwbeforelogin .group15 .groupwhere .rectangle5 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 99.92%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.77;
 }
 .cwbeforelogin .group15 .groupwhere .a1visitthecwport {
   background-color    : rgba(255,255,255,0.0);
-  right               : 1.27%;
-  top                 : 3.88%;
-  height              : 31.61%;
-  width               : 97.12%;
+  right               : 4.51%;
+  top                 : 4.83%;
+  height              : 28.86%;
+  width               : 90.59%;
   position            : absolute;
   margin              : 0;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  font-size           : 23.0px;
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  font-size           : 24.0px;
   color               : rgba(87, 87, 87, 1.0);
   text-align          : left;
   line-height         : 21.0px;
 }
 .cwbeforelogin .group15 .groupwhere .a1visitthecwport .span1 {
-  line-height         : 31.0px;
+  line-height         : 33.0px;
 }
 .cwbeforelogin .group15 .groupwhere .a1visitthecwport .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   font-size           : 21.0px;
   color               : rgba(120, 120, 120, 1.0);
   line-height         : 29.0px;
@@ -1390,9 +1424,8 @@ div {
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
-  opacity             : 0.0;
 }
-.cwbeforelogin .group15 .groupwhen .rectangle11 {
+.cwbeforelogin .group15 .groupwhen .rectangle6 {
   background-color    : rgba(255,255,255,0.0);
   top                 : 0px;
   height              : 100%;
@@ -1405,7 +1438,7 @@ div {
   transform           : rotate(0deg);
   opacity             : 0.77;
 }
-.cwbeforelogin .group15 .groupwhen .rectangle12 {
+.cwbeforelogin .group15 .groupwhen .rectangle7 {
   background-color    : rgba(79, 96, 99, 1.0);
   top                 : 7.51%;
   height              : 19.74%;
@@ -1419,10 +1452,10 @@ div {
   transform           : rotate(0deg);
   transition          : all 0.2s ease-in-out;
 }
-.cwbeforelogin .group15 .groupwhen .rectangle12:hover {
+.cwbeforelogin .group15 .groupwhen .rectangle7:hover {
   transform           : scale(1.1);
 }
-.cwbeforelogin .group15 .groupwhen .searchorganization {
+.cwbeforelogin .group15 .groupwhen .searchingorganizati {
   background-color    : rgba(255,255,255,0.0);
   top                 : 9.33%;
   height              : 17.06%;
@@ -1440,23 +1473,23 @@ div {
   text-align          : center;
   line-height         : 16.0px;
 }
-.cwbeforelogin .group15 .groupwhen .searchorganization:hover {
+.cwbeforelogin .group15 .groupwhen .searchingorganizati:hover {
   transform           : scale(1.1);
 }
-.cwbeforelogin .group15 .groupwhen .searchorganization .span1 {
+.cwbeforelogin .group15 .groupwhen .searchingorganizati .span1 {
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .searchorganization .span2 {
+.cwbeforelogin .group15 .groupwhen .searchingorganizati .span2 {
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .searchorganization .span3 {
+.cwbeforelogin .group15 .groupwhen .searchingorganizati .span3 {
   font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
   font-size           : 16.0px;
   color               : rgba(30, 29, 29, 1.0);
   line-height         : 22.0px;
 }
-.cwbeforelogin .group15 .groupwhen .rectangle2 {
+.cwbeforelogin .group15 .groupwhen .rectangle8 {
   background-color    : rgba(235, 247, 248, 1.0);
   top                 : 7.51%;
   height              : 19.74%;
@@ -1469,7 +1502,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .rectangle3 {
+.cwbeforelogin .group15 .groupwhen .rectangle9 {
   background-color    : rgba(79, 96, 99, 1.0);
   top                 : 7.51%;
   height              : 19.74%;
@@ -1482,7 +1515,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .registeronerpdur {
+.cwbeforelogin .group15 .groupwhen .registrationprocedu {
   background-color    : rgba(255,255,255,0.0);
   top                 : 9.23%;
   height              : 15.88%;
@@ -1499,17 +1532,17 @@ div {
   text-align          : center;
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .registeronerpdur .span1 {
+.cwbeforelogin .group15 .groupwhen .registrationprocedu .span1 {
   color               : rgba(254, 254, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .registeronerpdur .span2 {
+.cwbeforelogin .group15 .groupwhen .registrationprocedu .span2 {
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
   color               : rgba(254, 254, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .registeronerpdur .span3 {
+.cwbeforelogin .group15 .groupwhen .registrationprocedu .span3 {
   color               : rgba(254, 254, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .rectangle4 {
+.cwbeforelogin .group15 .groupwhen .rectangle10 {
   background-color    : rgba(79, 96, 99, 1.0);
   right               : 3.16%;
   top                 : 6.65%;
@@ -1522,7 +1555,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .proposalapprovaly {
+.cwbeforelogin .group15 .groupwhen .proposalsubmission {
   background-color    : rgba(255,255,255,0.0);
   right               : 3.56%;
   top                 : 9.23%;
@@ -1539,10 +1572,10 @@ div {
   text-align          : center;
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .proposalapprovaly .span1 {
+.cwbeforelogin .group15 .groupwhen .proposalsubmission .span1 {
   
 }
-.cwbeforelogin .group15 .groupwhen .proposalapprovaly .span2 {
+.cwbeforelogin .group15 .groupwhen .proposalsubmission .span2 {
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
 }
 .cwbeforelogin .group15 .groupwhen .line {
@@ -1593,7 +1626,7 @@ div {
   -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
   transform           : rotate(90deg);
 }
-.cwbeforelogin .group15 .groupwhen .phasei2 {
+.cwbeforelogin .group15 .groupwhen .phasei {
   background-color    : rgba(255,255,255,0.0);
   top                 : 2.15%;
   height              : 6.55%;
@@ -1610,7 +1643,7 @@ div {
   text-align          : center;
   line-height         : 42.0px;
 }
-.cwbeforelogin .group15 .groupwhen .phaseii2 {
+.cwbeforelogin .group15 .groupwhen .phaseii {
   background-color    : rgba(255,255,255,0.0);
   top                 : 33.15%;
   height              : 6.55%;
@@ -1627,7 +1660,7 @@ div {
   text-align          : center;
   line-height         : 42.0px;
 }
-.cwbeforelogin .group15 .groupwhen .phaseiii2 {
+.cwbeforelogin .group15 .groupwhen .phaseiii {
   background-color    : rgba(255,255,255,0.0);
   bottom              : 28.00%;
   height              : 6.55%;
@@ -1692,7 +1725,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .rectangle5 {
+.cwbeforelogin .group15 .groupwhen .rectangle11 {
   background-color    : rgba(127, 129, 129, 1.0);
   right               : 3.56%;
   top                 : 38.95%;
@@ -1705,7 +1738,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp {
+.cwbeforelogin .group15 .groupwhen .proposalapprovals {
   background-color    : rgba(255,255,255,0.0);
   right               : 4.35%;
   top                 : 40.67%;
@@ -1722,14 +1755,14 @@ div {
   text-align          : center;
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp .span1 {
+.cwbeforelogin .group15 .groupwhen .proposalapprovals .span1 {
   color               : rgba(246, 247, 246, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp .span2 {
+.cwbeforelogin .group15 .groupwhen .proposalapprovals .span2 {
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
   color               : rgba(246, 247, 246, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .rectangle6 {
+.cwbeforelogin .group15 .groupwhen .rectangle12 {
   background-color    : rgba(127, 129, 129, 1.0);
   top                 : 38.84%;
   height              : 19.74%;
@@ -1742,7 +1775,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .rectangle7 {
+.cwbeforelogin .group15 .groupwhen .rectangle13 {
   background-color    : rgba(127, 129, 129, 1.0);
   top                 : 38.84%;
   height              : 19.74%;
@@ -1755,7 +1788,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp2 {
+.cwbeforelogin .group15 .groupwhen .workcompletionobt {
   background-color    : rgba(255,255,255,0.0);
   top                 : 40.67%;
   height              : 15.13%;
@@ -1772,14 +1805,14 @@ div {
   text-align          : center;
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp2 .span1 {
+.cwbeforelogin .group15 .groupwhen .workcompletionobt .span1 {
   color               : rgba(254, 255, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp2 .span2 {
+.cwbeforelogin .group15 .groupwhen .workcompletionobt .span2 {
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
   color               : rgba(254, 255, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .rectangle8 {
+.cwbeforelogin .group15 .groupwhen .rectangle14 {
   background-color    : rgba(115, 192, 194, 1.0);
   bottom              : 9.98%;
   height              : 19.74%;
@@ -1792,7 +1825,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp3 {
+.cwbeforelogin .group15 .groupwhen .reportthenprepare {
   background-color    : rgba(255,255,255,0.0);
   bottom              : 8.26%;
   height              : 19.74%;
@@ -1809,17 +1842,17 @@ div {
   text-align          : center;
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp3 .span1 {
+.cwbeforelogin .group15 .groupwhen .reportthenprepare .span1 {
   color               : rgba(254, 255, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp3 .span2 {
+.cwbeforelogin .group15 .groupwhen .reportthenprepare .span2 {
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
   color               : rgba(254, 255, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp3 .span3 {
+.cwbeforelogin .group15 .groupwhen .reportthenprepare .span3 {
   color               : rgba(254, 255, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .rectangle9 {
+.cwbeforelogin .group15 .groupwhen .rectangle15 {
   background-color    : rgba(115, 192, 194, 1.0);
   bottom              : 9.98%;
   height              : 19.74%;
@@ -1832,7 +1865,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .rectangle10 {
+.cwbeforelogin .group15 .groupwhen .rectangle16 {
   background-color    : rgba(115, 192, 194, 1.0);
   right               : 3.16%;
   bottom              : 9.98%;
@@ -1845,7 +1878,7 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp5 {
+.cwbeforelogin .group15 .groupwhen .gradebasedonthe {
   background-color    : rgba(255,255,255,0.0);
   right               : 3.40%;
   bottom              : 11.37%;
@@ -1862,10 +1895,10 @@ div {
   text-align          : center;
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp5 .span1 {
+.cwbeforelogin .group15 .groupwhen .gradebasedonthe .span1 {
   color               : rgba(254, 255, 254, 1.0);
 }
-.cwbeforelogin .group15 .groupwhen .registrationonerp5 .span2 {
+.cwbeforelogin .group15 .groupwhen .gradebasedonthe .span2 {
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   color               : rgba(254, 255, 254, 1.0);
 }
@@ -1895,7 +1928,7 @@ div {
 .cwbeforelogin .group15 .groupwhen .weeklylogsubmissio .span3 {
   
 }
-.cwbeforelogin .group15 .groupwhen .finalpresentation {
+.cwbeforelogin .group15 .groupwhen .posterpresentation {
   background-color    : rgba(255,255,255,0.0);
   bottom              : 9.23%;
   height              : 18.78%;
@@ -1912,10 +1945,10 @@ div {
   text-align          : center;
   line-height         : 25.0px;
 }
-.cwbeforelogin .group15 .groupwhen .finalpresentation .span1 {
+.cwbeforelogin .group15 .groupwhen .posterpresentation .span1 {
   
 }
-.cwbeforelogin .group15 .groupwhen .finalpresentation .span2 {
+.cwbeforelogin .group15 .groupwhen .posterpresentation .span2 {
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
 }
 .cwbeforelogin .group12 {
@@ -2477,19 +2510,19 @@ div {
 }
 .cwbeforelogin .foranyqueriesuse {
   background-color    : rgba(255,255,255,0.0);
-  top                 : 1714px;
+  top                 : 1664px;
   height              : auto;
   width               : 573px;
   position            : absolute;
   margin              : 0;
-  left                : 767px;
+  left                : 434px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   font-size           : 21.0px;
   color               : rgba(120, 120, 120, 1.0);
-  text-align          : right;
+  text-align          : center;
   line-height         : 21.0px;
 }
 .cwbeforelogin .foranyqueriesuse .span1 {

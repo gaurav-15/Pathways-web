@@ -16,7 +16,7 @@
   width               : 100%;
   min-width           : 1440px;
   height              : 100vh;
-  min-height          : 3696px;
+  min-height          : 3115px;
   position            : relative;
   overflow            : hidden;
   margin              : 0px;
@@ -42,19 +42,19 @@ textarea:focus, input:focus {
 div {
   -webkit-text-size-adjust: none;
 }
-.anima-animate-enter4 {
+.anima-animate-enter1 {
   opacity             : 0;
   display             : block;
-  -webkit-animation   : anima-animate-enter4-frames 0.600000023842s ease-in-out 1 normal forwards;
-  -moz-animation      : anima-animate-enter4-frames 0.600000023842s ease-in-out 1 normal forwards;
-  -o-animation        : anima-animate-enter4-frames 0.600000023842s ease-in-out 1 normal forwards;
-  animation           : anima-animate-enter4-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -webkit-animation   : anima-animate-enter1-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -moz-animation      : anima-animate-enter1-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -o-animation        : anima-animate-enter1-frames 0.600000023842s ease-in-out 1 normal forwards;
+  animation           : anima-animate-enter1-frames 0.600000023842s ease-in-out 1 normal forwards;
   -webkit-animation-delay: 0s;
   -moz-animation-delay: 0s;
   -o-animation-delay  : 0s;
   animation-delay     : 0s;
 }
-@-webkit-keyframes anima-animate-enter4-frames {
+@-webkit-keyframes anima-animate-enter1-frames {
   0%
    
   {
@@ -68,7 +68,7 @@ div {
   opacity: 0.75;
     }
 }
-@-moz-keyframes anima-animate-enter4-frames {
+@-moz-keyframes anima-animate-enter1-frames {
   0%
    
   {
@@ -82,7 +82,7 @@ div {
   opacity: 0.75;
     }
 }
-@-o-keyframes anima-animate-enter4-frames {
+@-o-keyframes anima-animate-enter1-frames {
   0%
    
   {
@@ -96,7 +96,7 @@ div {
   opacity: 0.75;
     }
 }
-@keyframes anima-animate-enter4-frames {
+@keyframes anima-animate-enter1-frames {
   0%
    
   {
@@ -146,6 +146,856 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
   opacity             : 0.0;
+}
+.btpbeforelogin .group15 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 759px;
+  height              : 1045px;
+  width               : 1264px;
+  position            : absolute;
+  margin              : 0;
+  left                : 68px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .group16 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 9.86%;
+  width               : 12.10%;
+  position            : absolute;
+  margin              : 0;
+  left                : 12.58%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .group16 .rectangle2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .group16 .howtodo {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 9.15%;
+  bottom              : 11.65%;
+  height              : 60.19%;
+  width               : 78.43%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 22.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.btpbeforelogin .group15 .group8 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 14.72%;
+  top                 : 0px;
+  height              : 9.86%;
+  width               : 12.74%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .group8 .rectangle11 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .group8 .categories {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 15.53%;
+  height              : 62.14%;
+  width               : 74.53%;
+  position            : absolute;
+  margin              : 0;
+  left                : 11.18%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 22.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : center;
+  line-height         : 30.0px;
+}
+.btpbeforelogin .group15 .groupwhere {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : -0.67%;
+  height              : 89.19%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.0;
+}
+.btpbeforelogin .group15 .groupwhere .rectangle2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 99.92%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.86;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 4.51%;
+  top                 : 4.83%;
+  height              : 74.36%;
+  width               : 90.59%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  font-size           : 24.0px;
+  color               : rgba(87, 87, 87, 1.0);
+  text-align          : left;
+  line-height         : 21.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span1 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span2 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span3 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span4 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span5 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span6 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span7 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span8 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span9 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span10 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span11 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span12 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span13 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span14 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span15 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span16 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span17 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span18 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span19 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span20 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span21 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span22 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span23 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span24 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span25 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span26 {
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span27 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span28 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span29 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span30 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span31 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span32 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span33 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span34 {
+  font-family         : "LucidaGrande", Helvetica, Arial, serif;
+  line-height         : 28.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span35 {
+  line-height         : 33.0px;
+}
+.btpbeforelogin .group15 .groupwhere .thestructureofthe .span36 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  font-size           : 21.0px;
+  color               : rgba(120, 120, 120, 1.0);
+  line-height         : 29.0px;
+}
+.btpbeforelogin .group15 .grouphow {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 0.38%;
+  height              : 89.19%;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .rectangle3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 99.92%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.77;
+}
+.btpbeforelogin .group15 .grouphow .rectangle4 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  top                 : 7.51%;
+  height              : 23.39%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  left                : 2.93%;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  transition          : all 0.2s ease-in-out;
+}
+.btpbeforelogin .group15 .grouphow .rectangle4:hover {
+  transform           : scale(1.1);
+}
+.btpbeforelogin .group15 .grouphow .thinkingofaprojec {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 10.09%;
+  height              : 17.06%;
+  width               : 23.97%;
+  position            : absolute;
+  margin              : 0;
+  left                : 3.48%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  transition          : all 0.2s ease-in-out;
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(254, 254, 254, 1.0);
+  text-align          : center;
+  line-height         : 16.0px;
+}
+.btpbeforelogin .group15 .grouphow .thinkingofaprojec:hover {
+  transform           : scale(1.1);
+}
+.btpbeforelogin .group15 .grouphow .thinkingofaprojec .span1 {
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .thinkingofaprojec .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .thinkingofaprojec .span3 {
+  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
+  font-size           : 16.0px;
+  color               : rgba(30, 29, 29, 1.0);
+  line-height         : 22.0px;
+}
+.btpbeforelogin .group15 .grouphow .rectangle5 {
+  background-color    : rgba(235, 247, 248, 1.0);
+  top                 : 7.51%;
+  height              : 19.74%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  left                : 37.18%;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .rectangle6 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  top                 : 7.51%;
+  height              : 23.07%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  left                : 37.18%;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .talktoaprofessor {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 10.09%;
+  height              : 19.74%;
+  width               : 23.97%;
+  position            : absolute;
+  margin              : 0;
+  left                : 37.18%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .talktoaprofessor .span1 {
+  color               : rgba(254, 254, 254, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .talktoaprofessor .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(254, 254, 254, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .rectangle7 {
+  background-color    : rgba(79, 96, 99, 1.0);
+  right               : 3.16%;
+  top                 : 6.65%;
+  height              : 23.07%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .registrationregist {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 3.56%;
+  top                 : 9.23%;
+  height              : 19.74%;
+  width               : 23.97%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .registrationregist .span1 {
+  
+}
+.btpbeforelogin .group15 .grouphow .registrationregist .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+}
+.btpbeforelogin .group15 .grouphow .line {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 15.99%;
+  height              : 2.68%;
+  width               : 5.30%;
+  position            : absolute;
+  margin              : 0;
+  left                : 30.22%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .line1 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 29.98%;
+  top                 : 15.99%;
+  height              : 2.68%;
+  width               : 5.30%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .line2 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 13.13%;
+  top                 : 33.15%;
+  height              : 2.68%;
+  width               : 5.78%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(90deg); /* IE 9 */
+  -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
+  transform           : rotate(90deg);
+}
+.btpbeforelogin .group15 .grouphow .line3 {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 32.19%;
+  height              : 2.68%;
+  width               : 5.78%;
+  position            : absolute;
+  margin              : 0;
+  left                : 12.42%;
+  -ms-transform       : rotate(90deg); /* IE 9 */
+  -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
+  transform           : rotate(90deg);
+}
+.btpbeforelogin .group15 .grouphow .phasei {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 2.15%;
+  height              : 6.55%;
+  width               : 16.30%;
+  position            : absolute;
+  margin              : 0;
+  left                : 41.85%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 31.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : center;
+  line-height         : 42.0px;
+}
+.btpbeforelogin .group15 .grouphow .phaseii {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 33.15%;
+  height              : 6.55%;
+  width               : 16.30%;
+  position            : absolute;
+  margin              : 0;
+  left                : 41.46%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 31.0px;
+  color               : rgba(126, 128, 129, 1.0);
+  text-align          : center;
+  line-height         : 42.0px;
+}
+.btpbeforelogin .group15 .grouphow .phaseiii {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 28.00%;
+  height              : 6.55%;
+  width               : 16.30%;
+  position            : absolute;
+  margin              : 0;
+  left                : 41.46%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 31.0px;
+  color               : rgba(115, 192, 194, 1.0);
+  text-align          : center;
+  line-height         : 42.0px;
+}
+.btpbeforelogin .group15 .grouphow .line4 {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 18.56%;
+  height              : 2.68%;
+  width               : 5.30%;
+  position            : absolute;
+  margin              : 0;
+  left                : 30.78%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .line5 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 29.98%;
+  bottom              : 18.56%;
+  height              : 2.68%;
+  width               : 5.30%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .line6 {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 30.22%;
+  top                 : 47.53%;
+  height              : 2.68%;
+  width               : 5.38%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .line7 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 47.53%;
+  height              : 2.68%;
+  width               : 5.38%;
+  position            : absolute;
+  margin              : 0;
+  left                : 30.14%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .rectangle8 {
+  background-color    : rgba(127, 129, 129, 1.0);
+  right               : 3.56%;
+  bottom              : 37.98%;
+  height              : 23.07%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .projectapprovalit {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 4.35%;
+  bottom              : 39.59%;
+  height              : 19.74%;
+  width               : 23.97%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .projectapprovalit .span1 {
+  color               : rgba(246, 247, 246, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .projectapprovalit .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(246, 247, 246, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .rectangle9 {
+  background-color    : rgba(127, 129, 129, 1.0);
+  bottom              : 38.09%;
+  height              : 23.07%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  left                : 37.62%;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .rectangle10 {
+  background-color    : rgba(127, 129, 129, 1.0);
+  bottom              : 38.09%;
+  height              : 23.07%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  left                : 2.93%;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .thesisreportsubmi {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 40.67%;
+  height              : 15.13%;
+  width               : 23.97%;
+  position            : absolute;
+  margin              : 0;
+  left                : 3.24%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(253, 253, 253, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .thesisreportsubmi .span1 {
+  color               : rgba(254, 255, 254, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .thesisreportsubmi .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(254, 255, 254, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .thesisreportsubmi .span3 {
+  color               : rgba(254, 255, 254, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .rectangle11 {
+  background-color    : rgba(115, 192, 194, 1.0);
+  bottom              : 6.65%;
+  height              : 23.07%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  left                : 2.93%;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .formats {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 7.51%;
+  height              : 19.74%;
+  width               : 23.97%;
+  position            : absolute;
+  margin              : 0;
+  left                : 3.64%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(254, 254, 254, 1.0);
+  text-align          : center;
+  line-height         : 18.0px;
+}
+.btpbeforelogin .group15 .grouphow .formats .span1 {
+  color               : rgba(254, 255, 254, 1.0);
+  line-height         : 34.0px;
+}
+.btpbeforelogin .group15 .grouphow .formats .span2 {
+  font-size           : 18.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .reporttemplatelat {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 18.35%;
+  height              : 4.72%;
+  width               : 20.89%;
+  position            : absolute;
+  margin              : 0;
+  left                : 5.22%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 34.0px;
+}
+.btpbeforelogin .group15 .grouphow .coverpagetemplate {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 14.16%;
+  height              : 4.29%;
+  width               : 25.32%;
+  position            : absolute;
+  margin              : 0;
+  left                : 3.24%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 34.0px;
+}
+.btpbeforelogin .group15 .grouphow .reporttemplatepdf {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 10.30%;
+  height              : 4.18%;
+  width               : 17.64%;
+  position            : absolute;
+  margin              : 0;
+  left                : 7.12%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 25.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 34.0px;
+}
+.btpbeforelogin .group15 .grouphow .rectangle12 {
+  background-color    : rgba(115, 192, 194, 1.0);
+  bottom              : 6.65%;
+  height              : 23.07%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  left                : 37.62%;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .rectangle13 {
+  background-color    : rgba(115, 192, 194, 1.0);
+  right               : 3.16%;
+  bottom              : 9.98%;
+  height              : 19.74%;
+  width               : 24.76%;
+  position            : absolute;
+  margin              : 0;
+  border-radius       : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.btpbeforelogin .group15 .grouphow .gradethebtpwill {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 3.40%;
+  bottom              : 11.37%;
+  height              : 16.63%;
+  width               : 23.97%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(254, 254, 254, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .gradethebtpwill .span1 {
+  color               : rgba(254, 255, 254, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .gradethebtpwill .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+  color               : rgba(254, 255, 254, 1.0);
+}
+.btpbeforelogin .group15 .grouphow .regularevaluation {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 40.99%;
+  height              : 10.73%;
+  width               : 24.05%;
+  position            : absolute;
+  margin              : 0;
+  left                : 37.97%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(246, 247, 246, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .regularevaluation .span1 {
+  
+}
+.btpbeforelogin .group15 .grouphow .regularevaluation .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
+}
+.btpbeforelogin .group15 .grouphow .btppresentationat {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 11.91%;
+  height              : 16.09%;
+  width               : 23.10%;
+  position            : absolute;
+  margin              : 0;
+  left                : 38.45%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
+  font-size           : 18.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 25.0px;
+}
+.btpbeforelogin .group15 .grouphow .btppresentationat .span1 {
+  
+}
+.btpbeforelogin .group15 .grouphow .btppresentationat .span2 {
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
 }
 .btpbeforelogin .googlelogin {
   background-color    : rgba(255,255,255,0.0);
@@ -416,14 +1266,14 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
-.btpbeforelogin .u2022selfgrowthsgi {
+.btpbeforelogin .btechprojectisd {
   background-color    : rgba(255,255,255,0.0);
-  top                 : 269px;
+  top                 : 258px;
   height              : auto;
-  width               : 616px;
+  width               : 847px;
   position            : absolute;
   margin              : 0;
-  left                : 106px;
+  left                : 108px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -433,34 +1283,34 @@ div {
   text-align          : left;
   line-height         : 41.0px;
 }
-.btpbeforelogin .u2022selfgrowthsgi .span1 {
+.btpbeforelogin .btechprojectisd .span1 {
   
 }
-.btpbeforelogin .u2022selfgrowthsgi .span2 {
+.btpbeforelogin .btechprojectisd .span2 {
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   letter-spacing      : 1.2px;
 }
-.btpbeforelogin .u2022selfgrowthsgi .span3 {
+.btpbeforelogin .btechprojectisd .span3 {
   font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
   letter-spacing      : 1.2px;
 }
-.btpbeforelogin .u2022selfgrowthsgi .span4 {
+.btpbeforelogin .btechprojectisd .span4 {
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   letter-spacing      : 1.2px;
 }
-.btpbeforelogin .u2022selfgrowthsgi .span5 {
+.btpbeforelogin .btechprojectisd .span5 {
   font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
   letter-spacing      : 1.2px;
 }
-.btpbeforelogin .u2022selfgrowthsgi .span6 {
+.btpbeforelogin .btechprojectisd .span6 {
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   letter-spacing      : 1.2px;
 }
-.btpbeforelogin .u2022selfgrowthsgi .span7 {
+.btpbeforelogin .btechprojectisd .span7 {
   font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
   letter-spacing      : 1.2px;
 }
-.btpbeforelogin .u2022selfgrowthsgi .span8 {
+.btpbeforelogin .btechprojectisd .span8 {
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   letter-spacing      : 1.2px;
 }
@@ -762,821 +1612,9 @@ div {
   font-size           : 74.0px;
   line-height         : 68.0px;
 }
-.btpbeforelogin .group15 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 705px;
-  height              : 1045px;
-  width               : 1264px;
-  position            : absolute;
-  margin              : 0;
-  left                : 73px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group16 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 9.86%;
-  width               : 12.10%;
-  position            : absolute;
-  margin              : 0;
-  left                : 12.58%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group16 .rectangle2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
-  width               : 100%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group16 .howtodo {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 9.15%;
-  bottom              : 11.65%;
-  height              : 60.19%;
-  width               : 78.43%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
-  font-size           : 22.0px;
-  color               : rgba(79, 96, 99, 1.0);
-  text-align          : center;
-  line-height         : 30.0px;
-}
-.btpbeforelogin .group15 .group8 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 9.86%;
-  width               : 12.74%;
-  position            : absolute;
-  margin              : 0;
-  left                : 43.63%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group8 .rectangle11 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
-  width               : 100%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group8 .wheretodo {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : 15.53%;
-  height              : 62.14%;
-  width               : 74.53%;
-  position            : absolute;
-  margin              : 0;
-  left                : 11.18%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
-  font-size           : 22.0px;
-  color               : rgba(79, 96, 99, 1.0);
-  text-align          : center;
-  line-height         : 30.0px;
-}
-.btpbeforelogin .group15 .group18 {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 13.05%;
-  top                 : 0px;
-  height              : 9.86%;
-  width               : 12.74%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group18 .rectangle2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
-  width               : 100%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group18 .rectangle2 .rectangle3 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
-  width               : 100%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group18 .group71 {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : 14.56%;
-  height              : 59.22%;
-  width               : 75.78%;
-  position            : absolute;
-  margin              : 0;
-  left                : 12.11%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .group18 .group71 .whentodo {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
-  width               : 100%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
-  font-size           : 22.0px;
-  color               : rgba(79, 96, 99, 1.0);
-  text-align          : center;
-  line-height         : 30.0px;
-}
-.btpbeforelogin .group15 .group10 {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : -0.67%;
-  height              : 89.28%;
-  width               : 100%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  opacity             : 0.0;
-}
-.btpbeforelogin .group15 .group10 .rectangle2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
-  width               : 99.92%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  opacity             : 0.93;
-}
-.btpbeforelogin .group15 .group10 .thebestsemesterto {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 6.75%;
-  height              : 36.23%;
-  width               : 89.08%;
-  position            : absolute;
-  margin              : 0;
-  left                : 3.16%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  font-size           : 35.0px;
-  color               : rgba(79, 96, 99, 1.0);
-  text-align          : left;
-  letter-spacing      : 2.2px;
-  line-height         : 51.0px;
-}
-.btpbeforelogin .group15 .group10 .thebestsemesterto .span1 {
-  
-}
-.btpbeforelogin .group15 .group10 .thebestsemesterto .span2 {
-  font-family         : "AvenirNextCondensed-DemiBold", Helvetica, Arial, serif;
-}
-.btpbeforelogin .group15 .group10 .thebestsemesterto .span3 {
-  
-}
-.btpbeforelogin .group15 .group10 .thebestsemesterto .span4 {
-  font-family         : "AvenirNextCondensed-DemiBold", Helvetica, Arial, serif;
-}
-.btpbeforelogin .group15 .group10 .thebestsemesterto .span5 {
-  
-}
-.btpbeforelogin .group15 .groupwhere {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : -0.67%;
-  height              : 89.38%;
-  width               : 100%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhere .rectangle2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
-  width               : 99.92%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  opacity             : 0.77;
-}
-.btpbeforelogin .group15 .groupwhen {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : -0.67%;
-  height              : 89.19%;
-  width               : 100%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  opacity             : 0.0;
-}
-.btpbeforelogin .group15 .groupwhen .rectangle11 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 0px;
-  height              : 100%;
-  width               : 99.92%;
-  position            : absolute;
-  margin              : 0;
-  left                : 0px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  opacity             : 0.77;
-}
-.btpbeforelogin .group15 .groupwhen .rectangle12 {
-  background-color    : rgba(79, 96, 99, 1.0);
-  top                 : 7.51%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  left                : 2.93%;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  transition          : all 0.2s ease-in-out;
-}
-.btpbeforelogin .group15 .groupwhen .rectangle12:hover {
-  transform           : scale(1.1);
-}
-.btpbeforelogin .group15 .groupwhen .searchorganization {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 9.33%;
-  height              : 17.06%;
-  width               : 23.97%;
-  position            : absolute;
-  margin              : 0;
-  left                : 3.48%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  transition          : all 0.2s ease-in-out;
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(254, 254, 254, 1.0);
-  text-align          : center;
-  line-height         : 16.0px;
-}
-.btpbeforelogin .group15 .groupwhen .searchorganization:hover {
-  transform           : scale(1.1);
-}
-.btpbeforelogin .group15 .groupwhen .searchorganization .span1 {
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .searchorganization .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .searchorganization .span3 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  color               : rgba(30, 29, 29, 1.0);
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .searchorganization .span4 {
-  font-family         : "AvenirNext-Medium", Helvetica, Arial, serif;
-  font-size           : 16.0px;
-  color               : rgba(30, 29, 29, 1.0);
-  line-height         : 22.0px;
-}
-.btpbeforelogin .group15 .groupwhen .rectangle2 {
-  background-color    : rgba(235, 247, 248, 1.0);
-  top                 : 7.51%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  left                : 37.18%;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .rectangle3 {
-  background-color    : rgba(79, 96, 99, 1.0);
-  top                 : 7.51%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  left                : 37.18%;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .registeronerpdur {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 9.23%;
-  height              : 15.88%;
-  width               : 23.97%;
-  position            : absolute;
-  margin              : 0;
-  left                : 37.18%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(255, 255, 255, 1.0);
-  text-align          : center;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .registeronerpdur .span1 {
-  color               : rgba(254, 254, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .registeronerpdur .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  color               : rgba(254, 254, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .rectangle4 {
-  background-color    : rgba(79, 96, 99, 1.0);
-  right               : 3.16%;
-  top                 : 6.65%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .proposalapprovaly {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 3.56%;
-  top                 : 9.23%;
-  height              : 15.88%;
-  width               : 23.97%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(255, 255, 255, 1.0);
-  text-align          : center;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .proposalapprovaly .span1 {
-  
-}
-.btpbeforelogin .group15 .groupwhen .proposalapprovaly .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-}
-.btpbeforelogin .group15 .groupwhen .line {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 15.99%;
-  height              : 2.68%;
-  width               : 5.30%;
-  position            : absolute;
-  margin              : 0;
-  left                : 30.22%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .line1 {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 29.98%;
-  top                 : 15.99%;
-  height              : 2.68%;
-  width               : 5.30%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .line2 {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 12.74%;
-  top                 : 30.47%;
-  height              : 2.68%;
-  width               : 5.78%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(90deg); /* IE 9 */
-  -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
-  transform           : rotate(90deg);
-}
-.btpbeforelogin .group15 .groupwhen .line3 {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : 34.44%;
-  height              : 2.68%;
-  width               : 5.70%;
-  position            : absolute;
-  margin              : 0;
-  left                : 12.34%;
-  -ms-transform       : rotate(90deg); /* IE 9 */
-  -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
-  transform           : rotate(90deg);
-}
-.btpbeforelogin .group15 .groupwhen .phasei2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 2.15%;
-  height              : 6.55%;
-  width               : 16.30%;
-  position            : absolute;
-  margin              : 0;
-  left                : 41.85%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 31.0px;
-  color               : rgba(79, 96, 99, 1.0);
-  text-align          : center;
-  line-height         : 42.0px;
-}
-.btpbeforelogin .group15 .groupwhen .phaseii2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 33.15%;
-  height              : 6.55%;
-  width               : 16.30%;
-  position            : absolute;
-  margin              : 0;
-  left                : 41.46%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 31.0px;
-  color               : rgba(126, 128, 129, 1.0);
-  text-align          : center;
-  line-height         : 42.0px;
-}
-.btpbeforelogin .group15 .groupwhen .phaseiii2 {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : 28.00%;
-  height              : 6.55%;
-  width               : 16.30%;
-  position            : absolute;
-  margin              : 0;
-  left                : 41.46%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 31.0px;
-  color               : rgba(115, 192, 194, 1.0);
-  text-align          : center;
-  line-height         : 42.0px;
-}
-.btpbeforelogin .group15 .groupwhen .line4 {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : 18.56%;
-  height              : 2.68%;
-  width               : 5.30%;
-  position            : absolute;
-  margin              : 0;
-  left                : 30.78%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .line5 {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 29.98%;
-  bottom              : 18.56%;
-  height              : 2.68%;
-  width               : 5.30%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .line6 {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 30.22%;
-  top                 : 47.53%;
-  height              : 2.68%;
-  width               : 5.38%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .line7 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 47.53%;
-  height              : 2.68%;
-  width               : 5.38%;
-  position            : absolute;
-  margin              : 0;
-  left                : 30.14%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .rectangle5 {
-  background-color    : rgba(127, 129, 129, 1.0);
-  right               : 3.56%;
-  top                 : 38.95%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 4.35%;
-  top                 : 40.67%;
-  height              : 15.13%;
-  width               : 23.97%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(255, 255, 255, 1.0);
-  text-align          : center;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp .span1 {
-  color               : rgba(246, 247, 246, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  color               : rgba(246, 247, 246, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .rectangle6 {
-  background-color    : rgba(127, 129, 129, 1.0);
-  top                 : 38.84%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  left                : 37.62%;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .rectangle7 {
-  background-color    : rgba(127, 129, 129, 1.0);
-  top                 : 38.84%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  left                : 2.93%;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 40.67%;
-  height              : 15.13%;
-  width               : 23.97%;
-  position            : absolute;
-  margin              : 0;
-  left                : 3.24%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(253, 253, 253, 1.0);
-  text-align          : center;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp2 .span1 {
-  color               : rgba(254, 255, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp2 .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  color               : rgba(254, 255, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp2 .span3 {
-  color               : rgba(254, 255, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .rectangle8 {
-  background-color    : rgba(115, 192, 194, 1.0);
-  bottom              : 9.98%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  left                : 2.93%;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp3 {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : 8.26%;
-  height              : 19.74%;
-  width               : 23.97%;
-  position            : absolute;
-  margin              : 0;
-  left                : 3.24%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(254, 254, 254, 1.0);
-  text-align          : center;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp3 .span1 {
-  color               : rgba(254, 255, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp3 .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  color               : rgba(254, 255, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .rectangle9 {
-  background-color    : rgba(115, 192, 194, 1.0);
-  bottom              : 9.98%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  left                : 37.62%;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .rectangle10 {
-  background-color    : rgba(115, 192, 194, 1.0);
-  right               : 3.16%;
-  bottom              : 9.98%;
-  height              : 19.74%;
-  width               : 24.76%;
-  position            : absolute;
-  margin              : 0;
-  border-radius       : 12px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp5 {
-  background-color    : rgba(255,255,255,0.0);
-  right               : 3.40%;
-  bottom              : 11.37%;
-  height              : 16.63%;
-  width               : 23.97%;
-  position            : absolute;
-  margin              : 0;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(254, 254, 254, 1.0);
-  text-align          : center;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp5 .span1 {
-  color               : rgba(254, 255, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .registrationonerp5 .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  color               : rgba(254, 255, 254, 1.0);
-}
-.btpbeforelogin .group15 .groupwhen .weeklylogsubmissio {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 40.99%;
-  height              : 16.09%;
-  width               : 24.05%;
-  position            : absolute;
-  margin              : 0;
-  left                : 37.97%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(246, 247, 246, 1.0);
-  text-align          : center;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .weeklylogsubmissio .span1 {
-  
-}
-.btpbeforelogin .group15 .groupwhen .weeklylogsubmissio .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-}
-.btpbeforelogin .group15 .groupwhen .finalpresentation {
-  background-color    : rgba(255,255,255,0.0);
-  bottom              : 11.91%;
-  height              : 16.09%;
-  width               : 23.10%;
-  position            : absolute;
-  margin              : 0;
-  left                : 38.45%;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  font-size           : 18.0px;
-  color               : rgba(254, 255, 254, 1.0);
-  text-align          : center;
-  line-height         : 25.0px;
-}
-.btpbeforelogin .group15 .groupwhen .finalpresentation .span1 {
-  
-}
-.btpbeforelogin .group15 .groupwhen .finalpresentation .span2 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-}
-.btpbeforelogin .faqsincludingsenio {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 1914px;
-  height              : auto;
-  width               : 538px;
-  position            : absolute;
-  margin              : 0;
-  left                : 145px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "BebasNeueLight", Helvetica, Arial, serif;
-  font-size           : 69.0px;
-  color               : rgba(79, 96, 99, 1.0);
-  text-align          : left;
-  letter-spacing      : 2.2px;
-  line-height         : 26.0px;
-}
-.btpbeforelogin .faqsincludingsenio .span1 {
-  line-height         : 37.0px;
-}
-.btpbeforelogin .faqsincludingsenio .span2 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  font-size           : 48.0px;
-  line-height         : 37.0px;
-}
-.btpbeforelogin .faqsincludingsenio .span3 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  font-size           : 26.0px;
-  line-height         : 37.0px;
-}
 .btpbeforelogin .rectangle1 {
   background-color    : rgba(255, 255, 255, 1.0);
-  top                 : 1800px;
+  top                 : 1874px;
   height              : 73px;
   width               : 1440px;
   position            : absolute;
@@ -1588,12 +1626,12 @@ div {
 }
 .btpbeforelogin .group151 {
   background-color    : rgba(255,255,255,0.0);
-  top                 : 1854px;
+  top                 : 1843px;
   height              : 2393px;
   width               : 2094px;
   position            : absolute;
   margin              : 0;
-  left                : -453px;
+  left                : -450px;
   -ms-transform       : rotate(21deg); /* IE 9 */
   -webkit-transform   : rotate(21deg); /* Chrome, Safari, Opera */
   transform           : rotate(21deg);
@@ -1741,7 +1779,7 @@ div {
 }
 .btpbeforelogin .group9 {
   background-color    : rgba(255,255,255,0.0);
-  top                 : 3463px;
+  top                 : 2878px;
   height              : 245px;
   width               : 1440px;
   position            : absolute;
@@ -1934,42 +1972,7 @@ div {
   text-align          : left;
   line-height         : 30.0px;
 }
-.btpbeforelogin .foranyqueriesuse {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 1710px;
-  height              : 178px;
-  width               : 573px;
-  position            : absolute;
-  margin              : 0;
-  left                : 718px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  font-size           : 21.0px;
-  color               : rgba(120, 120, 120, 1.0);
-  text-align          : right;
-  line-height         : 21.0px;
-}
-.btpbeforelogin .foranyqueriesuse .span1 {
-  line-height         : 29.0px;
-}
-.btpbeforelogin .foranyqueriesuse .span2 {
-  font-size           : 25.0px;
-  line-height         : 34.0px;
-}
-.btpbeforelogin .foranyqueriesuse .span3 {
-  line-height         : 29.0px;
-}
-.btpbeforelogin .foranyqueriesuse .span4 {
-  color               : rgba(164, 162, 162, 1.0);
-  line-height         : 29.0px;
-}
-.btpbeforelogin .foranyqueriesuse .span5 {
-  font-family         : "AvenirNextCondensed-Bold", Helvetica, Arial, serif;
-  line-height         : 29.0px;
-}
-.btpbeforelogin .a1whencaniregist {
+.btpbeforelogin .q1canimakebtpr {
   background-color    : rgba(255,255,255,0.0);
   top                 : 2029px;
   height              : auto;
@@ -1980,109 +1983,56 @@ div {
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-DemiBold", Helvetica, Arial, serif;
+  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   font-size           : 25.0px;
   color               : rgba(134, 188, 176, 1.0);
   text-align          : left;
   line-height         : 34.0px;
 }
-.btpbeforelogin .a1whencaniregist .span1 {
+.btpbeforelogin .q1canimakebtpr .span1 {
   
 }
-.btpbeforelogin .a1whencaniregist .span2 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+.btpbeforelogin .q1canimakebtpr .span2 {
+  color               : rgba(102, 108, 107, 1.0);
 }
-.btpbeforelogin .a1whencaniregist .span3 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(88, 94, 90, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span4 {
+.btpbeforelogin .q1canimakebtpr .span3 {
   
 }
-.btpbeforelogin .a1whencaniregist .span5 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+.btpbeforelogin .q1canimakebtpr .span4 {
+  color               : rgba(102, 108, 107, 1.0);
 }
-.btpbeforelogin .a1whencaniregist .span6 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(88, 94, 93, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span7 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-}
-.btpbeforelogin .a1whencaniregist .span8 {
+.btpbeforelogin .q1canimakebtpr .span5 {
   
 }
-.btpbeforelogin .a1whencaniregist .span9 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+.btpbeforelogin .q1canimakebtpr .span6 {
+  color               : rgba(102, 108, 107, 1.0);
 }
-.btpbeforelogin .a1whencaniregist .span10 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(90, 94, 93, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span11 {
+.btpbeforelogin .q1canimakebtpr .span7 {
   
 }
-.btpbeforelogin .a1whencaniregist .span12 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+.btpbeforelogin .q1canimakebtpr .span8 {
+  color               : rgba(102, 108, 107, 1.0);
 }
-.btpbeforelogin .a1whencaniregist .span13 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(87, 94, 93, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span14 {
+.btpbeforelogin .q1canimakebtpr .span9 {
   
 }
-.btpbeforelogin .a1whencaniregist .span15 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(90, 94, 93, 1.0);
+.btpbeforelogin .q1canimakebtpr .span10 {
+  color               : rgba(102, 108, 107, 1.0);
 }
-.btpbeforelogin .a1whencaniregist .span16 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-}
-.btpbeforelogin .a1whencaniregist .span17 {
+.btpbeforelogin .q1canimakebtpr .span11 {
   
 }
-.btpbeforelogin .a1whencaniregist .span18 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(88, 95, 93, 1.0);
+.btpbeforelogin .q1canimakebtpr .span12 {
+  color               : rgba(102, 108, 107, 1.0);
 }
-.btpbeforelogin .a1whencaniregist .span19 {
-  
+.btpbeforelogin .q1canimakebtpr .span13 {
+  font-family         : "AvenirNextCondensed-DemiBold", Helvetica, Arial, serif;
+  color               : rgba(37, 45, 47, 1.0);
 }
-.btpbeforelogin .a1whencaniregist .span20 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(87, 96, 93, 1.0);
+.btpbeforelogin .q1canimakebtpr .span14 {
+  font-family         : "AvenirNextCondensed-DemiBold", Helvetica, Arial, serif;
 }
-.btpbeforelogin .a1whencaniregist .span21 {
-  
-}
-.btpbeforelogin .a1whencaniregist .span22 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(85, 97, 93, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span23 {
-  
-}
-.btpbeforelogin .a1whencaniregist .span24 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(85, 98, 96, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span25 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  color               : rgba(120, 120, 120, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span26 {
-  color               : rgba(115, 192, 194, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span27 {
-  font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
-  color               : rgba(120, 120, 120, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span28 {
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  color               : rgba(82, 99, 102, 1.0);
-}
-.btpbeforelogin .a1whencaniregist .span29 {
+.btpbeforelogin .q1canimakebtpr .span15 {
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
   color               : rgba(120, 120, 120, 1.0);
 }
@@ -2294,8 +2244,8 @@ div {
 .btpbeforelogin .group13 {
   background-color    : rgba(255,255,255,0.0);
   top                 : 26px;
-  height              : 238px;
-  width               : 259px;
+  height              : 1921px;
+  width               : 642px;
   position            : absolute;
   margin              : 0;
   left                : 35px;
@@ -2303,12 +2253,43 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
 }
+.btpbeforelogin .group13 .faqsincludingsenio {
+  background-color    : rgba(255,255,255,0.0);
+  right               : 0px;
+  bottom              : 0px;
+  height              : 3.85%;
+  width               : 83.49%;
+  position            : absolute;
+  margin              : 0;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "BebasNeueLight", Helvetica, Arial, serif;
+  font-size           : 69.0px;
+  color               : rgba(79, 96, 99, 1.0);
+  text-align          : left;
+  letter-spacing      : 2.2px;
+  line-height         : 26.0px;
+}
+.btpbeforelogin .group13 .faqsincludingsenio .span1 {
+  line-height         : 37.0px;
+}
+.btpbeforelogin .group13 .faqsincludingsenio .span2 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  font-size           : 48.0px;
+  line-height         : 37.0px;
+}
+.btpbeforelogin .group13 .faqsincludingsenio .span3 {
+  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
+  font-size           : 26.0px;
+  line-height         : 37.0px;
+}
 .btpbeforelogin .group13 .menubutton {
   background-color    : rgba(255,255,255,0.0);
   top                 : 0px;
-  height              : 100%;
-  width               : 100%;
-  position            : relative;
+  height              : 12.39%;
+  width               : 40.34%;
+  position            : absolute;
   margin              : 0;
   left                : 0px;
   overflow            : hidden;

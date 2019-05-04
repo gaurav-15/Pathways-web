@@ -57,11 +57,11 @@
             }else if (login_status===2) {
                 //personalized user 
                 var json=JSON.parse(logindata);
-                if(json.sg_status===0){
-                    window.location.replace("q1.html");
+                if(json.branch.trim()===""){
+                    window.location.replace("q3.html");
                 }else {
                     //window.location.replace("homesearch.html");
-                    window.location.replace("search.html");
+                    window.location.replace("homesearch.html");
                 }
             }else {
                 window.location.replace("search.html");

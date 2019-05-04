@@ -1,92 +1,107 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <title>User Information</title>
+            <title>Search</title>
             <meta name="google-signin-client_id" content="112424505552-o5dun7r6c791f56j3112sei76ledfdou.apps.googleusercontent.com">
             <script src="https://apis.google.com/js/platform.js" async defer></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link href="./img/favicon.png" rel="shortcut icon"/>
         <meta charset="utf-8"/>
         <meta content="width=1440, maximum-scale=1.0" name="viewport"/>
-        <link href="./css/question2.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/profle.css" rel="stylesheet" type="text/css"/>
         <meta content="Launchpad by Anima" name="author">
         </meta>
-<script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('Name: ' + profile.getName());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            console.log('Image URL: ' + profile.getImageUrl());
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState === 4 && this.status === 200) {
-                    if (xhttp.responseText==="0"){
-                        console.log("Failed to login");
-                        signOut();
-                    } else {
-                        console.log(xhttp.responseText);
-                    }
-                }
-            };
-            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/login", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("email="+profile.getEmail()+"&name="+profile.getName()+"&url="+profile.getImageUrl());
-}
 
+        <script>
+                function onSignIn(googleUser) {
+                        var profile = googleUser.getBasicProfile();
+                        console.log('Name: ' + profile.getName());
+                        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                        console.log('Image URL: ' + profile.getImageUrl());
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState === 4 && this.status === 200) {
+                                if (xhttp.responseText==="0"){
+                                    console.log("Failed to login");
+                                    signOut();
+                                } else {
+                                    console.log(xhttp.responseText);
+                                    addUserData(JSON.parse(xhttp.responseText));
+                                }
+                            }
+                        };
+                        xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/login", true);
+                        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhttp.send("email="+profile.getEmail()+"&name="+profile.getName()+"&url="+profile.getImageUrl());
+            }
+    
             function signOut() {
                 var auth2 = gapi.auth2.getAuthInstance();
                 auth2.signOut().then(function () {
                     console.log('User signed out.');
+                    url = 'index.html';
+            document.location.href = url;
                 });
-
             }
-            
-
-        
-            function cse() {
-                url = 'q4.html?q3=CSE';
+            function searchCourses() {
+            var search=document.getElementById('search_course').value;
+            url = 'searchresult.html?search=' + encodeURIComponent(search);
             document.location.href = url;
-            }
+        }
 
-            function csam() {
-                url = 'q4.html?q3=CSAM';
+
+        function editprofile() {
+            url = 'q3.html';
             document.location.href = url;
-            }
+        }
 
-            function csss() {
-                url = 'q4.html?q3=CSSS';
-            document.location.href = url;
+        function addUserData(json) {
+            document.getElementById("user_name").innerText=json.name;
+            document.getElementById("user_email").innerText=json.email;
+            var _img = document.getElementById('user_image');
+            var newImg = new Image;
+            newImg.onload = function() {
+                _img.src = this.src;
             }
-
-            function ece() {
-                url = 'q4.html?q3=ECE';
-            document.location.href = url;
-            }
-
-            function csd() {
-                url = 'q4.html?q3=CSD';
-            document.location.href = url;
-            }
-
-            function csb() {
-                url = 'q4.html?q3=CSB';
-            document.location.href = url;
-            }
-
-            function skip() {
-                url = 'search.html';
-            document.location.href = url;
-            }
-
+            newImg.src = json.url;
+            document.getElementById("user_branch").innerText=json.branch;
+            document.getElementById("user_interest").innerText=json.interests[0];
+            var l=json.interests.length;
+            document.getElementById("user_field").innerText=json.interests[l-1];
+        }
 </script>
-</head>
     </head>
     <body style="margin: 0;
  background: rgba(255, 255, 255, 1.0);">
-        <input id="anPageName" name="page" type="hidden" value="question2"/>
-        <div class="question2">
+        <input id="anPageName" name="page" type="hidden" value="profle"/>
+        <div class="profle">
             <div style="width: 1440px; height: 100%; position:relative; margin:auto;">
-                <img anima-src="./img/question3-img20180703172355.png" class="img20180703172355" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                <img anima-src="./img/sgbeforelogin-img20180703172355.png" class="img20180703172355" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                <img anima-show-on-scroll="" anima-src="./img/profle-sidebar.png" class="sidebar anima-animate-enter" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                <img anima-src="./img/btpbeforelogin-rectangle.png" class="rectangle" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                <a href="index.html"><div class="group5">
+                    <img anima-src="./img/profle-fill-1@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <div class="p">
+                        P
+                    </div>
+                    <div class="athw">
+                        ATHW
+                    </div>
+                    <div class="a">
+                        A
+                    </div>
+                    <div class="y">
+                        Y
+                    </div>
+                    <div class="iiitd">
+                        IIITD
+                    </div>
+                    <img anima-src="./img/cwbeforelogin-fill-3@2x.png" class="fill3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                </div>
+                </a>
+                <div class="profile anima-valign-text-middle">
+                    PROFILE
+                </div>
                 <div class="group15">
                     <div class="rectangle10">
                     </div>
@@ -109,36 +124,12 @@
                     <div class="rectangle9">
                     </div>
                 </div>
-                <img anima-show-on-scroll="" anima-src="./img/question05-sidebar.png" class="sidebar anima-animate-enter" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                <div class="googlelogin g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="index.html"><div class="group5">
-                    <img anima-src="./img/question4-fill-1@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="p">
-                        P
-                    </div>
-                    <div class="athw">
-                        ATHW
-                    </div>
-                    <div class="a">
-                        A
-                    </div>
-                    <div class="y">
-                        Y
-                    </div>
-                    <div class="iiitd">
-                        IIITD
-                    </div>
-                    <img anima-src="./img/cwbeforelogin-fill-3@2x.png" class="fill3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                </div>
-                </a>
-                <div class="rectangle">
-                </div>
                 <div class="group9">
                     <div class="rectangle2">
                     </div>
                     <div class="group4">
                         <a href="https://www.facebook.com/IIITDelhi/?ref=br_rs" target="_blank">
-                            <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-fb@2x.png" class="fb" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <img anima-src="./img/profle-fb@2x.png" class="fb" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                         </a>
                         <a href="https://twitter.com/IIITDelhi?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
                             <div class="group3">
@@ -147,7 +138,7 @@
                             </div>
                         </a>
                         <a href="https://www.youtube.com/channel/UCL-j5XhW112bJRYGqbURdLg" target="_blank">
-                            <img anima-src="./img/question05-ytoutube@2x.png" class="ytoutube" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <img anima-src="./img/sgbeforelogin-ytoutube@2x.png" class="ytoutube" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                         </a>
                         <a href="https://www.linkedin.com/school/iiit-delhi/" target="_blank">
                             <img anima-src="./img/ipbeforelogin-linked@2x.png" class="linked" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
@@ -155,8 +146,8 @@
                     </div>
                     <a href="https://www.iiitd.ac.in/" target="_blank">
                         <div class="group6">
-                            <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-iiitd@2x.png" class="iiitd" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                            <img anima-src="./img/question1-website-link.png" class="websitelink" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <img anima-src="./img/ipbeforelogin-iiitd@2x.png" class="iiitd" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <img anima-src="./img/sgbeforelogin-website-link.png" class="websitelink" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                         </div>
                     </a>
                     <div class="developedbystudent anima-valign-text-middle">
@@ -166,59 +157,14 @@
                         The information availaible on this site is just to guide the students and no developer is responsible for the authenticity of data. The developer assume the student will do the research him/herself before asumming things
                     </div>
                     <div class="jatinsinghaldash anima-valign-text-middle">
-                        Jatin Singhal  |  Dashmesh Sigh  |   Gaurav Guautum  |  Kanupriya Singh  |  Shruti Dabas  |  Vaibhav Sarda
+                        Jatin Singhal  |  Dashmesh Singh  |   Gaurav Gautam  |  Kanupriya Singh  |  Shruti Dabas  |  Vaibhav Sarda
                     </div>
-                </div>
-                <div class="rectangle1">
-                </div>
-                <div class="chooseyourbranch anima-valign-text-middle">
-                    <span><span class="span1">C</span><span class="span2">hoose your Branch</span>
-    </span>
-                </div>
-                <div class="skipbutton">
-                    <img anima-src="./img/question2-rectangle-2@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="cse anima-valign-text-middle" onclick="cse()">
-                        CSE
-                    </div>
-                </div>
-                <div class="continuebutton">
-                    <img anima-src="./img/question2-rectangle-2@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="csam anima-valign-text-middle" onclick="csam()">
-                        CSAM
-                    </div>
-                </div>
-                <div class="continuebutton1">
-                    <img anima-src="./img/question2-rectangle-2@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="csss anima-valign-text-middle" onclick="csss()">
-                        CSSS
-                    </div>
-                </div>
-                <div class="continuebutton2">
-                    <img anima-src="./img/question2-rectangle-2@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="csb anima-valign-text-middle" onclick="csb()">
-                        CSB
-                    </div>
-                </div>
-                <div class="continuebutton3">
-                    <img anima-src="./img/question2-rectangle-2@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="csd anima-valign-text-middle" onclick="csd()">
-                        CSD
-                    </div>
-                </div>
-                <div class="continuebutton4">
-                    <img anima-src="./img/question2-rectangle-2@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="ece anima-valign-text-middle" onclick="ece()">
-                        ECE
-                    </div>
-                </div>
-                <div class="skiptohome anima-valign-text-middle" onclick="skip()">
-                    Skip to home
                 </div>
                 <style>
-                    .question2 .group12-Z3nd * {
+                    .profle .group12-8xdy * {
                         box-sizing          : border-box;
                     }
-                    .question2 .group12-Z3nd {
+                    .profle .group12-8xdy {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 336px;
@@ -231,7 +177,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group {
+                    .profle .group12-8xdy .group {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 0px;
@@ -244,7 +190,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group .oval {
+                    .profle .group12-8xdy .group .oval {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -257,7 +203,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group .rectangle2 {
+                    .profle .group12-8xdy .group .rectangle2 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         bottom              : 12.33%;
@@ -270,7 +216,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group .ask {
+                    .profle .group12-8xdy .group .ask {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 31.51%;
@@ -288,7 +234,7 @@
                         text-align          : center;
                         line-height         : 27.0px;
                     }
-                    .question2 .group12-Z3nd .group11 {
+                    .profle .group12-8xdy .group11 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -300,9 +246,9 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.009;
+                        opacity             : 0.0052;
                     }
-                    .question2 .group12-Z3nd .group11 .rectangle11 {
+                    .profle .group12-8xdy .group11 .rectangle11 {
                         pointer-events      : none;
                         background-color    : rgba(255, 255, 255, 1.0);
                         top                 : 0px;
@@ -316,7 +262,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw {
+                    .profle .group12-8xdy .group11 .group14-apjz {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         bottom              : 3.58%;
@@ -329,7 +275,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw .rectangle2 {
+                    .profle .group12-8xdy .group11 .group14-apjz .rectangle2 {
                         pointer-events      : none;
                         background-color    : rgba(70, 70, 70, 1.0);
                         top                 : 0px;
@@ -343,7 +289,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw .submit {
+                    .profle .group12-8xdy .group11 .group14-apjz .submit {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 8.14%;
@@ -361,24 +307,24 @@
                         text-align          : center;
                         line-height         : 23.0px;
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw {
+                    .profle .group12-8xdy .group11 .group14-apjz {
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw.state1-to-state2 .rectangle2 {
+                    .profle .group12-8xdy .group11 .group14-apjz.state1-to-state2 .rectangle2 {
                         transition          : all 0.2s ease-in-out 0.0s;
                         opacity             : 0.4;
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw {
+                    .profle .group12-8xdy .group11 .group14-apjz {
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw.state2-to-state1 .rectangle2 {
+                    .profle .group12-8xdy .group11 .group14-apjz.state2-to-state1 .rectangle2 {
                         transition          : all 0.2s ease-in-out 0.0s;
                         opacity             : 1;
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw {
+                    .profle .group12-8xdy .group11 .group14-apjz {
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd .group11 .rectangle3 {
+                    .profle .group12-8xdy .group11 .rectangle3 {
                         pointer-events      : none;
                         background-color    : rgba(235, 247, 248, 1.0);
                         top                 : 8.70%;
@@ -392,7 +338,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group11 .enteryouremail {
+                    .profle .group12-8xdy .group11 .enteryouremail {
                         pointer-events      : auto;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 9.46%;
@@ -413,7 +359,7 @@
                         resize              : none;
                         padding             : 0;
                     }
-                    .question2 .group12-Z3nd .group11 .rectangle4 {
+                    .profle .group12-8xdy .group11 .rectangle4 {
                         pointer-events      : none;
                         background-color    : rgba(235, 247, 248, 1.0);
                         bottom              : 18.16%;
@@ -427,7 +373,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group12-Z3nd .group11 .askyourquestionu2026 {
+                    .profle .group12-8xdy .group11 .askyourquestionu2026 {
                         pointer-events      : auto;
                         background-color    : rgba(255,255,255,0.0);
                         bottom              : 21.48%;
@@ -448,56 +394,56 @@
                         resize              : none;
                         padding             : 0;
                     }
-                    .question2 .group12-Z3nd.state0-to-state1 .group11 {
+                    .profle .group12-8xdy.state0-to-state1 .group11 {
                         transition          : all 0.001s ease-in-out 0.0s;
                         pointer-events      : none;
                     }
-                    .question2 .group12-Z3nd.state0-to-state1 .group {
+                    .profle .group12-8xdy.state0-to-state1 .group {
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd.state1-to-state2 .group11 {
+                    .profle .group12-8xdy.state1-to-state2 .group11 {
                         transition          : all 0.2s ease-in-out 0.0s;
                         opacity             : 1;
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd.state1-to-state2 .group {
+                    .profle .group12-8xdy.state1-to-state2 .group {
                         pointer-events      : none;
                     }
-                    .question2 .group12-Z3nd.state2-to-state1 .group11 {
+                    .profle .group12-8xdy.state2-to-state1 .group11 {
                         transition          : all 0.2s ease-in-out 0.0s;
                         pointer-events      : none;
                     }
-                    .question2 .group12-Z3nd.state2-to-state1 .group {
+                    .profle .group12-8xdy.state2-to-state1 .group {
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd.state1 .group11 {
-                        opacity             : 0.0074;
+                    .profle .group12-8xdy.state1 .group11 {
+                        opacity             : 0.0036;
                         pointer-events      : none;
                     }
-                    .question2 .group12-Z3nd.state1 .group {
+                    .profle .group12-8xdy.state1 .group {
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd.state2 .group {
+                    .profle .group12-8xdy.state2 .group {
                         pointer-events      : none;
                     }
-                    .question2 .group12-Z3nd.state2 .group11 {
+                    .profle .group12-8xdy.state2 .group11 {
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw {
+                    .profle .group12-8xdy .group11 .group14-apjz {
                         pointer-events      : auto;
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw.state2 .rectangle2 {
+                    .profle .group12-8xdy .group11 .group14-apjz.state2 .rectangle2 {
                         opacity             : 0.4;
                     }
-                    .question2 .group12-Z3nd .group11 .group14-msUw {
+                    .profle .group12-8xdy .group11 .group14-apjz {
                         pointer-events      : auto;
                     }
                 </style>
-                <div id="g1AFLOE">
-                    <div class="group12 group12-Z3nd component state1" data-initial-state="state1">
+                <div id="gy4YRn7">
+                    <div class="group12 group12-8xdy component state1" data-initial-state="state1">
                         <div class="group">
-                            <img class="oval" src="./img/question1-oval-1@2x.png">
-                                <img class="rectangle2" src="./img/question4-rectangle-8@2x.png">
+                            <img class="oval" src="./img/ipbeforelogin-oval-1@2x.png">
+                                <img class="rectangle2" src="./img/profle-rectangle-1@2x.png">
                                     <div class="ask">
                                         Ask
                                     </div>
@@ -507,7 +453,7 @@
                         <div class="group11">
                             <div class="rectangle11">
                             </div>
-                            <div class="group14 group14-msUw component state1" data-initial-state="state1">
+                            <div class="group14 group14-apjz component state1" data-initial-state="state1">
                                 <div class="rectangle2">
                                 </div>
                                 <div class="submit">
@@ -616,13 +562,13 @@
                         }
                     }
                     var transitionEvent = whichTransitionEvent();
-                    function mouseentergroup12Z3ndg1AFLOE1Handler(event) {
-                        var component = document.querySelector('.question2 .group12-Z3nd');
+                    function mouseentergroup128xdygy4YRn71Handler(event) {
+                        var component = document.querySelector('.profle .group12-8xdy');
                         if (isCurrentState(component, 'state1')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.question2 .group12-Z3nd');
-                                    component.addEventListener(transitionEvent, transitiongroup12Z3ndg1AFLOEstate1tostate2EndedHandler);
+                                    var component = document.querySelector('.profle .group12-8xdy');
+                                    component.addEventListener(transitionEvent, transitiongroup128xdygy4YRn7state1tostate2EndedHandler);
                                     removeAllClassesButFirst(component, 'state1-to-state2');
                                     addClass(component, 'state2');
                                     addClass(component, 'state1-to-state2');
@@ -632,13 +578,13 @@
                             }
                         }
                     }
-                    function clickgroup12Z3ndg1AFLOE1Handler(event) {
-                        var component = document.querySelector('.question2 .group12-Z3nd');
+                    function clickgroup128xdygy4YRn71Handler(event) {
+                        var component = document.querySelector('.profle .group12-8xdy');
                         if (isCurrentState(component, 'state1')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.question2 .group12-Z3nd');
-                                    component.addEventListener(transitionEvent, transitiongroup12Z3ndg1AFLOEstate1tostate2EndedHandler);
+                                    var component = document.querySelector('.profle .group12-8xdy');
+                                    component.addEventListener(transitionEvent, transitiongroup128xdygy4YRn7state1tostate2EndedHandler);
                                     removeAllClassesButFirst(component, 'state1-to-state2');
                                     addClass(component, 'state2');
                                     addClass(component, 'state1-to-state2');
@@ -648,42 +594,42 @@
                             }
                         }
                     }
-                    function transitiongroup12Z3ndg1AFLOEstate1tostate2EndedHandler(event) {
+                    function transitiongroup128xdygy4YRn7state1tostate2EndedHandler(event) {
                         if (event.target.className.trim() == 'group11' || event.target.className.startsWith('group11 ')) {
-                            var component = document.querySelector('.question2 .group12-Z3nd');
-                            component.removeEventListener(transitionEvent, transitiongroup12Z3ndg1AFLOEstate1tostate2EndedHandler);
+                            var component = document.querySelector('.profle .group12-8xdy');
+                            component.removeEventListener(transitionEvent, transitiongroup128xdygy4YRn7state1tostate2EndedHandler);
                         }
                     }
-                    child = document.querySelector('.question2 .group12-Z3nd .group');
+                    child = document.querySelector('.profle .group12-8xdy .group');
                     if (child) {
-                        child.addEventListener('mouseenter', mouseentergroup12Z3ndg1AFLOE1Handler);
+                        child.addEventListener('mouseenter', mouseentergroup128xdygy4YRn71Handler);
                     } else {
-                        console.log('Could not find element at: .question2 .group12-Z3nd .group');
+                        console.log('Could not find element at: .profle .group12-8xdy .group');
                     }
-                    child = document.querySelector('.question2 .group12-Z3nd .group');
+                    child = document.querySelector('.profle .group12-8xdy .group');
                     if (child) {
-                        child.addEventListener('click', clickgroup12Z3ndg1AFLOE1Handler);
+                        child.addEventListener('click', clickgroup128xdygy4YRn71Handler);
                         child.style['cursor'] = 'pointer';
                     } else {
-                        console.log('Could not find element at: .question2 .group12-Z3nd .group');
+                        console.log('Could not find element at: .profle .group12-8xdy .group');
                     }
-                    function resetgroup12Z3ndg1AFLOE() {
-                        var component = document.querySelector('.question2 .group12-Z3nd');
+                    function resetgroup128xdygy4YRn7() {
+                        var component = document.querySelector('.profle .group12-8xdy');
                         if (!component) {
                             return;
                         }
-                        component.addEventListener(transitionEvent, transitiongroup12Z3ndg1AFLOEstate1tostate2EndedHandler);
+                        component.addEventListener(transitionEvent, transitiongroup128xdygy4YRn7state1tostate2EndedHandler);
                         removeAllClassesButFirst(component, 'state1-to-state2');
                         addClass(component, 'state2');
                         addClass(component, 'state1-to-state2');
                     }
-                    function mouseleavegroup12Z3ndg1AFLOE2Handler(event) {
-                        var component = document.querySelector('.question2 .group12-Z3nd');
+                    function mouseleavegroup128xdygy4YRn72Handler(event) {
+                        var component = document.querySelector('.profle .group12-8xdy');
                         if (isCurrentState(component, 'state2')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.question2 .group12-Z3nd');
-                                    component.addEventListener(transitionEvent, transitiongroup12Z3ndg1AFLOEstate2tostate1EndedHandler);
+                                    var component = document.querySelector('.profle .group12-8xdy');
+                                    component.addEventListener(transitionEvent, transitiongroup128xdygy4YRn7state2tostate1EndedHandler);
                                     removeAllClassesButFirst(component, 'state2-to-state1');
                                     addClass(component, 'state1');
                                     addClass(component, 'state2-to-state1');
@@ -693,25 +639,25 @@
                             }
                         }
                     }
-                    function transitiongroup12Z3ndg1AFLOEstate2tostate1EndedHandler(event) {
+                    function transitiongroup128xdygy4YRn7state2tostate1EndedHandler(event) {
                         if (event.target.className.trim() == 'group11' || event.target.className.startsWith('group11 ')) {
-                            var component = document.querySelector('.question2 .group12-Z3nd');
-                            component.removeEventListener(transitionEvent, transitiongroup12Z3ndg1AFLOEstate2tostate1EndedHandler);
+                            var component = document.querySelector('.profle .group12-8xdy');
+                            component.removeEventListener(transitionEvent, transitiongroup128xdygy4YRn7state2tostate1EndedHandler);
                         }
                     }
-                    child = document.querySelector('.question2 .group12-Z3nd .group11');
+                    child = document.querySelector('.profle .group12-8xdy .group11');
                     if (child) {
-                        child.addEventListener('mouseleave', mouseleavegroup12Z3ndg1AFLOE2Handler);
+                        child.addEventListener('mouseleave', mouseleavegroup128xdygy4YRn72Handler);
                     } else {
-                        console.log('Could not find element at: .question2 .group12-Z3nd .group11');
+                        console.log('Could not find element at: .profle .group12-8xdy .group11');
                     }
-                    function clickgroup14msUwg1AFLOE1Handler(event) {
-                        var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
+                    function clickgroup14apjzgy4YRn71Handler(event) {
+                        var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
                         if (isCurrentState(component, 'state1')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
-                                    component.addEventListener(transitionEvent, transitiongroup14msUwg1AFLOEstate1tostate2EndedHandler);
+                                    var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
+                                    component.addEventListener(transitionEvent, transitiongroup14apjzgy4YRn7state1tostate2EndedHandler);
                                     removeAllClassesButFirst(component, 'state1-to-state2');
                                     addClass(component, 'state2');
                                     addClass(component, 'state1-to-state2');
@@ -721,32 +667,32 @@
                             }
                         }
                     }
-                    function transitiongroup14msUwg1AFLOEstate1tostate2EndedHandler(event) {
+                    function transitiongroup14apjzgy4YRn7state1tostate2EndedHandler(event) {
                         if (event.target.className.trim() == 'rectangle2' || event.target.className.startsWith('rectangle2 ')) {
-                            var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
-                            component.removeEventListener(transitionEvent, transitiongroup14msUwg1AFLOEstate1tostate2EndedHandler);
+                            var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
+                            component.removeEventListener(transitionEvent, transitiongroup14apjzgy4YRn7state1tostate2EndedHandler);
                         }
                     }
-                    var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
+                    var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
                     component.style['cursor'] = 'pointer';
-                    component.addEventListener('click', clickgroup14msUwg1AFLOE1Handler);
-                    function resetgroup14msUwg1AFLOE() {
-                        var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
+                    component.addEventListener('click', clickgroup14apjzgy4YRn71Handler);
+                    function resetgroup14apjzgy4YRn7() {
+                        var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
                         if (!component) {
                             return;
                         }
-                        component.addEventListener(transitionEvent, transitiongroup14msUwg1AFLOEstate1tostate2EndedHandler);
+                        component.addEventListener(transitionEvent, transitiongroup14apjzgy4YRn7state1tostate2EndedHandler);
                         removeAllClassesButFirst(component, 'state1-to-state2');
                         addClass(component, 'state2');
                         addClass(component, 'state1-to-state2');
                     }
-                    function mouseleavegroup14msUwg1AFLOE2Handler(event) {
-                        var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
+                    function mouseleavegroup14apjzgy4YRn72Handler(event) {
+                        var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
                         if (isCurrentState(component, 'state2')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
-                                    component.addEventListener(transitionEvent, transitiongroup14msUwg1AFLOEstate2tostate1EndedHandler);
+                                    var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
+                                    component.addEventListener(transitionEvent, transitiongroup14apjzgy4YRn7state2tostate1EndedHandler);
                                     removeAllClassesButFirst(component, 'state2-to-state1');
                                     addClass(component, 'state1');
                                     addClass(component, 'state2-to-state1');
@@ -756,20 +702,64 @@
                             }
                         }
                     }
-                    function transitiongroup14msUwg1AFLOEstate2tostate1EndedHandler(event) {
+                    function transitiongroup14apjzgy4YRn7state2tostate1EndedHandler(event) {
                         if (event.target.className.trim() == 'rectangle2' || event.target.className.startsWith('rectangle2 ')) {
-                            var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
-                            component.removeEventListener(transitionEvent, transitiongroup14msUwg1AFLOEstate2tostate1EndedHandler);
+                            var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
+                            component.removeEventListener(transitionEvent, transitiongroup14apjzgy4YRn7state2tostate1EndedHandler);
                         }
                     }
-                    var component = document.querySelector('.question2 .group12-Z3nd .group11 .group14-msUw');
-                    component.addEventListener('mouseleave', mouseleavegroup14msUwg1AFLOE2Handler);
+                    var component = document.querySelector('.profle .group12-8xdy .group11 .group14-apjz');
+                    component.addEventListener('mouseleave', mouseleavegroup14apjzgy4YRn72Handler);
                 </script>
+                <div class="group7">
+                    <div class="rectangle2">
+                    </div>
+                    <a href="cw.html">
+                        <div class="group2">
+                            <img anima-src="./img/btpbeforelogin-rectangle-2@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <div class="cw">
+                                CW
+                            </div>
+                        </div>
+                    </a>
+                    <div class="group19">
+                        <img anima-src="./img/profle-rectangle-3@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <div class="courses">
+                            <span class="span1">Courses</span><span class="span2"><br /></span>
+                        </div>
+                    </div>
+                    <a href="ip.html">
+                        <div class="group20">
+                            <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <div class="ip">
+                                IP
+                            </div>
+                        </div>
+                    </a>
+                    <a href="btp.html">
+                        <div class="group21">
+                            <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <div class="btechprojects2">
+                                <div class="btp">
+                                    <span class="span1">BTP</span><span class="span2"><br /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="sg.html">
+                        <div class="group171">
+                            <img anima-src="./img/sgbeforelogin-rectangle-2@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <div class="sg">
+                                SG
+                            </div>
+                        </div>
+                    </a>
+                </div>
                 <style>
-                    .question2 .group13-Ymy4 * {
+                    .profle .group13-Yy4o * {
                         box-sizing          : border-box;
                     }
-                    .question2 .group13-Ymy4 {
+                    .profle .group13-Yy4o {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 26px;
@@ -782,7 +772,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group13-Ymy4 .group {
+                    .profle .group13-Yy4o .menubutton {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -796,7 +786,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group13-Ymy4 .group .background {
+                    .profle .group13-Yy4o .menubutton .background {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -809,7 +799,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group13-Ymy4 .group .group2 {
+                    .profle .group13-Yy4o .menubutton .group2 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 2.52%;
@@ -822,7 +812,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group13-Ymy4 .group .group2 .group1 {
+                    .profle .group13-Yy4o .menubutton .group2 .group {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -835,7 +825,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group13-Ymy4 .group .group2 .group1 .rectangle3 {
+                    .profle .group13-Yy4o .menubutton .group2 .group .rectangle3 {
                         pointer-events      : none;
                         background-color    : rgba(79, 96, 99, 1.0);
                         bottom              : 0px;
@@ -849,7 +839,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group13-Ymy4 .group .group2 .group1 .rectangle11 {
+                    .profle .group13-Yy4o .menubutton .group2 .group .rectangle11 {
                         pointer-events      : none;
                         background-color    : rgba(79, 96, 99, 1.0);
                         top                 : 38.89%;
@@ -863,7 +853,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group13-Ymy4 .group .group2 .group1 .rectangle21 {
+                    .profle .group13-Yy4o .menubutton .group2 .group .rectangle21 {
                         pointer-events      : none;
                         background-color    : rgba(79, 96, 99, 1.0);
                         top                 : 0px;
@@ -877,7 +867,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .question2 .group13-Ymy4 .group .group2 .rectangle2 {
+                    .profle .group13-Yy4o .menubutton .group2 .rectangle2 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -889,9 +879,9 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0060;
+                        opacity             : 0.0014;
                     }
-                    .question2 .group13-Ymy4 .group .group2 .aboutu2022 {
+                    .profle .group13-Yy4o .menubutton .group2 .aboutu2022 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 4.52%;
@@ -903,7 +893,7 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0063;
+                        opacity             : 0.0070;
                         font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
                         font-size           : 25.0px;
                         color               : rgba(255, 255, 255, 1.0);
@@ -911,7 +901,7 @@
                         letter-spacing      : 0.36px;
                         line-height         : 20.0px;
                     }
-                    .question2 .group13-Ymy4 .group .group2 .helpu2022 {
+                    .profle .group13-Yy4o .menubutton .group2 .helpu2022 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 4.52%;
@@ -923,7 +913,7 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0010;
+                        opacity             : 0.0023;
                         font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
                         font-size           : 25.0px;
                         color               : rgba(255, 255, 255, 1.0);
@@ -931,7 +921,7 @@
                         letter-spacing      : 0.36px;
                         line-height         : 21.0px;
                     }
-                    .question2 .group13-Ymy4 .group .group2 .contactu2022 {
+                    .profle .group13-Yy4o .menubutton .group2 .contactu2022 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 4.52%;
@@ -943,7 +933,7 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0095;
+                        opacity             : 0.0067;
                         font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
                         font-size           : 25.0px;
                         color               : rgba(255, 255, 255, 1.0);
@@ -951,7 +941,7 @@
                         letter-spacing      : 0.36px;
                         line-height         : 21.0px;
                     }
-                    .question2 .group13-Ymy4 .group .group2 .procedureu2022 {
+                    .profle .group13-Yy4o .menubutton .group2 .procedureu2022 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 4.52%;
@@ -963,7 +953,7 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0010;
+                        opacity             : 0.0034;
                         font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
                         font-size           : 25.0px;
                         color               : rgba(255, 255, 255, 1.0);
@@ -971,29 +961,112 @@
                         letter-spacing      : 0.36px;
                         line-height         : 21.0px;
                     }
-                    .question2 .group13-Ymy4.state0-to-state1 .group {
+                    .profle .group13-Yy4o.state0-to-state1 .menubutton .group2 .procedureu2022 {
+                        transition          : all 0.001s ease-in-out 0.0s;
+                        opacity             : 0.006;
+                        max-width           : 55161px;
+                    }
+                    .profle .group13-Yy4o.state0-to-state1 .menubutton .group2 .contactu2022 {
+                        transition          : all 0.001s ease-in-out 0.0s;
+                        opacity             : 0.004;
+                        max-width           : 93298px;
+                    }
+                    .profle .group13-Yy4o.state0-to-state1 .menubutton .group2 .helpu2022 {
+                        transition          : all 0.001s ease-in-out 0.0s;
+                        opacity             : 0.008;
+                        max-width           : 81673px;
+                    }
+                    .profle .group13-Yy4o.state0-to-state1 .menubutton .group2 .aboutu2022 {
+                        transition          : all 0.001s ease-in-out 0.0s;
+                        opacity             : 0.007;
+                        max-width           : 39590px;
+                    }
+                    .profle .group13-Yy4o.state0-to-state1 .menubutton .group2 .group {
                         pointer-events      : auto;
                     }
-                    .question2 .group13-Ymy4.state1-to-state2 .group {
+                    .profle .group13-Yy4o.state0-to-state1 .menubutton .group2 {
                         pointer-events      : none;
                     }
-                    .question2 .group13-Ymy4.state2-to-state1 .group {
-                        pointer-events      : auto;
+                    .profle .group13-Yy4o.state1-to-state2 .menubutton .group2 .helpu2022 {
+                        transition          : all 0.2s ease-in-out 0.0s;
+                        opacity             : 1;
                     }
-                    .question2 .group13-Ymy4.state1 .group {
-                        pointer-events      : auto;
+                    .profle .group13-Yy4o.state1-to-state2 .menubutton .group2 .procedureu2022 {
+                        transition          : all 0.2s ease-in-out 0.0s;
+                        opacity             : 1;
                     }
-                    .question2 .group13-Ymy4.state2 .group {
+                    .profle .group13-Yy4o.state1-to-state2 .menubutton .group2 .aboutu2022 {
+                        transition          : all 0.2s ease-in-out 0.0s;
+                        opacity             : 1;
+                    }
+                    .profle .group13-Yy4o.state1-to-state2 .menubutton .group2 .contactu2022 {
+                        transition          : all 0.2s ease-in-out 0.0s;
+                        opacity             : 1;
+                    }
+                    .profle .group13-Yy4o.state1-to-state2 .menubutton .group2 .group {
                         pointer-events      : none;
+                    }
+                    .profle .group13-Yy4o.state1-to-state2 .menubutton .group2 {
+                        pointer-events      : auto;
+                    }
+                    .profle .group13-Yy4o.state2-to-state1 .menubutton .group2 .aboutu2022 {
+                        transition          : all 0.2s ease-in-out 0.0s;
+                        opacity             : 0.007;
+                        max-width           : 92147px;
+                    }
+                    .profle .group13-Yy4o.state2-to-state1 .menubutton .group2 .procedureu2022 {
+                        transition          : all 0.2s ease-in-out 0.0s;
+                        opacity             : 0.003;
+                        max-width           : 14878px;
+                    }
+                    .profle .group13-Yy4o.state2-to-state1 .menubutton .group2 .contactu2022 {
+                        transition          : all 0.2s ease-in-out 0.0s;
+                        opacity             : 0.006;
+                        max-width           : 73037px;
+                    }
+                    .profle .group13-Yy4o.state2-to-state1 .menubutton .group2 .helpu2022 {
+                        transition          : all 0.2s ease-in-out 0.0s;
+                        opacity             : 0.002;
+                        max-width           : 95305px;
+                    }
+                    .profle .group13-Yy4o.state2-to-state1 .menubutton .group2 .group {
+                        pointer-events      : auto;
+                    }
+                    .profle .group13-Yy4o.state2-to-state1 .menubutton .group2 {
+                        pointer-events      : none;
+                    }
+                    .profle .group13-Yy4o.state1 .menubutton .group2 .procedureu2022 {
+                        opacity             : 0.0057;
+                    }
+                    .profle .group13-Yy4o.state1 .menubutton .group2 .contactu2022 {
+                        opacity             : 0.006;
+                    }
+                    .profle .group13-Yy4o.state1 .menubutton .group2 .aboutu2022 {
+                        opacity             : 0.0062;
+                    }
+                    .profle .group13-Yy4o.state1 .menubutton .group2 .helpu2022 {
+                        opacity             : 0.0043;
+                    }
+                    .profle .group13-Yy4o.state1 .menubutton .group2 .group {
+                        pointer-events      : auto;
+                    }
+                    .profle .group13-Yy4o.state1 .menubutton .group2 {
+                        pointer-events      : none;
+                    }
+                    .profle .group13-Yy4o.state2 .menubutton .group2 .group {
+                        pointer-events      : none;
+                    }
+                    .profle .group13-Yy4o.state2 .menubutton .group2 {
+                        pointer-events      : auto;
                     }
                 </style>
-                <div id="xF2vjRe">
-                    <div class="group13 group13-Ymy4 component state1" data-initial-state="state1">
-                        <div class="group">
+                <div id="lLcIrN3">
+                    <div class="group13 group13-Yy4o component state1" data-initial-state="state1">
+                        <div class="menubutton">
                             <div class="background">
                             </div>
                             <div class="group2">
-                                <div class="group1">
+                                <div class="group">
                                     <div class="rectangle3">
                                     </div>
                                     <div class="rectangle11">
@@ -1001,7 +1074,7 @@
                                     <div class="rectangle21">
                                     </div>
                                 </div>
-                                <img class="rectangle2" src="./img/question3-rectangle-11@2x.png">
+                                <img class="rectangle2" src="./img/sgbeforelogin-rectangle-14@2x.png">
                                     <div class="aboutu2022">
                                         <span class="span1">
                                             A
@@ -1131,13 +1204,13 @@
                         }
                     }
                     var transitionEvent = whichTransitionEvent();
-                    function clickgroup13Ymy4xF2vjRe1Handler(event) {
-                        var component = document.querySelector('.question2 .group13-Ymy4');
+                    function clickgroup13Yy4olLcIrN31Handler(event) {
+                        var component = document.querySelector('.profle .group13-Yy4o');
                         if (isCurrentState(component, 'state1')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.question2 .group13-Ymy4');
-                                    component.addEventListener(transitionEvent, transitiongroup13Ymy4xF2vjRestate1tostate2EndedHandler);
+                                    var component = document.querySelector('.profle .group13-Yy4o');
+                                    component.addEventListener(transitionEvent, transitiongroup13Yy4olLcIrN3state1tostate2EndedHandler);
                                     removeAllClassesButFirst(component, 'state1-to-state2');
                                     addClass(component, 'state2');
                                     addClass(component, 'state1-to-state2');
@@ -1147,34 +1220,36 @@
                             }
                         }
                     }
-                    function transitiongroup13Ymy4xF2vjRestate1tostate2EndedHandler(event) {
-                        var component = document.querySelector('.question2 .group13-Ymy4');
-                        component.removeEventListener(transitionEvent, transitiongroup13Ymy4xF2vjRestate1tostate2EndedHandler);
+                    function transitiongroup13Yy4olLcIrN3state1tostate2EndedHandler(event) {
+                        if (event.target.className.trim() == 'contactu2022' || event.target.className.startsWith('contactu2022 ')) {
+                            var component = document.querySelector('.profle .group13-Yy4o');
+                            component.removeEventListener(transitionEvent, transitiongroup13Yy4olLcIrN3state1tostate2EndedHandler);
+                        }
                     }
-                    child = document.querySelector('.question2 .group13-Ymy4 .group');
+                    child = document.querySelector('.profle .group13-Yy4o .menubutton .group2 .group');
                     if (child) {
-                        child.addEventListener('click', clickgroup13Ymy4xF2vjRe1Handler);
+                        child.addEventListener('click', clickgroup13Yy4olLcIrN31Handler);
                         child.style['cursor'] = 'pointer';
                     } else {
-                        console.log('Could not find element at: .question2 .group13-Ymy4 .group');
+                        console.log('Could not find element at: .profle .group13-Yy4o .menubutton .group2 .group');
                     }
-                    function resetgroup13Ymy4xF2vjRe() {
-                        var component = document.querySelector('.question2 .group13-Ymy4');
+                    function resetgroup13Yy4olLcIrN3() {
+                        var component = document.querySelector('.profle .group13-Yy4o');
                         if (!component) {
                             return;
                         }
-                        component.addEventListener(transitionEvent, transitiongroup13Ymy4xF2vjRestate1tostate2EndedHandler);
+                        component.addEventListener(transitionEvent, transitiongroup13Yy4olLcIrN3state1tostate2EndedHandler);
                         removeAllClassesButFirst(component, 'state1-to-state2');
                         addClass(component, 'state2');
                         addClass(component, 'state1-to-state2');
                     }
-                    function mouseleavegroup13Ymy4xF2vjRe2Handler(event) {
-                        var component = document.querySelector('.question2 .group13-Ymy4');
+                    function mouseleavegroup13Yy4olLcIrN32Handler(event) {
+                        var component = document.querySelector('.profle .group13-Yy4o');
                         if (isCurrentState(component, 'state2')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.question2 .group13-Ymy4');
-                                    component.addEventListener(transitionEvent, transitiongroup13Ymy4xF2vjRestate2tostate1EndedHandler);
+                                    var component = document.querySelector('.profle .group13-Yy4o');
+                                    component.addEventListener(transitionEvent, transitiongroup13Yy4olLcIrN3state2tostate1EndedHandler);
                                     removeAllClassesButFirst(component, 'state2-to-state1');
                                     addClass(component, 'state1');
                                     addClass(component, 'state2-to-state1');
@@ -1184,60 +1259,84 @@
                             }
                         }
                     }
-                    function transitiongroup13Ymy4xF2vjRestate2tostate1EndedHandler(event) {
-                        var component = document.querySelector('.question2 .group13-Ymy4');
-                        component.removeEventListener(transitionEvent, transitiongroup13Ymy4xF2vjRestate2tostate1EndedHandler);
+                    function transitiongroup13Yy4olLcIrN3state2tostate1EndedHandler(event) {
+                        if (event.target.className.trim() == 'helpu2022' || event.target.className.startsWith('helpu2022 ')) {
+                            var component = document.querySelector('.profle .group13-Yy4o');
+                            component.removeEventListener(transitionEvent, transitiongroup13Yy4olLcIrN3state2tostate1EndedHandler);
+                        }
                     }
-                    child = document.querySelector('None');
+                    child = document.querySelector('.profle .group13-Yy4o .menubutton .group2');
                     if (child) {
-                        child.addEventListener('mouseleave', mouseleavegroup13Ymy4xF2vjRe2Handler);
+                        child.addEventListener('mouseleave', mouseleavegroup13Yy4olLcIrN32Handler);
                     } else {
-                        console.log('Could not find element at: None');
+                        console.log('Could not find element at: .profle .group13-Yy4o .menubutton .group2');
                     }
                 </script>
-                <div class="group7">
-                    <div class="rectangle2">
-                    </div>
-                    <a href="cw.html">
-                        <div class="group2">
-                            <img anima-src="./img/btpbeforelogin-rectangle-2@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                            <div class="cw">
-                                CW
-                            </div>
+                <div class="g-signin2" data-onsuccess="onSignIn" style="display: none;"></div>
+                <div class="group17">
+                    <div class="googlelogin" onclick="signOut()">
+                        <div class="background">
                         </div>
-                    </a>
-                    <div class="group19">
-                        <img anima-src="./img/coursesbeforeloginhome-rectangle-3@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                        <div class="courses">
-                            <span class="span1">Courses</span><span class="span2"><br /></span>
-                        </div>
-                    </div>
-                    <a href="ip.html">
-                        <div class="group20">
-                            <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                            <div class="ip">
-                                IP
-                            </div>
-                        </div>
-                    </a>
-                    <a href="btp.html">
-                        <div class="group21">
-                            <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                            <div class="btechprojects2">
-                                <div class="btp">
-                                    <span class="span1">BTP</span><span class="span2"><br /></span>
+                        <div class="group3">
+                            <div class="group2">
+                                <div class="rectangle2">
                                 </div>
+                                <img anima-src="./img/profle-bitmap@2x.png" class="bitmap" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                                <img anima-src="./img/profle-rectangle-8@2x.png" class="rectangle11" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             </div>
                         </div>
-                    </a>
-                    <a href="sg.html">
-                        <div class="group17">
-                            <img anima-src="./img/sgbeforelogin-rectangle-2@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                            <div class="sg">
-                                SG
-                            </div>
-                        </div>
-                    </a>
+                    </div>
+                    <div class="group16">
+                        <img src="./img/logout.png" height="30" width="30">
+                        <!-- <img anima-src="./img/profle-path@2x.png" class="path" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/> -->
+                        <!-- <img anima-src="./img/profle-oval-2@2x.png" class="oval" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/> -->
+                    </div>
+                </div>
+                <div class="rectangle1">
+                </div>
+                <div class="group8">
+                    <img anima-src="./img/profle-rectangle-9.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <div class="jatin17293iiitdac" id="user_email">
+                        loading...
+                    </div>
+                    <img id="user_image" anima-src="./img/profle-oval-3@2x.png" class="oval" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <div class="jatinsinghal" id="user_name">
+                            loading...
+                    </div>
+                    <div class="group71">
+                    </div>
+                </div>
+                <div class="group10">
+                    <div class="branchinterest">
+                        <span class="span1">Branch  :    <br />Interest :   </span><span class="span2"> </span><span class="span3"><br />Field :			<br /></span>
+                    </div>
+                    <div class="typesomething">
+                        Type something
+                    </div>
+                    <div class="group6" onclick="editprofile()">
+                        <img anima-src="./img/profle-fill-1-3@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="./img/profle-fill-2-2@2x.png" class="fill2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="./img/profle-fill-4-2@2x.png" class="fill4" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    </div>
+                    <div class="group61"onclick="editprofile()">
+                        <img anima-src="./img/profle-fill-1-3@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="./img/profle-fill-2-2@2x.png" class="fill2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="./img/profle-fill-4-2@2x.png" class="fill4" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    </div>
+                    <div class="group62" onclick="editprofile()">
+                        <img anima-src="./img/profle-fill-1-3@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="./img/profle-fill-2-2@2x.png" class="fill2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        <img anima-src="./img/profle-fill-4-2@2x.png" class="fill4" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    </div>
+                </div>
+                <div class="userexperience" id="user_field">
+                        loading...
+                </div>
+                <div class="design" id="user_interest">
+                        loading...
+                </div>
+                <div class="csd" id="user_branch">
+                        loading...
                 </div>
             </div>
         </div>

@@ -1,12 +1,124 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <title>User Information</title>
+            <meta name="google-signin-client_id" content="112424505552-o5dun7r6c791f56j3112sei76ledfdou.apps.googleusercontent.com">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link href="./img/favicon.png" rel="shortcut icon"/>
         <meta charset="utf-8"/>
         <meta content="width=1440, maximum-scale=1.0" name="viewport"/>
         <link href="./css/question4.css" rel="stylesheet" type="text/css"/>
         <meta content="Launchpad by Anima" name="author">
         </meta>
+
+        <script>
+            var email="";
+                function onSignIn(googleUser) {
+                        var profile = googleUser.getBasicProfile();
+                        console.log('Name: ' + profile.getName());
+                        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                        console.log('Image URL: ' + profile.getImageUrl());
+                        email=profile.getEmail();
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState === 4 && this.status === 200) {
+                                if (xhttp.responseText==="0"){
+                                    console.log("Failed to login");
+                                    signOut();
+                                } else {
+                                    console.log(xhttp.responseText);
+                                }
+                            }
+                        };
+                        xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/login", true);
+                        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhttp.send("email="+profile.getEmail()+"&name="+profile.getName()+"&url="+profile.getImageUrl());
+            }
+    
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+
+
+            var q3="";
+            var q4="";
+            var q5="";
+            window.onload = function() {
+                var url = window.location.href;
+                url = new URL(url);
+                
+                q3=url.searchParams.get("q3");
+                q4=url.searchParams.get("q4");
+                //console.log(q4);
+                
+                if(q3===null || q3.trim()===""){
+                    url = 'q3.html';
+            document.location.href = url;
+                }
+                if(q4===null || q4.trim()===""){
+                    url = 'q4.html?q3='+q3;
+            document.location.href = url;
+                }
+                };
+
+
+                function saveprofile() {
+                    var courses_selected=[];
+                    var interests=q4.split(",");
+                    interests.push(q5);
+                    console.log(interests);
+                    var courses=JSON.stringify(courses_selected);
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState === 4 && this.status === 200) {
+                            //document.getElementById("data").innerHTML = xhttp.responseText;
+                            console.log(xhttp.responseText.toString());
+                            url = 'homesearch.html';
+                            document.location.href = url;
+                        }
+                    };
+                    xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/updateuserdetails", true);
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send("email="+email+"&branch="+q3+"&sem="+0+"&courses="+courses+"&sg_status="+0+"&cw_status="+0+"&interests="+JSON.stringify(interests));
+                }
+ 
+                function gaming() {
+                    q5="gaming";
+                    saveprofile();
+                }
+                function cinematography() {
+                    q5="cinematography";
+                    saveprofile();
+                }
+                function ui() {
+                    q5="ui";
+                    saveprofile();
+                }
+                function animation() {
+                    q5="animation";
+                    saveprofile();
+                }
+                function ux() {
+                    q5="ux";
+                    saveprofile();
+                }
+                function algo() {
+                    q5="algorithm";
+                    saveprofile();
+                }
+                function none() {
+                    q5="design";
+                    saveprofile();
+                }
+                function skip() {
+                    url = 'search.html';
+            document.location.href = url;
+                }
+            </script>
     </head>
     <body style="margin: 0;
  background: rgba(255, 255, 255, 1.0);">
@@ -37,28 +149,8 @@
                     </div>
                 </div>
                 <img anima-show-on-scroll="" anima-src="./img/question05-sidebar.png" class="sidebar anima-animate-enter4" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                <div class="googlelogin">
-                    <div class="background">
-                    </div>
-                    <div class="group3">
-                        <div class="group2">
-                            <div class="rectangle2">
-                            </div>
-                            <img anima-src="./img/question0-bitmap@2x.png" class="bitmap" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                            <img anima-src="./img/question0-rectangle@2x.png" class="rectangle11" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                        </div>
-                        <div class="group91">
-                            <div class="group8">
-                                <div class="group21">
-                                    <div class="login">
-                                        <span class="span1">Login</span><span class="span2"><br /></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="group5">
+                <div class="googlelogin g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="index.html"><div class="group5">
                     <img anima-src="./img/question4-fill-1@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="p">
                         P
@@ -77,6 +169,7 @@
                     </div>
                     <img anima-src="./img/cwbeforelogin-fill-3@2x.png" class="fill3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 </div>
+                </a>
                 <div class="rectangle">
                 </div>
                 <div class="group9">
@@ -119,44 +212,44 @@
                 </div>
                 <div class="skipbutton">
                     <img anima-src="./img/question4-rectangle-5@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="gaming anima-valign-text-middle">
+                    <div class="gaming anima-valign-text-middle" onclick="gaming()">
                         Gaming
                     </div>
                 </div>
                 <div class="continuebutton">
                     <img anima-src="./img/question4-rectangle-6@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="cinematography anima-valign-text-middle">
+                    <div class="cinematography anima-valign-text-middle" onclick="cinematography()">
                         Cinematography
                     </div>
                 </div>
                 <div class="continuebutton1">
                     <img anima-src="./img/question4-rectangle-5@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="graphicdesigningui anima-valign-text-middle">
+                    <div class="graphicdesigningui anima-valign-text-middle" onclick="ui()">
                         Graphic Designing(UI)
                     </div>
                 </div>
                 <div class="continuebutton2">
                     <img anima-src="./img/question4-rectangle-4.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="noneoftheaboveor anima-valign-text-middle">
+                    <div class="noneoftheaboveor anima-valign-text-middle" onclick="none()">
                         <span><span class="span1">None of the above  </span><span class="span2">OR</span><span class="span3">  Still Confused…</span>
     </span>
                     </div>
                 </div>
                 <div class="continuebutton3">
                     <img anima-src="./img/question4-rectangle-5@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="algorithmdesign anima-valign-text-middle">
+                    <div class="algorithmdesign anima-valign-text-middle" onclick="algo()">
                         Algorithm Design
                     </div>
                 </div>
                 <div class="continuebutton4">
                     <img anima-src="./img/question4-rectangle-6@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="userexperience anima-valign-text-middle">
+                    <div class="userexperience anima-valign-text-middle" onclick="ux()">
                         User Experience
                     </div>
                 </div>
                 <div class="continuebutton5">
                     <img anima-src="./img/question4-rectangle-5@2x.png" class="rectangle2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                    <div class="animaton anima-valign-text-middle">
+                    <div class="animaton anima-valign-text-middle" onclick="animation()">
                         Animaton
                     </div>
                 </div>
@@ -164,7 +257,7 @@
                     <span><span class="span1">C</span><span class="span2">hoose your Field</span>
     </span>
                 </div>
-                <div class="skiptohome anima-valign-text-middle">
+                <div class="skiptohome anima-valign-text-middle" onclick="skip()">
                     Skip to home
                 </div>
                 <style>
@@ -1151,7 +1244,7 @@
                 <div class="group7">
                     <div class="rectangle2">
                     </div>
-                    <a href="cwbeforelogin.html">
+                    <a href="cw.html">
                         <div class="group2">
                             <img anima-src="./img/btpbeforelogin-rectangle-2@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="cw">
@@ -1165,7 +1258,7 @@
                             <span class="span1">Courses</span><span class="span2"><br /></span>
                         </div>
                     </div>
-                    <a href="ipbeforelogin.html">
+                    <a href="ip.html">
                         <div class="group20">
                             <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="ip">
@@ -1173,7 +1266,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="btpbeforelogin.html">
+                    <a href="btp.html">
                         <div class="group21">
                             <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="btechprojects2">
@@ -1183,7 +1276,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="sgbeforelogin.html">
+                    <a href="sg.html">
                         <div class="group17">
                             <img anima-src="./img/sgbeforelogin-rectangle-2@2x.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="sg">

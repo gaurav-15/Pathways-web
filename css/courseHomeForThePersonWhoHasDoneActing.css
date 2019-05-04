@@ -42,19 +42,19 @@ textarea:focus, input:focus {
 div {
   -webkit-text-size-adjust: none;
 }
-.anima-animate-enter6 {
+.anima-animate-enter {
   opacity             : 0;
   display             : block;
-  -webkit-animation   : anima-animate-enter6-frames 0.600000023842s ease-in-out 1 normal forwards;
-  -moz-animation      : anima-animate-enter6-frames 0.600000023842s ease-in-out 1 normal forwards;
-  -o-animation        : anima-animate-enter6-frames 0.600000023842s ease-in-out 1 normal forwards;
-  animation           : anima-animate-enter6-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -webkit-animation   : anima-animate-enter-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -moz-animation      : anima-animate-enter-frames 0.600000023842s ease-in-out 1 normal forwards;
+  -o-animation        : anima-animate-enter-frames 0.600000023842s ease-in-out 1 normal forwards;
+  animation           : anima-animate-enter-frames 0.600000023842s ease-in-out 1 normal forwards;
   -webkit-animation-delay: 0s;
   -moz-animation-delay: 0s;
   -o-animation-delay  : 0s;
   animation-delay     : 0s;
 }
-@-webkit-keyframes anima-animate-enter6-frames {
+@-webkit-keyframes anima-animate-enter-frames {
   0%
    
   {
@@ -68,7 +68,7 @@ div {
   opacity: 0.75;
     }
 }
-@-moz-keyframes anima-animate-enter6-frames {
+@-moz-keyframes anima-animate-enter-frames {
   0%
    
   {
@@ -82,7 +82,7 @@ div {
   opacity: 0.75;
     }
 }
-@-o-keyframes anima-animate-enter6-frames {
+@-o-keyframes anima-animate-enter-frames {
   0%
    
   {
@@ -96,7 +96,7 @@ div {
   opacity: 0.75;
     }
 }
-@keyframes anima-animate-enter6-frames {
+@keyframes anima-animate-enter-frames {
   0%
    
   {
@@ -290,17 +290,17 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 435px;
   height              : auto;
-  width               : 336px;
+  width               : 1017px;
   position            : absolute;
   margin              : 0;
-  left                : 161px;
+  left                : 162px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   font-size           : 41.0px;
   color               : rgba(79, 96, 99, 1.0);
-  text-align          : center;
+  text-align          : left;
   letter-spacing      : 2.2px;
   line-height         : 56.0px;
 }
@@ -786,6 +786,8 @@ div {
   height              : 495px;
   width               : 1015px;
   position            : absolute;
+  overflow-x: hidden;
+  overflow-y: scroll;
   margin              : 0;
   left                : 162px;
   border-radius       : 14px;
@@ -796,102 +798,13 @@ div {
 }
 .coursehomeforthepersonwhohasdoneacting .u2022coursename1 {
   background-color    : rgba(255,255,255,0.0);
-  top                 : 543px;
+  /* top                 : 543px; */
   height              : auto;
   width               : 855px;
-  position            : absolute;
+  padding:10px;
+  /* position            : absolute; */
   margin              : 0;
-  left                : 202px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  font-size           : 36.0px;
-  color               : rgba(255, 255, 255, 1.0);
-  text-align          : left;
-  letter-spacing      : 2.2px;
-  line-height         : 49.0px;
-}
-.coursehomeforthepersonwhohasdoneacting .u2022coursename2 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 611px;
-  height              : auto;
-  width               : 855px;
-  position            : absolute;
-  margin              : 0;
-  left                : 202px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  font-size           : 36.0px;
-  color               : rgba(255, 255, 255, 1.0);
-  text-align          : left;
-  letter-spacing      : 2.2px;
-  line-height         : 49.0px;
-}
-.coursehomeforthepersonwhohasdoneacting .u2022coursename3 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 687px;
-  height              : auto;
-  width               : 855px;
-  position            : absolute;
-  margin              : 0;
-  left                : 202px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  font-size           : 36.0px;
-  color               : rgba(255, 255, 255, 1.0);
-  text-align          : left;
-  letter-spacing      : 2.2px;
-  line-height         : 49.0px;
-}
-.coursehomeforthepersonwhohasdoneacting .u2022coursename4 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 763px;
-  height              : auto;
-  width               : 855px;
-  position            : absolute;
-  margin              : 0;
-  left                : 202px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  font-size           : 36.0px;
-  color               : rgba(255, 255, 255, 1.0);
-  text-align          : left;
-  letter-spacing      : 2.2px;
-  line-height         : 49.0px;
-}
-.coursehomeforthepersonwhohasdoneacting .u2022coursename5 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 839px;
-  height              : auto;
-  width               : 855px;
-  position            : absolute;
-  margin              : 0;
-  left                : 202px;
-  -ms-transform       : rotate(0deg); /* IE 9 */
-  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
-  transform           : rotate(0deg);
-  font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  font-size           : 36.0px;
-  color               : rgba(255, 255, 255, 1.0);
-  text-align          : left;
-  letter-spacing      : 2.2px;
-  line-height         : 49.0px;
-}
-.coursehomeforthepersonwhohasdoneacting .u2022coursename6 {
-  background-color    : rgba(255,255,255,0.0);
-  top                 : 915px;
-  height              : auto;
-  width               : 855px;
-  position            : absolute;
-  margin              : 0;
-  left                : 202px;
+  /* left                : 202px; */
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -979,7 +892,7 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 20px;
   height              : auto;
-  width               : 333px;
+  width               : 100%;
   position            : absolute;
   margin              : 0;
   left                : 29px;
@@ -1128,12 +1041,12 @@ div {
 }
 .coursehomeforthepersonwhohasdoneacting .line3 {
   background-color    : rgba(255,255,255,0.0);
-  top                 : 354px;
+  top                 : 353px;
   height              : 25px;
-  width               : 12px;
+  width               : 21px;
   position            : absolute;
   margin              : 0;
-  left                : 300px;
+  left                : 299px;
   -ms-transform       : rotate(0deg); /* IE 9 */
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
@@ -1142,7 +1055,7 @@ div {
   background-color    : rgba(255,255,255,0.0);
   top                 : 353px;
   height              : 25px;
-  width               : 13px;
+  width               : 21px;
   position            : absolute;
   margin              : 0;
   left                : 590px;
@@ -1913,4 +1826,19 @@ div {
   display             : flex;
   flex-direction      : column;
   justify-content     : center;
+}
+
+
+.profile {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 33px;
+  /* height              : 66px; */
+  /* width               : 159px; */
+  position            : absolute;
+  margin              : 0;
+  left                : 1200px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
 }

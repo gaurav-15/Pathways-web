@@ -907,7 +907,9 @@ div {
 .particularcourse .aboutthecoursenot {
   background-color    : rgba(255,255,255,0.0);
   top                 : 461px;
-  height              : 100px;;
+  height              : 100px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   width               : 1156px;
   position            : absolute;
   margin              : 0;
@@ -916,11 +918,11 @@ div {
   -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
   transform           : rotate(0deg);
   font-family         : "AvenirNextCondensed-Regular", Helvetica, Arial, serif;
-  font-size           : 32.0px;
+  font-size           : 20.0px;
   color               : rgba(87, 87, 87, 1.0);
   text-align          : left;
-  letter-spacing      : 0.4px;
-  line-height         : 44.0px;
+  letter-spacing      : 0.1px;
+  line-height         : 20.0px;
 }
 .particularcourse .group22 {
   background-color    : rgba(255,255,255,0.0);
@@ -1118,7 +1120,7 @@ div {
   transform           : rotate(0deg);
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   font-size           : 36.0px;
-  color               : rgba(255, 255, 255, 1.0);
+  color               : rgba(79, 96, 99, 1.0);
   text-align          : center;
   letter-spacing      : 0.4px;
   line-height         : 49.0px;
@@ -1137,7 +1139,7 @@ div {
   transform           : rotate(0deg);
   font-family         : "AvenirNextCondensed-Medium", Helvetica, Arial, serif;
   font-size           : 28.0px;
-  color               : rgba(255, 255, 255, 1.0);
+  color               : rgba(79, 96, 99, 1.0);
   text-align          : left;
   letter-spacing      : 0.35px;
   line-height         : 38.0px;

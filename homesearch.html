@@ -1,19 +1,136 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <title>Search</title>
+            <meta name="google-signin-client_id" content="112424505552-o5dun7r6c791f56j3112sei76ledfdou.apps.googleusercontent.com">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link href="./img/favicon.png" rel="shortcut icon"/>
         <meta charset="utf-8"/>
         <meta content="width=1440, maximum-scale=1.0" name="viewport"/>
         <link href="./css/courseHomeForThePersonWhoHasDoneActing.css" rel="stylesheet" type="text/css"/>
         <meta content="Launchpad by Anima" name="author">
         </meta>
+
+        <script>
+                function onSignIn(googleUser) {
+                        var profile = googleUser.getBasicProfile();
+                        console.log('Name: ' + profile.getName());
+                        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                        console.log('Image URL: ' + profile.getImageUrl());
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState === 4 && this.status === 200) {
+                                if (xhttp.responseText==="0"){
+                                    console.log("Failed to login");
+                                    signOut();
+                                } else {
+                                    setUserdata(JSON.parse(xhttp.responseText));
+                                    console.log(xhttp.responseText);
+                                }
+                            }
+                        };
+                        xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/login", true);
+                        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhttp.send("email="+profile.getEmail()+"&name="+profile.getName()+"&url="+profile.getImageUrl());
+            }
+
+
+            function setUserdata(json) {
+                var a=json.interests.length;
+                document.getElementById('interest1').innerText=json.interests[0];
+                document.getElementById('interest2').innerText=json.interests[a-1];
+                document.getElementById('course_name').innerText="Courses in "+json.interests[a-1].toUpperCase();
+                searchCourse(json.interests[a-1]);
+                var _img = document.getElementById('user_image');
+                        var newImg = new Image;
+                        newImg.onload = function() {
+                            _img.src = this.src;
+                        }
+                        newImg.src = json.url;
+            }
+    
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+
+            function searchCourse(search) {
+                console.log(search);
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState === 4 && this.status === 200) {
+                        //document.getElementById("data").innerHTML = xhttp.responseText;
+//                        console.log(xhttp.responseText.toString());
+                        addSearchData(JSON.parse(xhttp.responseText.toString()));
+                    }
+                };
+            xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/searchCourses", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("search="+search);
+        }
+            function searchCourses() {
+            var search=document.getElementById('search_course').value;
+            url = 'searchresult.html?search=' + encodeURIComponent(search);
+            document.location.href = url;
+        }
+
+        window.onload = function(){
+    var input = document.getElementById("search_course");
+    input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            searchCourses();    
+        }
+        });
+}
+
+
+
+
+
+    function addSearchData(json) {
+        
+        /* id=rect1.
+            <div class="u2022coursename1">
+                                • Loading...
+                            </div>    
+        
+        */
+        if(json.length==0)
+            {
+                document.getElementById("rect1").innerHTML= '<div class="u2022coursename1">' + "• NO COURSE FOUND!" + '</div>';
+            }
+            else{
+                document.getElementById("rect1").innerHTML= '';
+                for(var i=0;i<json.length;i++){
+                    //console.log(json[i].prerequisites);
+                    var antireq=JSON.stringify(json[i].antirequisites);
+                    var prereq=JSON.stringify(json[i].prerequisites);
+                    var link= "coursedescription.html?name=" + encodeURIComponent(json[i].name)+ "&code="+encodeURIComponent(json[i].code)+"&credits="+encodeURIComponent(json[i].credits)+"&description="+encodeURIComponent(json[i].description)+"&antirequisite="+encodeURIComponent(antireq)+"&prerequisite="+encodeURIComponent(prereq);
+//                    console.log(link);
+                    
+                    var newnode= '<a href=' + link + ' >' + '<div class="u2022coursename1">' + "• " + json[i].name + '</div>' + '</a>'; //add href here
+                    
+                    //appending
+                    var cur= document.getElementById("rect1").innerHTML;
+                    document.getElementById("rect1").innerHTML= cur+ newnode;
+                }
+            }
+    }
+        </script>
     </head>
     <body style="margin: 0;
  background: rgba(255, 255, 255, 1.0);">
         <input id="anPageName" name="page" type="hidden" value="coursehomeforthepersonwhohasdoneacting"/>
         <div class="coursehomeforthepersonwhohasdoneacting">
             <div style="width: 1440px; height: 100%; position:relative; margin:auto;">
-                <img anima-src="./img/question3-img20180703172355.png" class="img20180703172355" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-img20180703172355.png" class="img20180703172355" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 <div class="group15">
                     <div class="rectangle10">
                     </div>
@@ -36,33 +153,14 @@
                     <div class="rectangle9">
                     </div>
                 </div>
-                <img anima-show-on-scroll="" anima-src="./img/question05-sidebar.png" class="sidebar anima-animate-enter6" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                <div class="coursesingaming">
-                    Courses in Gaming
+                <img anima-show-on-scroll="" anima-src="./img/coursehomeforthe-personwhohasdoneacting-sidebar.png" class="sidebar anima-animate-enter" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                <div class="coursesingaming" id="course_name">
+                    Courses in ...
                 </div>
-                <div class="googlelogin">
-                    <div class="background">
-                    </div>
-                    <div class="group3">
-                        <div class="group2">
-                            <div class="rectangle4">
-                            </div>
-                            <img anima-src="./img/question0-bitmap@2x.png" class="bitmap" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                            <img anima-src="./img/question0-rectangle@2x.png" class="rectangle11" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                        </div>
-                        <div class="group91">
-                            <div class="group8">
-                                <div class="group21">
-                                    <div class="login">
-                                        <span class="span1">Login</span><span class="span2"><br /></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="group5">
-                    <img anima-src="./img/question4-fill-1@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                <div class="googlelogin g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="profle.html" class="profile"><img id="user_image" src="./img/profile.png" height="40" width="40"></a>
+                <a href="index.html"><div class="group5">
+                    <img anima-src="./img/btpbeforelogin-fill-1@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="p">
                         P
                     </div>
@@ -80,6 +178,7 @@
                     </div>
                     <img anima-src="./img/cwbeforelogin-fill-3@2x.png" class="fill3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 </div>
+                </a>
                 <div class="rectangle">
                 </div>
                 <div class="group9">
@@ -96,7 +195,7 @@
                             </div>
                         </a>
                         <a href="https://www.youtube.com/channel/UCL-j5XhW112bJRYGqbURdLg" target="_blank">
-                            <img anima-src="./img/question05-ytoutube@2x.png" class="ytoutube" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-ytoutube@2x.png" class="ytoutube" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                         </a>
                         <a href="https://www.linkedin.com/school/iiit-delhi/" target="_blank">
                             <img anima-src="./img/ipbeforelogin-linked@2x.png" class="linked" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
@@ -105,7 +204,7 @@
                     <a href="https://www.iiitd.ac.in/" target="_blank">
                         <div class="group6">
                             <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-iiitd@2x.png" class="iiitd" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-                            <img anima-src="./img/question1-website-link.png" class="websitelink" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                            <img anima-src="./img/sgbeforelogin-website-link.png" class="websitelink" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                         </div>
                     </a>
                     <div class="developedbystudent anima-valign-text-middle">
@@ -118,28 +217,12 @@
                         Jatin Singhal  |  Dashmesh Sigh  |   Gaurav Guautum  |  Kanupriya Singh  |  Shruti Dabas  |  Vaibhav Sarda
                     </div>
                 </div>
-                <div class="rectangle1">
+                <div class="rectangle1" id="rect1">
+                        <div class="u2022coursename1">
+                                • Loading...
+                            </div>                                                    
                 </div>
-                <div class="u2022coursename1">
-                    • Course name 1
-                </div>
-                <div class="u2022coursename2">
-                    • Course name 2
-                </div>
-                <div class="u2022coursename3">
-                    • Course name 3
-                </div>
-                <div class="u2022coursename4">
-                    • Course name 4
-                </div>
-                <div class="u2022coursename5">
-                    • Course name 5
-                </div>
-                <div class="u2022coursename6">
-                    • Course name 6
-                </div>
-                <div class="rectangle2">
-                </div>
+                
                 <div class="group23">
                     <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-rectangle-1.png" class="rectangle4" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="group10">
@@ -147,26 +230,27 @@
                         <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-line-2@2x.png" class="line2" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     </div>
                     <div class="searchforanycours">
-                        <span class="span1">S</span><span class="span2">earch</span><span class="span3">  </span><span class="span4">f</span><span class="span5">or</span><span class="span6">  </span><span class="span7">a</span><span class="span8">ny</span><span class="span9">  c</span><span class="span10">ourse. . . </span>
+                            <input type="text" placeholder="Search for any course" id="search_course" name="search_course" style="font-size:28px; width:80%; padding:10px; border:0px solid; background-color: rgba(255,255,255,0.0);">
+                        <!-- <span class="span1">S</span><span class="span2">earch</span><span class="span3">  </span><span class="span4">f</span><span class="span5">or</span><span class="span6">  </span><span class="span7">a</span><span class="span8">ny</span><span class="span9">  c</span><span class="span10">ourse. . . </span> -->
                     </div>
                 </div>
                 <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-rectangle-2.png" class="rectangle3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 <div class="coursechoices">
                     <span class="span1">Course Choices</span><span class="span2"> </span>
                 </div>
-                <div class="design">
-                    <span class="span1">Design</span><span class="span2"> </span>
+                <div class="design" id="interest1">
+                    <span class="span1">Interest1</span><span class="span2"> </span>
                 </div>
-                <div class="gaming">
-                    <span class="span1">Gaming</span><span class="span2"> </span>
+                <div class="gaming" id="interest2">
+                    <span class="span1">Interest2</span><span class="span2"> </span>
                 </div>
                 <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-line-3@2x.png" class="line3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 <img anima-src="./img/coursehomeforthe-personwhohasdoneacting-line-3-1@2x.png" class="line31" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 <style>
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f * {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX * {
                         box-sizing          : border-box;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 336px;
@@ -179,7 +263,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 0px;
@@ -192,7 +276,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group .oval {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group .oval {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -205,7 +289,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group .rectangle4 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group .rectangle4 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         bottom              : 12.33%;
@@ -218,7 +302,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group .ask {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group .ask {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 31.51%;
@@ -236,7 +320,7 @@
                         text-align          : center;
                         line-height         : 27.0px;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -248,9 +332,9 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0063;
+                        opacity             : 0.0035;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .rectangle11 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .rectangle11 {
                         pointer-events      : none;
                         background-color    : rgba(255, 255, 255, 1.0);
                         top                 : 0px;
@@ -264,7 +348,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         bottom              : 3.58%;
@@ -277,7 +361,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH .rectangle21 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw .rectangle21 {
                         pointer-events      : none;
                         background-color    : rgba(70, 70, 70, 1.0);
                         top                 : 0px;
@@ -291,7 +375,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH .submit {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw .submit {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 8.14%;
@@ -309,24 +393,24 @@
                         text-align          : center;
                         line-height         : 23.0px;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH.state1-to-state2 .rectangle21 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw.state1-to-state2 .rectangle21 {
                         transition          : all 0.2s ease-in-out 0.0s;
                         opacity             : 0.4;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH.state2-to-state1 .rectangle21 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw.state2-to-state1 .rectangle21 {
                         transition          : all 0.2s ease-in-out 0.0s;
                         opacity             : 1;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .rectangle31 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .rectangle31 {
                         pointer-events      : none;
                         background-color    : rgba(235, 247, 248, 1.0);
                         top                 : 8.70%;
@@ -340,7 +424,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .enteryouremail {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .enteryouremail {
                         pointer-events      : auto;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 9.46%;
@@ -361,7 +445,7 @@
                         resize              : none;
                         padding             : 0;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .rectangle4 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .rectangle4 {
                         pointer-events      : none;
                         background-color    : rgba(235, 247, 248, 1.0);
                         bottom              : 18.16%;
@@ -375,7 +459,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .askyourquestionu2026 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .askyourquestionu2026 {
                         pointer-events      : auto;
                         background-color    : rgba(255,255,255,0.0);
                         bottom              : 21.48%;
@@ -396,56 +480,56 @@
                         resize              : none;
                         padding             : 0;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state0-to-state1 .group11 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state0-to-state1 .group11 {
                         transition          : all 0.001s ease-in-out 0.0s;
                         pointer-events      : none;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state0-to-state1 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state0-to-state1 .group {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state1-to-state2 .group11 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state1-to-state2 .group11 {
                         transition          : all 0.2s ease-in-out 0.0s;
                         opacity             : 1;
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state1-to-state2 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state1-to-state2 .group {
                         pointer-events      : none;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state2-to-state1 .group11 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state2-to-state1 .group11 {
                         transition          : all 0.2s ease-in-out 0.0s;
                         pointer-events      : none;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state2-to-state1 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state2-to-state1 .group {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state1 .group11 {
-                        opacity             : 0.006;
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state1 .group11 {
+                        opacity             : 0.0089;
                         pointer-events      : none;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state1 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state1 .group {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state2 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state2 .group {
                         pointer-events      : none;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f.state2 .group11 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX.state2 .group11 {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH.state2 .rectangle21 {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw.state2 .rectangle21 {
                         opacity             : 0.4;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH {
+                    .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw {
                         pointer-events      : auto;
                     }
                 </style>
-                <div id="QuobD9j">
-                    <div class="group12 group12-Ia4f component state1" data-initial-state="state1">
+                <div id="TfiRmeV">
+                    <div class="group12 group12-PlqX component state1" data-initial-state="state1">
                         <div class="group">
-                            <img class="oval" src="./img/question1-oval-1@2x.png">
-                                <img class="rectangle4" src="./img/question4-rectangle-8@2x.png">
+                            <img class="oval" src="./img/ipbeforelogin-oval-1@2x.png">
+                                <img class="rectangle4" src="./img/ipbeforelogin-rectangle-13@2x.png">
                                     <div class="ask">
                                         Ask
                                     </div>
@@ -455,7 +539,7 @@
                         <div class="group11">
                             <div class="rectangle11">
                             </div>
-                            <div class="group14 group14-6dXH component state1" data-initial-state="state1">
+                            <div class="group14 group14-qkWw component state1" data-initial-state="state1">
                                 <div class="rectangle21">
                                 </div>
                                 <div class="submit">
@@ -564,13 +648,13 @@
                         }
                     }
                     var transitionEvent = whichTransitionEvent();
-                    function mouseentergroup12Ia4fQuobD9j1Handler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
+                    function mouseentergroup12PlqXTfiRmeV1Handler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
                         if (isCurrentState(component, 'state1')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
-                                    component.addEventListener(transitionEvent, transitiongroup12Ia4fQuobD9jstate1tostate2EndedHandler);
+                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
+                                    component.addEventListener(transitionEvent, transitiongroup12PlqXTfiRmeVstate1tostate2EndedHandler);
                                     removeAllClassesButFirst(component, 'state1-to-state2');
                                     addClass(component, 'state2');
                                     addClass(component, 'state1-to-state2');
@@ -580,13 +664,13 @@
                             }
                         }
                     }
-                    function clickgroup12Ia4fQuobD9j1Handler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
+                    function clickgroup12PlqXTfiRmeV1Handler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
                         if (isCurrentState(component, 'state1')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
-                                    component.addEventListener(transitionEvent, transitiongroup12Ia4fQuobD9jstate1tostate2EndedHandler);
+                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
+                                    component.addEventListener(transitionEvent, transitiongroup12PlqXTfiRmeVstate1tostate2EndedHandler);
                                     removeAllClassesButFirst(component, 'state1-to-state2');
                                     addClass(component, 'state2');
                                     addClass(component, 'state1-to-state2');
@@ -596,42 +680,42 @@
                             }
                         }
                     }
-                    function transitiongroup12Ia4fQuobD9jstate1tostate2EndedHandler(event) {
+                    function transitiongroup12PlqXTfiRmeVstate1tostate2EndedHandler(event) {
                         if (event.target.className.trim() == 'group11' || event.target.className.startsWith('group11 ')) {
-                            var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
-                            component.removeEventListener(transitionEvent, transitiongroup12Ia4fQuobD9jstate1tostate2EndedHandler);
+                            var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
+                            component.removeEventListener(transitionEvent, transitiongroup12PlqXTfiRmeVstate1tostate2EndedHandler);
                         }
                     }
-                    child = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group');
+                    child = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group');
                     if (child) {
-                        child.addEventListener('mouseenter', mouseentergroup12Ia4fQuobD9j1Handler);
+                        child.addEventListener('mouseenter', mouseentergroup12PlqXTfiRmeV1Handler);
                     } else {
-                        console.log('Could not find element at: .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group');
+                        console.log('Could not find element at: .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group');
                     }
-                    child = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group');
+                    child = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group');
                     if (child) {
-                        child.addEventListener('click', clickgroup12Ia4fQuobD9j1Handler);
+                        child.addEventListener('click', clickgroup12PlqXTfiRmeV1Handler);
                         child.style['cursor'] = 'pointer';
                     } else {
-                        console.log('Could not find element at: .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group');
+                        console.log('Could not find element at: .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group');
                     }
-                    function resetgroup12Ia4fQuobD9j() {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
+                    function resetgroup12PlqXTfiRmeV() {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
                         if (!component) {
                             return;
                         }
-                        component.addEventListener(transitionEvent, transitiongroup12Ia4fQuobD9jstate1tostate2EndedHandler);
+                        component.addEventListener(transitionEvent, transitiongroup12PlqXTfiRmeVstate1tostate2EndedHandler);
                         removeAllClassesButFirst(component, 'state1-to-state2');
                         addClass(component, 'state2');
                         addClass(component, 'state1-to-state2');
                     }
-                    function mouseleavegroup12Ia4fQuobD9j2Handler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
+                    function mouseleavegroup12PlqXTfiRmeV2Handler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
                         if (isCurrentState(component, 'state2')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
-                                    component.addEventListener(transitionEvent, transitiongroup12Ia4fQuobD9jstate2tostate1EndedHandler);
+                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
+                                    component.addEventListener(transitionEvent, transitiongroup12PlqXTfiRmeVstate2tostate1EndedHandler);
                                     removeAllClassesButFirst(component, 'state2-to-state1');
                                     addClass(component, 'state1');
                                     addClass(component, 'state2-to-state1');
@@ -641,25 +725,25 @@
                             }
                         }
                     }
-                    function transitiongroup12Ia4fQuobD9jstate2tostate1EndedHandler(event) {
+                    function transitiongroup12PlqXTfiRmeVstate2tostate1EndedHandler(event) {
                         if (event.target.className.trim() == 'group11' || event.target.className.startsWith('group11 ')) {
-                            var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f');
-                            component.removeEventListener(transitionEvent, transitiongroup12Ia4fQuobD9jstate2tostate1EndedHandler);
+                            var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX');
+                            component.removeEventListener(transitionEvent, transitiongroup12PlqXTfiRmeVstate2tostate1EndedHandler);
                         }
                     }
-                    child = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11');
+                    child = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11');
                     if (child) {
-                        child.addEventListener('mouseleave', mouseleavegroup12Ia4fQuobD9j2Handler);
+                        child.addEventListener('mouseleave', mouseleavegroup12PlqXTfiRmeV2Handler);
                     } else {
-                        console.log('Could not find element at: .coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11');
+                        console.log('Could not find element at: .coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11');
                     }
-                    function clickgroup146dXHQuobD9j1Handler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
+                    function clickgroup14qkWwTfiRmeV1Handler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
                         if (isCurrentState(component, 'state1')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
-                                    component.addEventListener(transitionEvent, transitiongroup146dXHQuobD9jstate1tostate2EndedHandler);
+                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
+                                    component.addEventListener(transitionEvent, transitiongroup14qkWwTfiRmeVstate1tostate2EndedHandler);
                                     removeAllClassesButFirst(component, 'state1-to-state2');
                                     addClass(component, 'state2');
                                     addClass(component, 'state1-to-state2');
@@ -669,32 +753,32 @@
                             }
                         }
                     }
-                    function transitiongroup146dXHQuobD9jstate1tostate2EndedHandler(event) {
+                    function transitiongroup14qkWwTfiRmeVstate1tostate2EndedHandler(event) {
                         if (event.target.className.trim() == 'rectangle21' || event.target.className.startsWith('rectangle21 ')) {
-                            var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
-                            component.removeEventListener(transitionEvent, transitiongroup146dXHQuobD9jstate1tostate2EndedHandler);
+                            var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
+                            component.removeEventListener(transitionEvent, transitiongroup14qkWwTfiRmeVstate1tostate2EndedHandler);
                         }
                     }
-                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
+                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
                     component.style['cursor'] = 'pointer';
-                    component.addEventListener('click', clickgroup146dXHQuobD9j1Handler);
-                    function resetgroup146dXHQuobD9j() {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
+                    component.addEventListener('click', clickgroup14qkWwTfiRmeV1Handler);
+                    function resetgroup14qkWwTfiRmeV() {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
                         if (!component) {
                             return;
                         }
-                        component.addEventListener(transitionEvent, transitiongroup146dXHQuobD9jstate1tostate2EndedHandler);
+                        component.addEventListener(transitionEvent, transitiongroup14qkWwTfiRmeVstate1tostate2EndedHandler);
                         removeAllClassesButFirst(component, 'state1-to-state2');
                         addClass(component, 'state2');
                         addClass(component, 'state1-to-state2');
                     }
-                    function mouseleavegroup146dXHQuobD9j2Handler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
+                    function mouseleavegroup14qkWwTfiRmeV2Handler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
                         if (isCurrentState(component, 'state2')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
-                                    component.addEventListener(transitionEvent, transitiongroup146dXHQuobD9jstate2tostate1EndedHandler);
+                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
+                                    component.addEventListener(transitionEvent, transitiongroup14qkWwTfiRmeVstate2tostate1EndedHandler);
                                     removeAllClassesButFirst(component, 'state2-to-state1');
                                     addClass(component, 'state1');
                                     addClass(component, 'state2-to-state1');
@@ -704,20 +788,20 @@
                             }
                         }
                     }
-                    function transitiongroup146dXHQuobD9jstate2tostate1EndedHandler(event) {
+                    function transitiongroup14qkWwTfiRmeVstate2tostate1EndedHandler(event) {
                         if (event.target.className.trim() == 'rectangle21' || event.target.className.startsWith('rectangle21 ')) {
-                            var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
-                            component.removeEventListener(transitionEvent, transitiongroup146dXHQuobD9jstate2tostate1EndedHandler);
+                            var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
+                            component.removeEventListener(transitionEvent, transitiongroup14qkWwTfiRmeVstate2tostate1EndedHandler);
                         }
                     }
-                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-Ia4f .group11 .group14-6dXH');
-                    component.addEventListener('mouseleave', mouseleavegroup146dXHQuobD9j2Handler);
+                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group12-PlqX .group11 .group14-qkWw');
+                    component.addEventListener('mouseleave', mouseleavegroup14qkWwTfiRmeV2Handler);
                 </script>
                 <style>
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx * {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME * {
                         box-sizing          : border-box;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 26px;
@@ -730,7 +814,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -744,7 +828,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .background {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .background {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -757,7 +841,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 2.52%;
@@ -770,7 +854,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .group1 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .group1 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -783,7 +867,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .group1 .rectangle5 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .group1 .rectangle5 {
                         pointer-events      : none;
                         background-color    : rgba(79, 96, 99, 1.0);
                         bottom              : 0px;
@@ -797,7 +881,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .group1 .rectangle11 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .group1 .rectangle11 {
                         pointer-events      : none;
                         background-color    : rgba(79, 96, 99, 1.0);
                         top                 : 38.89%;
@@ -811,7 +895,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .group1 .rectangle21 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .group1 .rectangle21 {
                         pointer-events      : none;
                         background-color    : rgba(79, 96, 99, 1.0);
                         top                 : 0px;
@@ -825,7 +909,7 @@
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .rectangle4 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .rectangle4 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         top                 : 0px;
@@ -837,9 +921,9 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0069;
+                        opacity             : 0.0064;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .aboutu2022 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .aboutu2022 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 4.52%;
@@ -851,7 +935,7 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0047;
+                        opacity             : 0.0067;
                         font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
                         font-size           : 25.0px;
                         color               : rgba(255, 255, 255, 1.0);
@@ -859,7 +943,7 @@
                         letter-spacing      : 0.36px;
                         line-height         : 20.0px;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .helpu2022 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .helpu2022 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 4.52%;
@@ -871,7 +955,7 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0089;
+                        opacity             : 0.0062;
                         font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
                         font-size           : 25.0px;
                         color               : rgba(255, 255, 255, 1.0);
@@ -879,7 +963,7 @@
                         letter-spacing      : 0.36px;
                         line-height         : 21.0px;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .contactu2022 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .contactu2022 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 4.52%;
@@ -891,7 +975,7 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0029;
+                        opacity             : 0.0016;
                         font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
                         font-size           : 25.0px;
                         color               : rgba(255, 255, 255, 1.0);
@@ -899,7 +983,7 @@
                         letter-spacing      : 0.36px;
                         line-height         : 21.0px;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group .group2 .procedureu2022 {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME .group .group2 .procedureu2022 {
                         pointer-events      : none;
                         background-color    : rgba(255,255,255,0.0);
                         right               : 4.52%;
@@ -911,7 +995,7 @@
                         -ms-transform       : rotate(0deg); /* IE 9 */
                         -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
                         transform           : rotate(0deg);
-                        opacity             : 0.0061;
+                        opacity             : 0.0078;
                         font-family         : "AvenirNext-Regular", Helvetica, Arial, serif;
                         font-size           : 25.0px;
                         color               : rgba(255, 255, 255, 1.0);
@@ -919,24 +1003,24 @@
                         letter-spacing      : 0.36px;
                         line-height         : 21.0px;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx.state0-to-state1 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME.state0-to-state1 .group {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx.state1-to-state2 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME.state1-to-state2 .group {
                         pointer-events      : none;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx.state2-to-state1 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME.state2-to-state1 .group {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx.state1 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME.state1 .group {
                         pointer-events      : auto;
                     }
-                    .coursehomeforthepersonwhohasdoneacting .group13-jhsx.state2 .group {
+                    .coursehomeforthepersonwhohasdoneacting .group13-rQME.state2 .group {
                         pointer-events      : none;
                     }
                 </style>
-                <div id="GuDl0d3">
-                    <div class="group13 group13-jhsx component state1" data-initial-state="state1">
+                <div id="DvbOguP">
+                    <div class="group13 group13-rQME component state1" data-initial-state="state1">
                         <div class="group">
                             <div class="background">
                             </div>
@@ -949,7 +1033,7 @@
                                     <div class="rectangle21">
                                     </div>
                                 </div>
-                                <img class="rectangle4" src="./img/question3-rectangle-11@2x.png">
+                                <img class="rectangle4" src="./img/coursesbeforeloginhome-rectangle-1@2x.png">
                                     <div class="aboutu2022">
                                         <span class="span1">
                                             A
@@ -1079,13 +1163,13 @@
                         }
                     }
                     var transitionEvent = whichTransitionEvent();
-                    function clickgroup13jhsxGuDl0d31Handler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-jhsx');
+                    function clickgroup13rQMEDvbOguP1Handler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-rQME');
                         if (isCurrentState(component, 'state1')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-jhsx');
-                                    component.addEventListener(transitionEvent, transitiongroup13jhsxGuDl0d3state1tostate2EndedHandler);
+                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-rQME');
+                                    component.addEventListener(transitionEvent, transitiongroup13rQMEDvbOguPstate1tostate2EndedHandler);
                                     removeAllClassesButFirst(component, 'state1-to-state2');
                                     addClass(component, 'state2');
                                     addClass(component, 'state1-to-state2');
@@ -1095,34 +1179,34 @@
                             }
                         }
                     }
-                    function transitiongroup13jhsxGuDl0d3state1tostate2EndedHandler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-jhsx');
-                        component.removeEventListener(transitionEvent, transitiongroup13jhsxGuDl0d3state1tostate2EndedHandler);
+                    function transitiongroup13rQMEDvbOguPstate1tostate2EndedHandler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-rQME');
+                        component.removeEventListener(transitionEvent, transitiongroup13rQMEDvbOguPstate1tostate2EndedHandler);
                     }
-                    child = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-jhsx .group');
+                    child = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-rQME .group');
                     if (child) {
-                        child.addEventListener('click', clickgroup13jhsxGuDl0d31Handler);
+                        child.addEventListener('click', clickgroup13rQMEDvbOguP1Handler);
                         child.style['cursor'] = 'pointer';
                     } else {
-                        console.log('Could not find element at: .coursehomeforthepersonwhohasdoneacting .group13-jhsx .group');
+                        console.log('Could not find element at: .coursehomeforthepersonwhohasdoneacting .group13-rQME .group');
                     }
-                    function resetgroup13jhsxGuDl0d3() {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-jhsx');
+                    function resetgroup13rQMEDvbOguP() {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-rQME');
                         if (!component) {
                             return;
                         }
-                        component.addEventListener(transitionEvent, transitiongroup13jhsxGuDl0d3state1tostate2EndedHandler);
+                        component.addEventListener(transitionEvent, transitiongroup13rQMEDvbOguPstate1tostate2EndedHandler);
                         removeAllClassesButFirst(component, 'state1-to-state2');
                         addClass(component, 'state2');
                         addClass(component, 'state1-to-state2');
                     }
-                    function mouseleavegroup13jhsxGuDl0d32Handler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-jhsx');
+                    function mouseleavegroup13rQMEDvbOguP2Handler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-rQME');
                         if (isCurrentState(component, 'state2')) {
                             try {
                                 setTimeout(function() {
-                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-jhsx');
-                                    component.addEventListener(transitionEvent, transitiongroup13jhsxGuDl0d3state2tostate1EndedHandler);
+                                    var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-rQME');
+                                    component.addEventListener(transitionEvent, transitiongroup13rQMEDvbOguPstate2tostate1EndedHandler);
                                     removeAllClassesButFirst(component, 'state2-to-state1');
                                     addClass(component, 'state1');
                                     addClass(component, 'state2-to-state1');
@@ -1132,13 +1216,13 @@
                             }
                         }
                     }
-                    function transitiongroup13jhsxGuDl0d3state2tostate1EndedHandler(event) {
-                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-jhsx');
-                        component.removeEventListener(transitionEvent, transitiongroup13jhsxGuDl0d3state2tostate1EndedHandler);
+                    function transitiongroup13rQMEDvbOguPstate2tostate1EndedHandler(event) {
+                        var component = document.querySelector('.coursehomeforthepersonwhohasdoneacting .group13-rQME');
+                        component.removeEventListener(transitionEvent, transitiongroup13rQMEDvbOguPstate2tostate1EndedHandler);
                     }
                     child = document.querySelector('None');
                     if (child) {
-                        child.addEventListener('mouseleave', mouseleavegroup13jhsxGuDl0d32Handler);
+                        child.addEventListener('mouseleave', mouseleavegroup13rQMEDvbOguP2Handler);
                     } else {
                         console.log('Could not find element at: None');
                     }
@@ -1146,7 +1230,7 @@
                 <div class="group7">
                     <div class="rectangle4">
                     </div>
-                    <a href="cwbeforelogin.html">
+                    <a href="cw.html">
                         <div class="group2">
                             <img anima-src="./img/btpbeforelogin-rectangle-2@2x.png" class="rectangle5" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="cw">
@@ -1160,7 +1244,7 @@
                             <span class="span1">Courses</span><span class="span2"><br /></span>
                         </div>
                     </div>
-                    <a href="ipbeforelogin.html">
+                    <a href="ip.html">
                         <div class="group20">
                             <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle5" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="ip">
@@ -1168,7 +1252,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="btpbeforelogin.html">
+                    <a href="btp.html">
                         <div class="group21">
                             <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle5" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="btechprojects2">
@@ -1178,7 +1262,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="sgbeforelogin.html">
+                    <a href="sg.html">
                         <div class="group17">
                             <img anima-src="./img/sgbeforelogin-rectangle-2@2x.png" class="rectangle5" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="sg">

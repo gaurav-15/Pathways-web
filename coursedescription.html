@@ -57,7 +57,7 @@
         }
 
 
-        function getPrereq(ID)
+        function getPrereq(ID,namee)
     {
         //Database
         var courseblock;
@@ -67,8 +67,8 @@
                 //courseblock= JSON.parse(xhttp.responseText.toString());
                 //getRes(courseblock);
                 //console.log(courseblock[0].prerequisites);
-                console.log(xhttp.responseText.toString());
-                displayNestedPrereq(JSON.parse(xhttp.responseText.toString()));
+//                console.log(xhttp.responseText.toString());
+                displayNestedPrereq(JSON.parse(xhttp.responseText.toString()),namee);
             }
         };
         xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/getprereqbyid", true);
@@ -77,7 +77,28 @@
 
     }
 
-    function getAntireq(ID)
+    function getOptions(ID,namee)
+    {
+
+        //Database
+        var courseblock;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                //courseblock= JSON.parse(xhttp.responseText.toString());
+                //getRes(courseblock);
+                //console.log(courseblock[0].prerequisites);
+                console.log(xhttp.responseText.toString());
+                displayOptions(JSON.parse(xhttp.responseText.toString()),namee)
+            }
+        };
+        xhttp.open("POST", "https://pathways-pathways-x.1d35.starter-us-east-1.openshiftapps.com/getoptionsbyid", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("code="+ID);
+
+    }
+
+    function getAntireq(ID,namee)
     {
                 //Database
         var courseblock;
@@ -87,9 +108,9 @@
                 //courseblock= JSON.parse(xhttp.responseText.toString());
                 //getRes(courseblock);
                 //console.log(courseblock[0].prerequisites);
-                console.log(xhttp.responseText.toString());
+//                console.log(xhttp.responseText.toString());
 
-                displayNestedAntireq(JSON.parse(xhttp.responseText.toString()));
+                displayNestedAntireq(JSON.parse(xhttp.responseText.toString()),namee);
 
             }
         };
@@ -99,31 +120,264 @@
     }
 
 
+    function displayOptions(json,namee) {
+        
+        console.log("OPTION JSONNNNN")
+        console.log(json);
+        var obj=Object.keys(json);
+        
+        if(obj.length==1) //change to 1.
+        {
+              document.getElementById("scrollfor2").innerHTML= '<div class="a1coursename1ar">' + "- THIS COURSE IS NOT PREREQUISITE IN ANY COURSE !!!" + '</div>';
+        }
+        else{
+            
+            document.getElementById("scrollfor2").innerHTML= '';
+            for(var i=0;i<obj.length;i++){
 
+                var s= obj[i];
+//                console.log(json[s]); //for accessing a field, use json[s][0].fieldName.
+                var cn=json[s][0].name;
+    //            console.log(cn);
 
+                if(cn===namee){
+                    //do nothing
+                }
+                else{
+                    
+                    var antireq=JSON.stringify(json[s][0].antirequisites);
+                    var prereq=JSON.stringify(json[s][0].prerequisites);
+                    var link= "coursedescription.html?name=" + encodeURIComponent(json[s][0].name)+ "&code="+encodeURIComponent(json[s][0].code)+"&credits="+encodeURIComponent(json[s][0].credits)+"&description="+encodeURIComponent(json[s][0].description)+"&antirequisite="+encodeURIComponent(antireq)+"&prerequisite="+encodeURIComponent(prereq);
+                    
+                    
+                    var newnode= '<a href=' + link + ' >' + '<div class="a1coursename1ar">' + "- " + cn + '</div>' + '</a>';
+                    
+                    //appending
+                    var cur= document.getElementById("scrollfor2").innerHTML;
+                    document.getElementById("scrollfor2").innerHTML= cur+ newnode;
+                }
+            }
+        }
+    }
 
     /////handle immediate prerequisites
-    function displayImmediatePrereq(json) {
-
-    }
-
-
-     /////handle immediate antirequisites
-    function displayImmediateAntireq(json) {
+    function displayImmediatePrereq(json,namee) {
+//        console.log(json);
+        var obj=Object.keys(json);
         
+        //<div class="a1coursename1"> - Loading 1... </div>
+        if(obj.length==1)
+        {
+            document.getElementById("scrollfor1").innerHTML= '<div class="a1coursename1">' + "- NO PREREQUISITES !!!" + '</div>';
+        }
+        else{
+             document.getElementById("scrollfor1").innerHTML= '';
+            
+             //get prereq codes of current course.
+             var immPre;
+             for(var i=0;i<obj.length;i++){
+
+                var s= obj[i];
+//                console.log(json[s]); //for accessing a field, use json[s][0].fieldName.
+                var cn=json[s][0].name;
+    //            console.log(cn);
+
+                if(cn===namee){
+                    immPre=json[s][0].prerequisites;
+                }
+             }
+            
+            console.log(immPre);
+            
+            for(var i=0;i<obj.length;i++){
+
+                var s= obj[i];
+//                console.log(json[s]); //for accessing a field, use json[s][0].fieldName.
+                var cn=json[s][0].name;
+                var cc=json[s][0].code;
+                console.log(cc);
+
+                if(immPre.includes(cc))
+                {    
+                    var antireq=JSON.stringify(json[s][0].antirequisites);
+                    var prereq=JSON.stringify(json[s][0].prerequisites);
+                    var link= "coursedescription.html?name=" + encodeURIComponent(json[s][0].name)+ "&code="+encodeURIComponent(json[s][0].code)+"&credits="+encodeURIComponent(json[s][0].credits)+"&description="+encodeURIComponent(json[s][0].description)+"&antirequisite="+encodeURIComponent(antireq)+"&prerequisite="+encodeURIComponent(prereq);
+                    
+                    
+                    var newnode= '<a href=' + link + ' >' + '<div class="a1coursename1">' + "- " + cn + '</div>' + '</a>';
+                    
+                    //appending
+                    var cur= document.getElementById("scrollfor1").innerHTML;
+                    document.getElementById("scrollfor1").innerHTML= cur+ newnode;
+                }
+            }
+        }
     }
+
+
+//     /////handle immediate antirequisites
+//    function displayImmediateAntireq(json,namee) {
+//        
+//        /*
+//            <div id="scrollfor2">
+//                            <div class="a1coursename1ar">
+//                                    - Loading 2...
+//                                </div>
+//                    </div>
+//        */
+//        console.log("SONNNN");
+//        console.log(json);
+//        
+//        var obj=Object.keys(json);
+//        
+//        if(obj.length==1)
+//        {
+//            document.getElementById("scrollfor2").innerHTML= '<div class="a1coursename1ar">' + "- NO ANTIREQUISITES !!!" + '</div>';
+//        }
+//        else{
+//             document.getElementById("scrollfor2").innerHTML= '';
+//            
+//             //get prereq codes of current course.
+//             var immAnt;
+//                console.log(name);
+//             for(var i=0;i<obj.length;i++){
+//
+//                var s= obj[i];
+////                console.log(json[s]); //for accessing a field, use json[s][0].fieldName.
+//                var cn=json[s][0].name;
+//                console.log(cn);
+//
+//                if(cn===namee){
+//                    console.log("ENTRY KARA");
+//                    
+//                    immAnt=json[s][0].antirequisites;
+//                }
+//             }
+//            console.log("IMMMMANTT");
+//            console.log(immAnt);
+//            
+//            for(var i=0;i<obj.length;i++){
+//
+//                var s= obj[i];
+////                console.log(json[s]); //for accessing a field, use json[s][0].fieldName.
+//                var cn=json[s][0].name;
+//                var cc=json[s][0].code;
+////                console.log(cc);
+//
+//                if(immAnt.includes(cc))
+//                {    
+//                    var antireq=JSON.stringify(json[s][0].antirequisites);
+//                    var prereq=JSON.stringify(json[s][0].prerequisites);
+//                    var link= "coursedescription.html?name=" + encodeURIComponent(json[s][0].name)+ "&code="+encodeURIComponent(json[s][0].code)+"&credits="+encodeURIComponent(json[s][0].credits)+"&description="+encodeURIComponent(json[s][0].description)+"&antirequisite="+encodeURIComponent(antireq)+"&prerequisite="+encodeURIComponent(prereq);
+//                    
+//                    
+//                    var newnode= '<a href=' + link + ' >' + '<div class="a1coursename1ar">' + "- " + cn + '</div>' + '</a>';
+//                    
+//                    //appending
+//                    var cur= document.getElementById("scrollfor2").innerHTML;
+//                    document.getElementById("scrollfor2").innerHTML= cur+ newnode;
+//                }
+//            }
+//        }
+//    }
 
 
 
     /////handle nested prerequisites
-    function displayNestedPrereq(json) {
-        displayImmediatePrereq(json);
+    function displayNestedPrereq(json,namee) {
+        console.log("NAMEEEEEE");
+        console.log(namee);
+        displayImmediatePrereq(json,namee);
+        
+        //console.log(name) //target course name
+        var obj=Object.keys(json);
+        
+        if(obj.length==1) //change to 1.
+        {
+//            console.log("CHALA");
+//            var x=  document.getElementById("scrollfor3").innerHTML;
+//            console.log(x);
+              document.getElementById("scrollfor3").innerHTML= '<div class="a1coursename1t">' + "- NO PREREQUISITES !!!" + '</div>';
+        }
+        else{
+            
+            document.getElementById("scrollfor3").innerHTML= '';
+            for(var i=0;i<obj.length;i++){
+
+                var s= obj[i];
+//                console.log(json[s]); //for accessing a field, use json[s][0].fieldName.
+                var cn=json[s][0].name;
+    //            console.log(cn);
+
+                if(cn===namee){
+                    //do nothing
+                }
+                else{
+                    
+                    var antireq=JSON.stringify(json[s][0].antirequisites);
+                    var prereq=JSON.stringify(json[s][0].prerequisites);
+                    var link= "coursedescription.html?name=" + encodeURIComponent(json[s][0].name)+ "&code="+encodeURIComponent(json[s][0].code)+"&credits="+encodeURIComponent(json[s][0].credits)+"&description="+encodeURIComponent(json[s][0].description)+"&antirequisite="+encodeURIComponent(antireq)+"&prerequisite="+encodeURIComponent(prereq);
+                    
+                    
+                    var newnode= '<a href=' + link + ' >' + '<div class="a1coursename1t">' + "- " + cn + '</div>' + '</a>';
+                    
+                    //appending
+                    var cur= document.getElementById("scrollfor3").innerHTML;
+                    document.getElementById("scrollfor3").innerHTML= cur+ newnode;
+                }
+            }
+        }
+
     }
 
 
     /////handle nested prerequisites
-    function displayNestedAntireq(json) {
-        displayImmediateAntireq(json);
+    function displayNestedAntireq(json,namee) {
+        //displayImmediateAntireq(json,namee);
+        console.log("LLALALALLA");
+        console.log(json);
+        
+        /*<div id="scrollfor4">
+                            <div class="a1coursename1d">
+                                    - Loading 4...
+                                </div> 
+                    </div>
+        */
+        
+        var obj=Object.keys(json);
+        
+        if(obj.length==1) //change to 1.
+        {
+              document.getElementById("scrollfor4").innerHTML= '<div class="a1coursename1d">' + "- NO ANTIREQUISITES !!!" + '</div>';
+        }
+        else{
+            
+            document.getElementById("scrollfor4").innerHTML= '';
+            for(var i=0;i<obj.length;i++){
+
+                var s= obj[i];
+//                console.log(json[s]); //for accessing a field, use json[s][0].fieldName.
+                var cn=json[s][0].name;
+    //            console.log(cn);
+
+                if(cn===namee){
+                    //do nothing
+                }
+                else{
+                    var antireq=JSON.stringify(json[s][0].antirequisites);
+                    var prereq=JSON.stringify(json[s][0].prerequisites);
+                    var link= "coursedescription.html?name=" + encodeURIComponent(json[s][0].name)+ "&code="+encodeURIComponent(json[s][0].code)+"&credits="+encodeURIComponent(json[s][0].credits)+"&description="+encodeURIComponent(json[s][0].description)+"&antirequisite="+encodeURIComponent(antireq)+"&prerequisite="+encodeURIComponent(prereq);
+                    
+                    
+                    var newnode= '<a href=' + link + ' >' + '<div class="a1coursename1d">' + "- " + cn + '</div>' + '</a>';
+                    
+                    //appending
+                    var cur= document.getElementById("scrollfor4").innerHTML;
+                    document.getElementById("scrollfor4").innerHTML= cur+ newnode;
+                }
+            }
+        }
+        
     }
 
 
@@ -133,7 +387,8 @@
                 window.onload = function() {
                     var url = window.location.href;
                     url = new URL(url);
-                    var name = url.searchParams.get("name");
+                    var namee1 = url.searchParams.get("name");
+                    var namee2 = url.searchParams.get("name");
                     var code = url.searchParams.get("code");
                     var credits = url.searchParams.get("credits");
                     var description = url.searchParams.get("description");
@@ -143,13 +398,14 @@
                     //console.log(c);
                     //console.log("anti got: "+JSON.parse(antirequisites));
                     //console.log("preq got: "+JSON.parse(prerequisites));
-                    document.getElementById("course_name").innerText=name;
+                    document.getElementById("course_name").innerText=namee1;
                     document.getElementById("course_code").innerText=code;
                     document.getElementById("course_credits").innerText=credits;
                     document.getElementById("course_description").innerText=description;
 
-                    getAntireq(code);
-                    getPrereq(code);
+                    getAntireq(code,namee1);
+                    getPrereq(code,namee2);
+                    getOptions(code,namee1);
 
                     console.log(JSON.parse(prerequisites));
                     
@@ -174,7 +430,7 @@
             <div style="width: 1440px; height: 100%; position:relative; margin:auto;">
                 <img anima-src="./img/particularcourse-img20180703172355.png" class="img20180703172355" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 <div class="googlelogin g-signin2" data-onsuccess="onSignIn"></div>
-                <div class="group5">
+                <a href="index.html"><div class="group5">
                     <img anima-src="./img/btpbeforelogin-fill-1@2x.png" class="fill1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="p">
                         P
@@ -193,6 +449,7 @@
                     </div>
                     <img anima-src="./img/cwbeforelogin-fill-3@2x.png" class="fill3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 </div>
+                </a>
                 <div class="group15">
                     <div class="rectangle">
                     </div>
@@ -286,135 +543,44 @@
                     <div class="donu2019ttakethiscour">
                         <span class="span1">Don’t take this course </span><span class="span2">if you <br />want to take these courses</span>
                     </div>
-                    <div class="scrollforreqreq">
+                    <div class="scrollforreqreq" id="scrollfor4">
                             <div class="a1coursename1d">
-                                    1. Course name 1 d
-                                </div>
-                                <div class="a1coursename1d">
-                                        1. Course name 1 d
-                                    </div>
-                                    <div class="a1coursename1d">
-                                            1. Course name 1 d
-                                        </div>
-                                        <div class="a1coursename1d">
-                                                1. Course name 1 d
-                                            </div>
-                                            <div class="a1coursename1d">
-                                                    1. Course name 1 d
-                                                </div>
-                                                <div class="a1coursename1d">
-                                                        1. Course name 1 d
-                                                    </div>
-                                                    <div class="a1coursename1d">
-                                                            1. Course name 1 d
-                                                        </div>
-                                                        <div class="a1coursename1d">
-                                                                1. Course name 1 d
-                                                            </div>
-                                                            <div class="a1coursename1d">
-                                                                    1. Course name 1 d
-                                                                </div>
-
-                                
+                                    - Loading ...
+                                </div> 
                     </div>
                 </div>
                 <div class="group8">
-                    <img anima-src="./img/particularcourse-rectangle-3.png" class="rectangle" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <img anima-src="./img/particularcourse-rectangle-4.png" class="rectangle" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="antirequistes">
-                        Anti-requistes
+                            <span class="span1">Take this course </span><span class="span2">if you <br />want to take these courses</span>
                     </div>
-                    <div class="scrollforreq">
+                    <div class="scrollforreqreq" id="scrollfor2">
                             <div class="a1coursename1ar">
-                                    1. Course name 1 ar
+                                    - Loading ...
                                 </div>
-                                <div class="a1coursename1ar">
-                                        1. Course name 1 ar
-                                    </div>
-                                    <div class="a1coursename1ar">
-                                            1. Course name 1 ar
-                                        </div>
-                                        <div class="a1coursename1ar">
-                                                1. Course name 1 ar
-                                            </div>
-                                            <div class="a1coursename1ar">
-                                                    1. Course name 1 ar
-                                                </div>
-                                                <div class="a1coursename1ar">
-                                                        1. Course name 1 ar
-                                                    </div>
-                                                    <div class="a1coursename1ar">
-                                                            1. Course name 1 ar
-                                                        </div>
-                                                        <div class="a1coursename1ar">
-                                                                1. Course name 1 ar
-                                                            </div>
                     </div>
                 </div>
                 <div class="group16">
                     <img anima-src="./img/particularcourse-rectangle-4.png" class="rectangle" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="prerequistes">
-                        Pre-requistes
+                        Pre-requisites
                     </div>
-                    <div class="scrollforreq">
+                    <div class="scrollforreq" id="scrollfor1">
                             <div class="a1coursename1">
-                                    1. Course name 1
+                                    - Loading ...
                                 </div>
-                                
-                                <div class="a1coursename1">
-                                        1. Course name 1
-                                    </div>
-                                
-                                    <div class="a1coursename1">
-                                            1. Course name 1
-                                        </div>
-                                
-                                        <div class="a1coursename1">
-                                                1. Course name 1
-                                            </div>
-                                
-                                            <div class="a1coursename1">
-                                                    1. Course name 1
-                                                </div>
-                                                <div class="a1coursename1">
-                                                        1. Course name 1
-                                                    </div>
-                                                    <div class="a1coursename1">
-                                                            1. Course name 1
-                                                        </div>
-                                                        <div class="a1coursename1">
-                                                                1. Course name 1
-                                                            </div>
                     </div>
                                                                                                             
                 </div>
                 <div class="group18">
                     <img anima-src="./img/particularcourse-rectangle-5.png" class="rectangle" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                     <div class="takethiscourseif">
-                        <span class="span1">Take this course</span><span class="span2"> if you <br />want to take these courses</span>
+                        <span class="span1">All Prerequisites</span><span class="span2"> </span>
                     </div>
-                    <div class="scrollforreqreq">
+                    <div class="scrollforreq" id="scrollfor3">
                             <div class="a1coursename1t">
-                                    1. Course name 1 t
+                                    - Loading ...
                                 </div>
-                                <div class="a1coursename1t">
-                                        1. Course name 1 t
-                                    </div>
-                                    <div class="a1coursename1t">
-                                            1. Course name 1 t
-                                        </div>
-                                        <div class="a1coursename1t">
-                                                1. Course name 1 t
-                                            </div>
-                                            <div class="a1coursename1t">
-                                                    1. Course name 1 t
-                                                </div>
-                                                <div class="a1coursename1t">
-                                                        1. Course name 1 t
-                                                    </div>
-                                                    <div class="a1coursename1t">
-                                                            1. Course name 1 t
-                                                        </div>
-
                     </div>
                 </div>
                 <style>
@@ -1196,6 +1362,7 @@
                             <div class="background">
                             </div>
                             <div class="group2">
+                                    <a href="commingsoon.html">
                                 <div class="group1">
                                     <div class="rectangle3">
                                     </div>
@@ -1204,6 +1371,7 @@
                                     <div class="rectangle2">
                                     </div>
                                 </div>
+                                </a>
                                 <img class="rectangle" src="./img/coursesbeforeloginhome-rectangle-1@2x.png">
                                     <div class="aboutu2022">
                                         <span class="span1">
@@ -1401,7 +1569,7 @@
                 <div class="group7">
                     <div class="rectangle">
                     </div>
-                    <a href="cwbeforelogin.html">
+                    <a href="cw.html">
                         <div class="group2">
                             <img anima-src="./img/particularcourse-rectangle-8@2x.png" class="rectangle1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="cw">
@@ -1415,7 +1583,7 @@
                             <span class="span1">Courses</span><span class="span2"><br /></span>
                         </div>
                     </div>
-                    <a href="ipbeforelogin.html">
+                    <a href="ip.html">
                         <div class="group20">
                             <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="ip">
@@ -1423,7 +1591,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="btpbeforelogin.html">
+                    <a href="btp.html">
                         <div class="group21">
                             <img anima-src="./img/cwbeforelogin-rectangle-5@2x.png" class="rectangle1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="btechprojects2">
@@ -1433,7 +1601,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="sgbeforelogin.html">
+                    <a href="sg.html">
                         <div class="group17">
                             <img anima-src="./img/sgbeforelogin-rectangle-2@2x.png" class="rectangle1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                             <div class="sg">
